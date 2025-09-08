@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <!-- JQUERY -->
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <!-- STYLE SHEET -->
+  <link rel="stylesheet" href="./styles/main.css">
+  <!-- JS -->
+  <script src="./js/follower.js"></script>
+  <script src="./js/typewriter.js"></script>
+  <!-- FAVICONS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png"> 
+  <!-- <link rel="manifest" href="./assets/images/site.webmanifest"> -->
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+  <title>Zaki Ahmed Product Design</title>
+</head>
+<body>
+
+  <!-- FOLLOWER -->
+  <div id="follower"></div>
+
+<!-- NAV -->
+  <nav class="navbar navbar-expand-lg ">
+  <a class="navbar-brand" href="./index.html"><img src="./assets/images/zaki.png"></a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#"> <img src="./assets/images/icons/heart.png"> Work</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"> <img src="./assets/images/icons/user.png"> About</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#"> <img src="./assets/images/icons/brain.png"> Philosophies </a>
+      </li>
+
+      <li class="nav-item me-3" >
+        <a class="nav-link" href="#"> <img src="./assets/images/icons/shapes.png"> Design Ops</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link videoButton" href="#">
+          <img src="./assets/images/icons/play1.png" alt="Play Icon" class="play-icon">
+          <span class="button-text">30 second intro</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- CONTENT -->
+
+  <div class="content">
+
+<div class="rotating-outer" id="play-audio">
+  <div class="rotating-wrapper">
+    <div class="headshot-glow" id="audio-indicator">
+      <img src="./assets/images/headshot1.png" id="headshot" alt="Center Image" class="center-image" />
+    </div>
+    <img src="./assets/images/arrow.png" style="position:absolute; bottom:-80px; left:-10px;">
+    <svg viewBox="0 0 200 200" class="rotating-text">
+      <defs>
+        <path id="circlePath" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" />
+      </defs>
+      <text>
+        <textPath href="#circlePath" startOffset="0%">
+          CLICK ME TO HEAR HOW MY NAME IS PRONOUNCED
+        </textPath>
+      </text>
+    </svg>
+  </div>
+</div>
+
+<!-- Audio Element -->
+<audio id="name-audio" src="./assets/audio/zuh-key.mp3" preload="auto"></audio>
+
+    <div class="mainBanner" id="typewriter-target"></div>
+      <h3 id="headline-text" class="hidden">Leading Product Experience Design. Mentoring Creatives. Maximizing Business Value.</h3>
+    <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center align-items-lg-start" style="gap:2rem">
+
+      <div class="chip">
+        <img src="./assets/images/icons/pin.png"> Houston, TX
+      </div>
+      <div class="chip">
+        <img src="./assets/images/icons/workshop.png"> LUMA Design Thinking  Facilitator
+      </div>
+      <div class="chip">
+        <img src="./assets/images/icons/ai.png"> AI / ML Products
+      </div>
+      <div class="chip">
+        <img src="./assets/images/icons/cloud.png"> B2B SaaS Products
+      </div>
+    </div>
+
+    <h2 style="margin-top:6rem; margin-bottom:3rem">Case Studies </h2>
+
+  </div>
+
+
+    <main class="main-wrapper">
+      <div class="scroll-section vertical-section section">
+        <div class="wrapper">
+          <div role="list" class="list">
+              <div role="listitem" class="item" id="cs4">
+              <div class="item_content">
+                <!-- <h2 class="item_number">4</h2> -->
+                <h4>Unifying Patient Scheduling for Efficiency, Consistency and Scalability</h2>
+                <div class="button2"><span>View Case Study</span></div>
+              </div>
+              <div class="img-cs-wrapper" >
+                <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/NetHealth_sEIapC7kj.png?updatedAt=1752356060844">
+              </div>
+            </div>
+            <div role="listitem" class="item" id="cs1">
+              <div class="item_content">
+                <!-- <h2 class="item_number">1</h2> -->
+                <h4>Enhancing Fleet Efficiency and Profitability Through AI-Powered Load Scheduling for Trucking Planners.</h2>
+                  <div class="button2"><span>View Case Study</span></div>
+              </div>
+              <div class="img-cs-wrapper" >
+                <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/optymThumbnail_26zQomZqr.png?updatedAt=1752023182052">
+              </div>
+            </div>
+            <div role="listitem" class="item" id="cs2">
+              <div class="item_content">
+                <!-- <h2 class="item_number">2</h2> -->
+                <h4>Bringing freedom and speed to building and restructuring business orgs.</h2>
+                <div class="button2"><span>View Case Study <span/></div>
+              </div>
+              <div class="img-cs-wrapper" >
+                <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/orgBuilderThumbnail_lvhwIqT21.png?updatedAt=1752023182100">
+              </div>
+            </div>
+            <div role="listitem" class="item" id="cs3">
+              <div class="item_content">
+                <!-- <h2 class="item_number">3</h2> -->
+                <h4>Unlocking insight and efficiency by enabling asset managers to analyze financial documents with Gen AI powered Chat RAG.</h2>
+                <div class="button2"><span> View Case Study</span></div>
+              </div>
+              <div class="img-cs-wrapper" >
+                <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/DocSenseThumbnail_jRjjQWSRq.png?updatedAt=1752023182060">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      </div>
+    </main>
+
+    <div class="d-flex w-100 flex-column align-items-start" id="workExperience">
+      <h2>Work Experience</h2>
+      <p>I am an experienced UX leader based in Houston, Texas with over 9 years of experience leading teams in user-driven designs, workshops, and research across various industries. I have worked on B2B, B2C and AI products in sectors such as healthcare, business management consulting, retailing, energy, e-commerce, and trucking. My passion lies in creating streamlined processes and developing talent to build high-quality digital products. This is what motivates me each day in my work. 
+      </p>
+      <div class="row">
+        <div class="d-flex flex-column col">
+          <h3>Neudesic</h3>
+          <p>Principal Product Designer</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="./js/gsap.js"></script>
+    <script type="text/javascript" src="./js/playAudio.js"></script>     
+    <script type="text/javascript" src="./js/swapIconColor.js"></script>
+  </body>
+</body>
+
+</html>
