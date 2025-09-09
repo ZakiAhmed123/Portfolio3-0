@@ -987,7 +987,6 @@ body {
     align-items: center;
     position: fixed !important;
     top: 1.5rem !important;
-    left: 5% !important;
     background: rgba(113, 109, 112, 0.50);
     box-shadow: 0 0.25rem 1.875rem rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(0.525rem);
