@@ -858,6 +858,62 @@ body {
   }
 }
 
+/* Logo Marquee Styles */
+.logo-marquee-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 3rem 0;
+  background: var(--black);
+}
+
+.logo-marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.logo-track {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  animation: marquee 30s linear infinite;
+  width: fit-content;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+  flex-shrink: 0;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+  opacity: 1;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-marquee-container {
+    padding: 2rem 0;
+  }
+  
+  .logo {
+    height: 40px;
+  }
+  
+  .logo-track {
+    gap: 30px;
+  }
+}
+
 /*MEDIA QUERIES LARGE SIZES*/
 
 @media (min-width: 992px) {
