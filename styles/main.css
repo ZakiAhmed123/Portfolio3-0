@@ -920,6 +920,7 @@ body {
   padding: 3rem 0;
   background: var(--black);
   position: relative;
+  margin-bottom: 96px;
 }
 
 /* Fade effects on both sides */
