@@ -61,3 +61,46 @@ window.addEventListener("load", () => {
 window.addEventListener("resize", () => {
   ScrollTrigger.refresh();
 });
+
+// Fade-in animations for about me and logo marquee sections
+gsap.registerPlugin(ScrollTrigger);
+
+// About Me section fade-in
+gsap.fromTo("#about-section", 
+  {
+    opacity: 0,
+    y: 50
+  },
+  {
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "#about-section",
+      start: "top 80%",
+      end: "bottom 20%",
+      toggleActions: "play none none reverse"
+    }
+  }
+);
+
+// Logo Marquee section fade-in
+gsap.fromTo("#marquee-section", 
+  {
+    opacity: 0,
+    y: 50
+  },
+  {
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "#marquee-section",
+      start: "top 80%",
+      end: "bottom 20%",
+      toggleActions: "play none none reverse"
+    }
+  }
+);

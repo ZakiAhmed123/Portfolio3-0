@@ -811,6 +811,18 @@ body {
   width: 100%;
 }
 
+/* Fade-in animation classes */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .about-me-section {
   display: flex;
   align-items: center;
