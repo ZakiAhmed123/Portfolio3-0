@@ -864,6 +864,31 @@ body {
   overflow: hidden;
   padding: 3rem 0;
   background: var(--black);
+  position: relative;
+}
+
+/* Fade effects on both sides */
+.logo-marquee-container::before,
+.logo-marquee-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Left fade */
+.logo-marquee-container::before {
+  left: 0;
+  background: linear-gradient(to right, var(--black), transparent);
+}
+
+/* Right fade */
+.logo-marquee-container::after {
+  right: 0;
+  background: linear-gradient(to left, var(--black), transparent);
 }
 
 .logo-marquee {
