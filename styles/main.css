@@ -98,6 +98,7 @@ margin-top: 96px;
 /* First section title should not have top margin */
 h2:first-of-type {
   margin-top: 0;
+  padding-bottom: 48px;
 }
 
 
