@@ -92,8 +92,15 @@ font-weight: 700;
 line-height: normal;
 letter-spacing: -1px;
 text-align: center;
-margin-bottom:0px;
+margin-bottom: 48px;
+margin-top: 96px;
 }
+
+/* First section title should not have top margin */
+h2:first-of-type {
+  margin-top: 0;
+}
+
 h3 {
   color: var(--white);
   font-family: "Inter", sans-serif;
@@ -101,6 +108,7 @@ h3 {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  margin-bottom: 48px;
 }
 
 h4 {
