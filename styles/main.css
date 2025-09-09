@@ -232,8 +232,11 @@ nav {
 }
 
 .navbar-collapse {
-  justify-content: center;
-  flex-grow: 1;
+  flex-grow: 0;
+}
+
+.nav-video-button {
+  margin-left: auto;
 }
 
 .nav-item {
