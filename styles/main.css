@@ -209,7 +209,7 @@ nav {
   -webkit-backdrop-filter: blur(0.525rem);
   border: 0rem solid var(--white);
   width: 100%;
-  max-width: 1296px;
+  max-width: 1178px;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 0rem;
