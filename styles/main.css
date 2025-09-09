@@ -854,10 +854,27 @@ body {
   font-size: 1rem;
   font-style: normal;
   font-weight: 600;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   margin-left: 1.5rem;
 }
 
+.linkedin-link {
+  display: inline-flex;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.linkedin-link:hover {
+  opacity: 0.7;
+}
+
+.linkedin-icon {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) saturate(100%) invert(85%) sepia(26%) saturate(1020%) hue-rotate(334deg) brightness(106%) contrast(101%);
+}
 .headshot-container {
   flex-shrink: 0;
 }
