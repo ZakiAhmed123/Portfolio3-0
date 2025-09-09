@@ -214,12 +214,16 @@ nav {
 }
 
 .navbar {
+  display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .navbar-brand {
   padding-left: 0rem;
   display: none;
+  flex: 1;
 }
 
 .navbar-brand:hover {
@@ -232,11 +236,15 @@ nav {
 }
 
 .navbar-collapse {
-  flex-grow: 0;
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .nav-video-button {
-  margin-left: auto;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .nav-item {
