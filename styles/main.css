@@ -1010,23 +1010,25 @@ body {
 
 .footer-content {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 24px;
 }
 
 .footer-item {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 8px;
 }
 
 .footer-label {
-  color: var(--white);
+  color: var(--peach);
   font-family: "Inter", sans-serif;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.4;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -1px;
 }
 
 .footer-text {
@@ -1042,9 +1044,8 @@ body {
     padding: 0 1rem 2rem 1rem;
   }
   
-  .footer-content {
-    flex-direction: column;
-    gap: 1.5rem;
+  .footer-label {
+    font-size: 24px;
   }
 }
 
