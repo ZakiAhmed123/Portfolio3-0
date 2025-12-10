@@ -8,10 +8,17 @@ $(function () {
     if (wordIndex < words.length) {
       const currentWord = words[wordIndex];
       if (charIndex < currentWord.length) {
-        $('#typewriter-target').append(currentWord.charAt(charIndex));
+        let span = $('#typewriter-target').find('.typing-current-word');
+        if (!span.length) {
+          const className = currentWord.toLowerCase().replace('.', '');
+          span = $('<span>').addClass(`typing-word typing-${className}`).appendTo('#typewriter-target');
+          span.addClass('typing-current-word');
+        }
+        span.append(currentWord.charAt(charIndex));
         charIndex++;
         setTimeout(typeWriter, speed);
       } else {
+        $('#typewriter-target').find('.typing-current-word').removeClass('typing-current-word');
         $('#typewriter-target').append('<br>');
         wordIndex++;
         charIndex = 0;
@@ -36,10 +43,6 @@ $(function () {
         .addClass('headline-underline')
         .text(sentence.trim() + '.')
         .appendTo($headline);
-
-      if (sentence.trim().toLowerCase().includes('mentor')) {
-        span.addClass('mentor-text');
-      }
     });
 
     // Animate each underline one after another

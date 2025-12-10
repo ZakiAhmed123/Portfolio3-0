@@ -850,7 +850,7 @@ body {
   width: 100%;
 }
 
-.mentor-text {
+.typing-mentor {
   color: transparent;
   -webkit-text-stroke: 4px var(--peach);
   text-stroke: 4px var(--peach);
