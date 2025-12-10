@@ -36,6 +36,10 @@ $(function () {
         .addClass('headline-underline')
         .text(sentence.trim() + '.')
         .appendTo($headline);
+
+      if (sentence.trim().toLowerCase().includes('mentor')) {
+        span.addClass('mentor-text');
+      }
     });
 
     // Animate each underline one after another

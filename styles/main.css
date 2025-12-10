@@ -850,6 +850,12 @@ body {
   width: 100%;
 }
 
+.mentor-text {
+  color: transparent;
+  -webkit-text-stroke: 4px var(--peach);
+  text-stroke: 4px var(--peach);
+}
+
 /* Fade-in animation classes */
 .fade-in-section {
   opacity: 0;
