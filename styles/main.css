@@ -423,20 +423,6 @@ body {
   letter-spacing: -0.04em;
   line-height: 0.85em;
   height: 408px;
-  perspective: 1200px;
-}
-
-#typewriter-target {
-  display: inline-block;
-  transform: rotateX(15deg) rotateY(-25deg) rotateZ(5deg);
-  transform-style: preserve-3d;
-  text-shadow:
-    3px 3px 0px rgba(184, 233, 148, 0.4),
-    6px 6px 0px rgba(184, 233, 148, 0.3),
-    9px 9px 0px rgba(184, 233, 148, 0.2),
-    12px 12px 0px rgba(184, 233, 148, 0.1),
-    15px 15px 20px rgba(0, 0, 0, 0.5);
-  filter: drop-shadow(-2px -2px 3px rgba(255, 255, 255, 0.1));
 }
 
 .content {
@@ -784,16 +770,6 @@ body {
 
   .mainBanner {
     height:auto;
-  }
-
-  #typewriter-target {
-    transform: rotateX(8deg) rotateY(-12deg) rotateZ(3deg);
-    text-shadow:
-      2px 2px 0px rgba(184, 233, 148, 0.4),
-      4px 4px 0px rgba(184, 233, 148, 0.3),
-      6px 6px 0px rgba(184, 233, 148, 0.2),
-      8px 8px 0px rgba(184, 233, 148, 0.1),
-      10px 10px 15px rgba(0, 0, 0, 0.5);
   }
 
   .wrapper {
