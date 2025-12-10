@@ -32,6 +32,23 @@
   <!-- FOLLOWER -->
   <div id="follower"></div>
 
+  <!-- COLOR PICKER -->
+  <div id="color-picker-toggle" class="color-picker-toggle">
+    <span>Colors</span>
+  </div>
+  <div id="color-picker-overlay" class="color-picker-overlay">
+    <div class="color-picker-header">
+      <h3>Primary Color Tester</h3>
+      <button id="close-picker" class="close-picker">×</button>
+    </div>
+    <div class="color-picker-display">
+      <div class="current-color-label">Current:</div>
+      <div id="current-color-display" class="current-color-display"></div>
+      <input type="text" id="color-input" class="color-input" placeholder="#FFF3E1">
+    </div>
+    <div class="color-picker-grid" id="color-grid"></div>
+  </div>
+
 <!-- NAV -->
   <nav class="navbar navbar-expand-lg ">
   <a class="navbar-brand" href="./index.html"><img src="./assets/images/zaki.png"></a>
@@ -236,8 +253,9 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="./js/gsap.js"></script>
-    <script type="text/javascript" src="./js/playAudio.js"></script>     
+    <script type="text/javascript" src="./js/playAudio.js"></script>
     <script type="text/javascript" src="./js/swapIconColor.js"></script>
+    <script type="text/javascript" src="./js/colorPicker.js"></script>
   </body>
 </body>
 
