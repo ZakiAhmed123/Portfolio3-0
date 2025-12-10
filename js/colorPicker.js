@@ -37,6 +37,32 @@ const colorGrid = document.getElementById("color-grid");
 const colorInput = document.getElementById("color-input");
 const currentColorDisplay = document.getElementById("current-color-display");
 
+let isEyeDropperActive = false;
+let pickedElement = null;
+
+function rgbToHex(rgb) {
+  if (!rgb) return "#000000";
+
+  rgb = rgb.trim();
+
+  if (rgb.startsWith("#")) {
+    return rgb;
+  }
+
+  const match = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+  if (match) {
+    const r = parseInt(match[1]);
+    const g = parseInt(match[2]);
+    const b = parseInt(match[3]);
+    return "#" + [r, g, b].map((x) => {
+      const hex = x.toString(16);
+      return hex.length === 1 ? "0" + hex : hex;
+    }).join("").toUpperCase();
+  }
+
+  return "#000000";
+}
+
 function updatePrimaryColor(color) {
   document.documentElement.style.setProperty("--peach", color);
   currentColorDisplay.style.background = color;
@@ -67,12 +93,82 @@ function createColorGrid() {
   updatePrimaryColor(currentColor);
 }
 
+function activateEyeDropper() {
+  isEyeDropperActive = !isEyeDropperActive;
+  const eyeDropperButton = document.getElementById("eye-dropper-btn");
+
+  if (isEyeDropperActive) {
+    document.body.style.cursor = "crosshair";
+    document.body.classList.add("eye-dropper-active");
+    if (eyeDropperButton) eyeDropperButton.classList.add("active");
+
+    document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("click", onElementClick);
+  } else {
+    deactivateEyeDropper();
+  }
+}
+
+function deactivateEyeDropper() {
+  isEyeDropperActive = false;
+  document.body.style.cursor = "auto";
+  document.body.classList.remove("eye-dropper-active");
+  const eyeDropperButton = document.getElementById("eye-dropper-btn");
+  if (eyeDropperButton) eyeDropperButton.classList.remove("active");
+
+  if (pickedElement) {
+    pickedElement.classList.remove("color-picked");
+    pickedElement = null;
+  }
+
+  document.removeEventListener("mousemove", onMouseMove);
+  document.removeEventListener("click", onElementClick);
+}
+
+function onMouseMove(e) {
+  if (!isEyeDropperActive) return;
+
+  if (pickedElement) {
+    pickedElement.classList.remove("color-picked");
+  }
+
+  const element = document.elementFromPoint(e.clientX, e.clientY);
+
+  if (element && element !== document.body && element !== document.documentElement) {
+    pickedElement = element;
+    element.classList.add("color-picked");
+
+    const backgroundColor = window.getComputedStyle(element).backgroundColor;
+    const color = rgbToHex(backgroundColor);
+    currentColorDisplay.style.background = color;
+  }
+}
+
+function onElementClick(e) {
+  if (!isEyeDropperActive) return;
+
+  e.preventDefault();
+  e.stopPropagation();
+
+  const element = document.elementFromPoint(e.clientX, e.clientY);
+  if (element && element !== document.body && element !== document.documentElement) {
+    const backgroundColor = window.getComputedStyle(element).backgroundColor;
+    const color = rgbToHex(backgroundColor);
+    updatePrimaryColor(color);
+  }
+
+  deactivateEyeDropper();
+}
+
 colorPickerToggle.addEventListener("click", () => {
   colorPickerOverlay.classList.toggle("active");
 });
 
 closePicker.addEventListener("click", () => {
   colorPickerOverlay.classList.remove("active");
+  if (isEyeDropperActive) {
+    deactivateEyeDropper();
+  }
 });
 
 colorInput.addEventListener("keydown", (e) => {
@@ -94,3 +190,8 @@ colorInput.addEventListener("keydown", (e) => {
 });
 
 document.addEventListener("DOMContentLoaded", createColorGrid);
+
+const eyeDropperButton = document.getElementById("eye-dropper-btn");
+if (eyeDropperButton) {
+  eyeDropperButton.addEventListener("click", activateEyeDropper);
+}
