@@ -41,7 +41,7 @@ let isEyeDropperActive = false;
 let pickedElement = null;
 
 function rgbToHex(rgb) {
-  if (!rgb) return "#000000";
+  if (!rgb) return null;
 
   rgb = rgb.trim();
 
@@ -49,18 +49,42 @@ function rgbToHex(rgb) {
     return rgb;
   }
 
-  const match = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+  const match = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/);
   if (match) {
     const r = parseInt(match[1]);
     const g = parseInt(match[2]);
     const b = parseInt(match[3]);
+    const alpha = match[4] ? parseFloat(match[4]) : 1;
+
+    if (alpha === 0) return null;
+
     return "#" + [r, g, b].map((x) => {
       const hex = x.toString(16);
       return hex.length === 1 ? "0" + hex : hex;
     }).join("").toUpperCase();
   }
 
-  return "#000000";
+  return null;
+}
+
+function getElementColor(element) {
+  let currentElement = element;
+  const maxDepth = 10;
+  let depth = 0;
+
+  while (currentElement && depth < maxDepth) {
+    const backgroundColor = window.getComputedStyle(currentElement).backgroundColor;
+    const color = rgbToHex(backgroundColor);
+
+    if (color) {
+      return color;
+    }
+
+    currentElement = currentElement.parentElement;
+    depth++;
+  }
+
+  return "#050709";
 }
 
 function updatePrimaryColor(color) {
@@ -138,8 +162,7 @@ function onMouseMove(e) {
     pickedElement = element;
     element.classList.add("color-picked");
 
-    const backgroundColor = window.getComputedStyle(element).backgroundColor;
-    const color = rgbToHex(backgroundColor);
+    const color = getElementColor(element);
     currentColorDisplay.style.background = color;
   }
 }
@@ -152,8 +175,7 @@ function onElementClick(e) {
 
   const element = document.elementFromPoint(e.clientX, e.clientY);
   if (element && element !== document.body && element !== document.documentElement) {
-    const backgroundColor = window.getComputedStyle(element).backgroundColor;
-    const color = rgbToHex(backgroundColor);
+    const color = getElementColor(element);
     updatePrimaryColor(color);
   }
 
