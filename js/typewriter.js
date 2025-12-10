@@ -1,5 +1,5 @@
 $(function () {
-  const words = ["DESIGNER.", "MENTOR.", "STRATEGIST."];
+  const words = ["MENTOR.", "DESIGNER.", "STRATEGIST."];
   let wordIndex = 0;
   let charIndex = 0;
   const speed = 70;
