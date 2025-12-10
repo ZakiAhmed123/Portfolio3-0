@@ -12,6 +12,33 @@ html {
   background-color: var(--black);
 }
 
+#starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.star {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+  animation: twinkle linear infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 body {
   transition: color 0.3s, background-color 0.3s;
 }
@@ -406,6 +433,7 @@ body {
   align-items: center;
   gap: 2.0rem;
   position: relative;
+  z-index: 2;
 }
 
 .chip {
@@ -537,6 +565,8 @@ body {
 
 .main-wrapper {
   padding: 0rem 6rem 0rem 6rem;
+  position: relative;
+  z-index: 2;
 }
 
 .heading {
@@ -921,6 +951,7 @@ body {
   background: var(--black);
   position: relative;
   margin-bottom: 96px;
+  z-index: 2;
 }
 
 /* Fade effects on both sides */
@@ -999,6 +1030,8 @@ body {
 .footer {
   margin-top: 96px;
   padding: 0 6rem 3rem 6rem;
+  position: relative;
+  z-index: 2;
 }
 
 .footer-divider {
