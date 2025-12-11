@@ -659,7 +659,7 @@ body {
 }
 
 .item:hover .img-cs-wrapper img {
-  transform: rotate(-20deg);
+  transform: rotate(-8deg);
 }
 
 #cs1 {
