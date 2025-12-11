@@ -4,20 +4,17 @@ document.addEventListener('DOMContentLoaded', function() {
   const line3 = document.getElementById('line3');
   const designerWord = document.getElementById('designer-word');
 
-  // Determine base font size based on viewport
-  const isLargeScreen = window.innerWidth >= 992;
-  const baseFontSize = isLargeScreen ? 160 : 56; // 10rem = 160px, 3.5rem = 56px
+  const pauseDuration = 1200; // 1.2 seconds pause between each line
 
   // Function to animate a line in
-  function animateLine(line, fontSize, delay) {
+  function animateLine(line) {
     return new Promise((resolve) => {
-      setTimeout(() => {
-        line.style.fontSize = fontSize + 'px';
-        line.style.opacity = '1';
-        line.style.transform = 'translateY(0)';
-        line.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-        resolve();
-      }, delay);
+      line.style.opacity = '1';
+      line.style.transform = 'translateY(0)';
+      line.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+
+      // Resolve after animation completes + pause duration
+      setTimeout(resolve, 500 + pauseDuration);
     });
   }
 
@@ -40,21 +37,21 @@ document.addEventListener('DOMContentLoaded', function() {
     letters.forEach((letter, index) => {
       setTimeout(() => {
         letter.style.color = '#ABFF02';
-        letter.style.transition = 'color 0.15s ease';
-      }, index * 80); // 80ms delay between each letter
+        letter.style.transition = 'color 0.2s ease';
+      }, index * 150); // 150ms delay between each letter
     });
   }
 
   // Start the animation sequence
   async function startAnimation() {
-    await animateLine(line1, baseFontSize, 0);
-    await animateLine(line2, baseFontSize + 8, 200);
-    await animateLine(line3, baseFontSize + 16, 400);
+    await animateLine(line1);
+    await animateLine(line2);
+    await animateLine(line3);
 
-    // Wait a bit after Designer appears, then start color animation
+    // Start color animation after Designer appears
     setTimeout(() => {
       animateDesignerColor();
-    }, 300);
+    }, 100);
   }
 
   startAnimation();
