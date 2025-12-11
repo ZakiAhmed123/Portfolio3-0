@@ -12,7 +12,7 @@ html {
   background-color: var(--black);
 }
 
-#starfield {
+#spline-background {
   position: fixed;
   top: 0;
   left: 0;
@@ -20,23 +20,6 @@ html {
   height: 100%;
   pointer-events: none;
   z-index: 1;
-}
-
-.star {
-  position: absolute;
-  background: #ffffff;
-  border-radius: 50%;
-  box-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
-  animation: twinkle linear infinite;
-}
-
-@keyframes twinkle {
-  0%, 100% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 1;
-  }
 }
 
 body {
