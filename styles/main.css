@@ -399,7 +399,7 @@ body {
 
 .mainBanner {
   color: var(--peach);
-  text-align: center;
+  text-align: left;
   font-family: "Inter", sans-serif;
   font-size: 3.5rem;
   font-style: normal;
