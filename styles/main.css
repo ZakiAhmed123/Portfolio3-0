@@ -415,8 +415,6 @@ body {
 }
 
 .title-line {
-  opacity: 0;
-  transform: translateY(20px);
   min-height: 1em;
   line-height: 0.85em;
 }
@@ -435,7 +433,7 @@ body {
 
 .designer-letter {
   display: inline-block;
-  color: var(--white);
+  color: #DADADA;
 }
 
 .content {

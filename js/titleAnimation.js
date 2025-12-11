@@ -1,24 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const line1 = document.getElementById('line1');
-  const line2 = document.getElementById('line2');
-  const line3 = document.getElementById('line3');
   const designerWord = document.getElementById('designer-word');
 
-  const pauseDuration = 1200; // 1.2 seconds pause between each line
-
-  // Function to animate a line in
-  function animateLine(line) {
-    return new Promise((resolve) => {
-      line.style.opacity = '1';
-      line.style.transform = 'translateY(0)';
-      line.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-
-      // Resolve after animation completes + pause duration
-      setTimeout(resolve, 500 + pauseDuration);
-    });
-  }
-
-  // Function to animate "Designer" letter by letter with color change
+  // Function to animate "Designer" letter by letter with color wave
   function animateDesignerColor() {
     const word = 'Designer.';
     designerWord.innerHTML = '';
@@ -33,26 +16,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const letters = designerWord.querySelectorAll('.designer-letter');
 
-    // Animate each letter's color from white to #ABFF02
+    // Animate each letter: turn green, then previous letter turns white
     letters.forEach((letter, index) => {
       setTimeout(() => {
+        // Turn current letter green
         letter.style.color = '#ABFF02';
         letter.style.transition = 'color 0.2s ease';
+
+        // Turn previous letter white
+        if (index > 0) {
+          letters[index - 1].style.color = 'var(--white)';
+        }
       }, index * 150); // 150ms delay between each letter
     });
   }
 
-  // Start the animation sequence
-  async function startAnimation() {
-    await animateLine(line1);
-    await animateLine(line2);
-    await animateLine(line3);
-
-    // Start color animation after Designer appears
-    setTimeout(() => {
-      animateDesignerColor();
-    }, 100);
-  }
-
-  startAnimation();
+  // Start animation immediately
+  animateDesignerColor();
 });
