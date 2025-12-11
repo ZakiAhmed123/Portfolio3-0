@@ -219,7 +219,7 @@ text {
 nav {
   display: flex;
   padding: 0rem 0.75rem !important;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   position: fixed !important;
   top: 0rem;
@@ -229,8 +229,8 @@ nav {
   backdrop-filter: blur(0.525rem);
   -webkit-backdrop-filter: blur(0.525rem);
   border: 0rem solid var(--white);
-  width: 100%;
-  max-width: 1178px;
+  width: 1320px;
+  max-width: 1320px;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 0rem;
@@ -239,7 +239,7 @@ nav {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
 }
@@ -260,15 +260,8 @@ nav {
 }
 
 .navbar-collapse {
-  flex: 1;
   display: flex;
   justify-content: center;
-}
-
-.nav-video-button {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
 }
 
 .nav-item {
@@ -1166,7 +1159,7 @@ body {
   nav {
     display: flex;
     padding: 0.75rem 0.75rem 0.75rem 2rem !important;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: fixed !important;
     top: 1.5rem !important;
@@ -1175,7 +1168,8 @@ body {
     backdrop-filter: blur(0.525rem);
     -webkit-backdrop-filter: blur(0.525rem);
     border: 0.0625rem solid var(--white);
-    width: 90%;
+    width: 1320px;
+    max-width: 1320px;
     border-radius: 4.1875rem;
     z-index: 9998;
   }
@@ -1190,7 +1184,7 @@ body {
   }
 
   .navbar {
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .nav-link {
