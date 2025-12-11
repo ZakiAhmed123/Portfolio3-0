@@ -983,8 +983,8 @@ body {
 }
 
 .logo {
-  height: 100px;
-  width: auto;
+  width: 100px;
+  height: auto;
   opacity: 0.9;
   transition: opacity 0.3s ease;
   max-width: 100%;
@@ -1003,10 +1003,6 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 3rem 2rem;
   }
-
-  .logo {
-    height: 100px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -1023,10 +1019,6 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
-
-  .logo {
-    height: 100px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -1042,10 +1034,6 @@ body {
   .logo-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-  }
-
-  .logo {
-    height: 100px;
   }
 }
 
