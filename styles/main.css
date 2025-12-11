@@ -221,6 +221,7 @@ nav {
   padding: 0rem 0.75rem !important;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
   position: fixed !important;
   top: 0rem;
   left: 0rem;
@@ -247,7 +248,6 @@ nav {
 .navbar-brand {
   padding-left: 0rem;
   display: none;
-  flex: 1;
 }
 
 .navbar-brand:hover {
@@ -1175,6 +1175,7 @@ body {
     padding: 0.75rem 0.75rem 0.75rem 2rem !important;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
     position: fixed !important;
     top: 1.5rem !important;
     background: rgba(113, 109, 112, 0.50);
