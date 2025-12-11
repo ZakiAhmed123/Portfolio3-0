@@ -400,10 +400,10 @@ body {
 .mainBanner {
   color: var(--peach);
   text-align: center;
-  font-family: "Bagel Fat One", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 3.5rem;
   font-style: normal;
-  font-weight: 900;
+  font-weight: 600;
   line-height: normal;
   letter-spacing: -0.088em;
   line-height: 0.85em;
