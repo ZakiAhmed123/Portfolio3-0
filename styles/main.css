@@ -112,7 +112,7 @@ body {
 
 
 h2 {color: var(--peach);
-font-family: Inter;
+font-family: "Spline Sans", sans-serif;
 font-size: 40px;
 font-style: normal;
 font-weight: 700;
@@ -131,7 +131,7 @@ h2:first-of-type {
 
 h3 {
   color: var(--white);
-  font-family: "Inter", sans-serif;
+  font-family: "Spline Sans", sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
@@ -141,7 +141,7 @@ h3 {
 
 h4 {
     color: var(--Black, #050709);
-    font-family: Inter;
+    font-family: "Spline Sans", sans-serif;
     font-size: 40px;
     font-style: normal;
     font-weight: 600;
@@ -198,7 +198,7 @@ h4 {
 
 
 text {
-  font-family: "Inter", sans-serif;
+  font-family: "Spline Sans", sans-serif;
   font-size: 12px;
   fill: var(--peach);
   letter-spacing: 3px;
@@ -294,7 +294,7 @@ nav {
 
 .nav-link {
   color: var(--white);
-  font-family: "Inter", sans-serif;
+  font-family: "Spline Sans", sans-serif;
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 400;
@@ -336,7 +336,7 @@ button:focus:not(:focus-visible) {
   padding-bottom:.75rem;
   background: var(--peach);
   color: var(--black);
-  font-family: "Inter", sans-serif;
+  font-family: "Spline Sans", sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
   border-radius: 2rem;
@@ -415,7 +415,7 @@ body {
 .mainBanner {
   color: var(--peach);
   text-align: center;
-  font-family: "Inter", sans-serif;
+  font-family: "Spline Sans", sans-serif;
   font-size: 3.5rem;
   font-style: normal;
   font-weight: 900;
@@ -475,7 +475,7 @@ body {
   align-items: center;
   border-radius: 1.5rem;
   color: var(--Black, #050709);
-  font-family: Inter;
+  font-family: "Spline Sans", sans-serif;
   font-size: 40px;
   font-style: normal;
   font-weight: 600;
@@ -518,7 +518,7 @@ body {
   border-radius: 14px;
   background: var(--black);
   color: var(--white);
-  font-family: Inter;
+  font-family: "Spline Sans", sans-serif;
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 400;
@@ -610,7 +610,7 @@ body {
   align-items: center;
   border-radius: 1.5rem;
   color: var(--Black, #050709);
-  font-family: Inter;
+  font-family: "Spline Sans", sans-serif;
   font-size: 40px;
   font-style: normal;
   font-weight: 600;
@@ -882,7 +882,7 @@ body {
 
 .about-quote {
   color: var(--white);
-  font-family: "Inter", sans-serif;
+  font-family: "Spline Sans", sans-serif;
   font-size: 1.125rem;
   font-style: italic;
   font-weight: 400;
@@ -894,7 +894,7 @@ body {
 
 .quote-author {
   color: var(--peach);
-  font-family: "Inter", sans-serif;
+  font-family: "Spline Sans", sans-serif;
   font-size: 1rem;
   font-style: normal;
   font-weight: 600;
@@ -962,7 +962,7 @@ body {
   font-size: 18px;
   color: #999;
   text-align: center;
-  font-family: "Inter", sans-serif;
+  font-family: "Spline Sans", sans-serif;
   font-weight: 400;
   line-height: 1.6;
   margin-bottom: 3rem;
@@ -1077,7 +1077,7 @@ body {
 
 .footer-label {
   color: var(--peach);
-  font-family: "Inter", sans-serif;
+  font-family: "Spline Sans", sans-serif;
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
@@ -1087,7 +1087,7 @@ body {
 
 .footer-text {
   color: var(--white);
-  font-family: "Inter", sans-serif;
+  font-family: "Spline Sans", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
