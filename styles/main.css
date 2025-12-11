@@ -850,7 +850,7 @@ body {
 }
 
 .typing-designer {
-  color: transparent;
+  color: var(--peach);
   -webkit-text-stroke: 4px var(--peach);
   text-stroke: 4px var(--peach);
 }
