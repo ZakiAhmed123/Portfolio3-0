@@ -103,6 +103,8 @@ line-height: normal;
 letter-spacing: -1px;
 text-align: center;
 margin-top: 96px;
+position: relative;
+z-index: 2;
 }
 
 /* First section title should not have top margin */
