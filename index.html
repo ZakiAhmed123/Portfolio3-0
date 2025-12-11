@@ -32,24 +32,18 @@
   <!-- FOLLOWER -->
   <div id="follower"></div>
 
-  <!-- COLOR PICKER -->
-  <div id="color-picker-toggle" class="color-picker-toggle">
-    <span>Colors</span>
-  </div>
-  <div id="color-picker-overlay" class="color-picker-overlay">
-    <div class="color-picker-header">
-      <h3>Primary Color Tester</h3>
-      <button id="close-picker" class="close-picker">×</button>
+  <!-- THEME CHANGER -->
+  <div class="theme-changer-container">
+    <div class="theme-changer-toggle" id="theme-toggle">
+      <span>Themes</span>
     </div>
-    <div class="color-picker-display">
-      <div class="current-color-label">Current:</div>
-      <div id="current-color-display" class="current-color-display"></div>
-      <input type="text" id="color-input" class="color-input" placeholder="#FFF3E1">
+    <div class="theme-changer-panel" id="theme-panel">
+      <div class="theme-panel-header">
+        <h3>Color Palette Tester</h3>
+        <button id="close-theme-panel" class="close-theme-panel">×</button>
+      </div>
+      <div class="theme-grid" id="theme-grid"></div>
     </div>
-    <button id="eye-dropper-btn" class="eye-dropper-btn">
-      <span class="dropper-icon">🎨</span> Pick Color
-    </button>
-    <div class="color-picker-grid" id="color-grid"></div>
   </div>
 
 <!-- NAV -->
@@ -258,7 +252,7 @@
     <script src="./js/gsap.js"></script>
     <script type="text/javascript" src="./js/playAudio.js"></script>
     <script type="text/javascript" src="./js/swapIconColor.js"></script>
-    <script type="text/javascript" src="./js/colorPicker.js"></script>
+    <script type="text/javascript" src="./js/themeChanger.js"></script>
   </body>
 </body>
 
