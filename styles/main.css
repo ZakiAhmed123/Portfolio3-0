@@ -828,6 +828,7 @@ body {
   margin-right: 0.5rem;
   opacity: 0;
   transition: opacity 0.3s ease-in;
+  color: #fff9;
 }
 
 .headline-underline::after {
