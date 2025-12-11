@@ -399,7 +399,7 @@ body {
 
 .mainBanner {
   color: var(--peach);
-  text-align: left;
+  text-align: center;
   font-family: "Inter", sans-serif;
   font-size: 3.5rem;
   font-style: normal;
@@ -408,6 +408,20 @@ body {
   letter-spacing: -0.088em;
   line-height: 0.85em;
   height: 408px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-line {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.designer-letter {
+  display: inline-block;
+  color: var(--white);
 }
 
 .content {
