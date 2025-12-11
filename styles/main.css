@@ -259,18 +259,16 @@ nav {
   height: auto;
 }
 
-.nav-logo {
-  width: 80px;
-  height: 60px;
+.nav-logo-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: white;
+  transition: color 0.3s ease;
 }
 
-.nav-logo path {
-  fill: white;
-  transition: fill 0.3s ease;
-}
-
-.navbar-brand:hover .nav-logo path {
-  fill: #ABFF02;
+.navbar-brand:hover .nav-logo-text {
+  color: #ABFF02;
 }
 
 .navbar-collapse {
