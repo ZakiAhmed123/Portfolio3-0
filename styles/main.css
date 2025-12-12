@@ -695,41 +695,10 @@ body {
   transform: rotate(-8deg);
 }
 
-#cs1 {
-  background: url("../assets/images/Grainy Gradient Background 4.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  border-radius: 1rem;
-}
-
 #cs1 h4, #cs2 h4, #cs3 h4, #cs4 h4 {
   color: white !important;
 }
 
-#cs2 {
-  background: url("../assets/images/Grainy Gradient Background 5.jpg");
-    background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  border-radius: 1rem;
-}
-
-#cs3 {
-  background: url("../assets/images/Grainy Gradient Background 6.jpg");
-    background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  border-radius: 1rem;
-}
-
-#cs4 {
-  background: url("../assets/images/Grainy Gradient Background 1.jpg");
-    background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  border-radius: 1rem;
-}
 .item_number {
   font-size: 1.5rem;
   height: 3rem;
