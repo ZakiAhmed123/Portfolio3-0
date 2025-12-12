@@ -66,7 +66,7 @@ window.addEventListener("resize", () => {
 gsap.registerPlugin(ScrollTrigger);
 
 // About Me heading fade-in
-gsap.fromTo(".content h2:nth-of-type(2)",
+gsap.fromTo("body > h2",
   {
     opacity: 0,
     y: 30
@@ -77,8 +77,8 @@ gsap.fromTo(".content h2:nth-of-type(2)",
     duration: 0.3,
     ease: "power2.out",
     scrollTrigger: {
-      trigger: ".content h2:nth-of-type(2)",
-      start: "top 80%",
+      trigger: ".about-me-section",
+      start: "top 90%",
       toggleActions: "play none none reverse"
     }
   }
@@ -228,7 +228,7 @@ gsap.utils.toArray(".chip").forEach((chip, index) => {
 });
 
 // Case Studies heading fade-in
-gsap.fromTo(".content h2",
+gsap.fromTo(".content > h2",
   {
     opacity: 0,
     y: 30
@@ -239,7 +239,7 @@ gsap.fromTo(".content h2",
     duration: 0.3,
     ease: "power2.out",
     scrollTrigger: {
-      trigger: ".content h2",
+      trigger: ".content > h2",
       start: "top 80%",
       toggleActions: "play none none reverse"
     }

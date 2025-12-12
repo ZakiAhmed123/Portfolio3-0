@@ -21,11 +21,11 @@ body::after {
   left: 0;
   right: 0;
   height: 50px;
-  background: linear-gradient(to top, rgba(5, 7, 9, 1) 0%, rgba(5, 7, 9, 0.8) 30%, transparent 100%);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: linear-gradient(to top, rgba(5, 7, 9, 0.3) 0%, rgba(5, 7, 9, 0.1) 60%, transparent 100%);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   pointer-events: none;
-  z-index: 9997;
+  z-index: 10000;
 }
 
 #spline-background {
@@ -910,7 +910,9 @@ body {
 /* Initial hidden state for scroll animations */
 .experience-item,
 .chip,
-.content h2,
+.content > h2,
+body > h2,
+#experience h2,
 .logo-grid-subtitle,
 .logo-wrapper,
 .quote-container,
