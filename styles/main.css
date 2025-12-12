@@ -10,7 +10,6 @@
 
 html {
   background-color: var(--black);
-  scroll-behavior: smooth;
 }
 
 #spline-background {
