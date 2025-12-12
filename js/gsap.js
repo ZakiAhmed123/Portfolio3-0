@@ -86,7 +86,7 @@ gsap.fromTo("#about-section",
 );
 
 // Logo Marquee section fade-in
-gsap.fromTo("#marquee-section", 
+gsap.fromTo("#marquee-section",
   {
     opacity: 0,
     y: 50
@@ -98,6 +98,26 @@ gsap.fromTo("#marquee-section",
     ease: "power2.out",
     scrollTrigger: {
       trigger: "#marquee-section",
+      start: "top 80%",
+      end: "bottom 20%",
+      toggleActions: "play none none reverse"
+    }
+  }
+);
+
+// Experience section fade-in
+gsap.fromTo("#experience",
+  {
+    opacity: 0,
+    y: 50
+  },
+  {
+    opacity: 1,
+    y: 0,
+    duration: 0.3,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "#experience",
       start: "top 80%",
       end: "bottom 20%",
       toggleActions: "play none none reverse"
