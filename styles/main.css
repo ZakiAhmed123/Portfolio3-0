@@ -651,6 +651,25 @@ body {
   letter-spacing: -1px;
   gap: 1.5rem;
   margin-bottom:2rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#cs4 {
+  background-image: url('https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/Grainy%20Gradient%20Background%205_UF__x8J7o.jpg?updatedAt=1752863014456');
+}
+
+#cs1 {
+  background-image: url('https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/Grainy%20Gradient%20Background%204_oE4t04-Zl.jpg?updatedAt=1752863014201');
+}
+
+#cs2 {
+  background-image: url('https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/Grainy%20Gradient%20Background%206_-4FyGzOut.jpg?updatedAt=1752863014200');
+}
+
+#cs3 {
+  background-image: url('https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/Grainy%20Gradient%20Background%201_YXokGScfx.jpg?updatedAt=1752863014140');
 }
 
 .img-cs-wrapper {
