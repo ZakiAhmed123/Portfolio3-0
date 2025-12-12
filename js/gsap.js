@@ -65,11 +65,11 @@ window.addEventListener("resize", () => {
 // Fade-in animations for about me and logo marquee sections
 gsap.registerPlugin(ScrollTrigger);
 
-// About Me section fade-in
-gsap.fromTo("#about-section", 
+// About Me heading fade-in
+gsap.fromTo(".content h2:nth-of-type(2)",
   {
     opacity: 0,
-    y: 50
+    y: 30
   },
   {
     opacity: 1,
@@ -77,19 +77,57 @@ gsap.fromTo("#about-section",
     duration: 0.3,
     ease: "power2.out",
     scrollTrigger: {
-      trigger: "#about-section",
+      trigger: ".content h2:nth-of-type(2)",
       start: "top 80%",
-      end: "bottom 20%",
       toggleActions: "play none none reverse"
     }
   }
 );
 
-// Logo Marquee section fade-in
-gsap.fromTo("#marquee-section",
+// About Me quote container fade-in
+gsap.fromTo(".quote-container",
   {
     opacity: 0,
-    y: 50
+    x: -50
+  },
+  {
+    opacity: 1,
+    x: 0,
+    duration: 0.4,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "#about-section",
+      start: "top 80%",
+      toggleActions: "play none none reverse"
+    }
+  }
+);
+
+// About Me headshot fade-in
+gsap.fromTo(".headshot-container",
+  {
+    opacity: 0,
+    x: 50
+  },
+  {
+    opacity: 1,
+    x: 0,
+    duration: 0.4,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "#about-section",
+      start: "top 80%",
+      toggleActions: "play none none reverse"
+    },
+    delay: 0.2
+  }
+);
+
+// Logo Marquee subtitle fade-in
+gsap.fromTo(".logo-grid-subtitle",
+  {
+    opacity: 0,
+    y: 30
   },
   {
     opacity: 1,
@@ -99,14 +137,35 @@ gsap.fromTo("#marquee-section",
     scrollTrigger: {
       trigger: "#marquee-section",
       start: "top 80%",
-      end: "bottom 20%",
       toggleActions: "play none none reverse"
     }
   }
 );
 
-// Experience section fade-in
-gsap.fromTo("#experience",
+// Staggered fade-in for logo grid items
+gsap.utils.toArray(".logo-wrapper").forEach((logo, index) => {
+  gsap.fromTo(logo,
+    {
+      opacity: 0,
+      y: 30
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.3,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".logo-grid",
+        start: "top 80%",
+        toggleActions: "play none none reverse"
+      },
+      delay: index * 0.08
+    }
+  );
+});
+
+// Experience section title fade-in
+gsap.fromTo("#experience h2",
   {
     opacity: 0,
     y: 50
@@ -119,8 +178,111 @@ gsap.fromTo("#experience",
     scrollTrigger: {
       trigger: "#experience",
       start: "top 80%",
-      end: "bottom 20%",
       toggleActions: "play none none reverse"
     }
   }
 );
+
+// Staggered fade-in for each experience item
+gsap.utils.toArray(".experience-item").forEach((item, index) => {
+  gsap.fromTo(item,
+    {
+      opacity: 0,
+      y: 50
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.3,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: item,
+        start: "top 85%",
+        toggleActions: "play none none reverse"
+      },
+      delay: index * 0.1
+    }
+  );
+});
+
+// Staggered fade-in for each chip
+gsap.utils.toArray(".chip").forEach((chip, index) => {
+  gsap.fromTo(chip,
+    {
+      opacity: 0,
+      y: 20
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.3,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".content .d-flex",
+        start: "top 70%",
+        toggleActions: "play none none reverse"
+      },
+      delay: index * 0.1
+    }
+  );
+});
+
+// Case Studies heading fade-in
+gsap.fromTo(".content h2",
+  {
+    opacity: 0,
+    y: 30
+  },
+  {
+    opacity: 1,
+    y: 0,
+    duration: 0.3,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".content h2",
+      start: "top 80%",
+      toggleActions: "play none none reverse"
+    }
+  }
+);
+
+// Footer divider fade-in
+gsap.fromTo(".footer-divider",
+  {
+    opacity: 0,
+    scaleX: 0
+  },
+  {
+    opacity: 1,
+    scaleX: 1,
+    duration: 0.4,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".footer",
+      start: "top 85%",
+      toggleActions: "play none none reverse"
+    }
+  }
+);
+
+// Staggered fade-in for footer items
+gsap.utils.toArray(".footer-item").forEach((item, index) => {
+  gsap.fromTo(item,
+    {
+      opacity: 0,
+      y: 20
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.3,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".footer",
+        start: "top 85%",
+        toggleActions: "play none none reverse"
+      },
+      delay: 0.2 + (index * 0.1)
+    }
+  );
+});

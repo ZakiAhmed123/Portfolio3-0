@@ -13,6 +13,21 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Gradient blur overlay at bottom of viewport */
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: linear-gradient(to top, rgba(5, 7, 9, 1) 0%, rgba(5, 7, 9, 0.8) 30%, transparent 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  pointer-events: none;
+  z-index: 9997;
+}
+
 #spline-background {
   position: fixed;
   top: 0;
@@ -890,6 +905,19 @@ body {
 .fade-in-section.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Initial hidden state for scroll animations */
+.experience-item,
+.chip,
+.content h2,
+.logo-grid-subtitle,
+.logo-wrapper,
+.quote-container,
+.headshot-container,
+.footer-divider,
+.footer-item {
+  opacity: 0;
 }
 
 .about-me-section {
