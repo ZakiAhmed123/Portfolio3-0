@@ -997,7 +997,6 @@ body > h2,
 .logo-grid-container {
   width: 100%;
   padding: 4rem 6rem 6rem 6rem;
-  background: var(--black);
   position: relative;
   margin-bottom: 96px;
   z-index: 2;
@@ -1098,7 +1097,6 @@ body > h2,
 .experience-section {
   width: 100%;
   padding: 0 6rem 6rem 6rem;
-  background: var(--black);
   position: relative;
   z-index: 100;
   scroll-margin-top: 120px;
