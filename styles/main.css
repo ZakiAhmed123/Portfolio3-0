@@ -1250,7 +1250,19 @@ body > h2,
   padding: 120px 6rem 3rem 6rem;
 }
 
+.footer-title {
+  font-size: 120px;
+  font-weight: 900;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  margin: 0;
+  color: #000;
+}
+
 @media (max-width: 768px) {
+  .footer-title {
+    font-size: 60px;
+  }
   .footer {
     height: 400px;
   }
