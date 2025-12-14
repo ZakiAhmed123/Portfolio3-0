@@ -1227,7 +1227,7 @@ body > h2,
 .wave-track {
   display: flex;
   width: fit-content;
-  animation: waveScroll 20s linear infinite;
+  animation: waveScroll 30s linear infinite;
 }
 
 .wave-svg {
@@ -1238,11 +1238,11 @@ body > h2,
 }
 
 @keyframes waveScroll {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
-    transform: translateX(-720px);
+  to {
+    transform: translateX(-1440px);
   }
 }
 
