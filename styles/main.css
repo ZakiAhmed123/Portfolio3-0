@@ -1250,27 +1250,77 @@ body > h2,
 
 .footer-content {
   padding: 120px 6rem 3rem 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
-.footer-title {
-  font-size: 120px;
-  font-weight: 900;
-  font-family: 'Inter', sans-serif;
-  text-align: center;
-  margin: 0;
+.footer-linkedin-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.footer-linkedin-link:hover {
+  transform: scale(1.1);
+}
+
+.footer-linkedin-icon {
+  width: 60px;
+  height: 60px;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-email,
+.footer-phone {
+  font-family: 'Spline Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
   color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-email:hover,
+.footer-phone:hover {
+  color: #666;
+  text-decoration: underline;
+}
+
+.footer-location {
+  font-family: 'Spline Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #333;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
-  .footer-title {
-    font-size: 60px;
-  }
   .footer {
     height: 400px;
   }
 
   .footer-content {
     padding: 120px 1rem 2rem 1rem;
+  }
+
+  .footer-linkedin-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .footer-email,
+  .footer-phone,
+  .footer-location {
+    font-size: 16px;
   }
 }
 
