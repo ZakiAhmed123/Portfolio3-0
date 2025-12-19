@@ -1,11 +1,20 @@
 /*COLOR + TYPOGRAPHY*/
 
+@font-face {
+  font-family: 'KT Higer';
+  src: url('../assets/fonts/kt_higer.ttf') format('truetype'),
+       url('../assets/fonts/kt_higer.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
 :root {
   --black: #050709;
   --white: #ffffff;
   --green: #b8e994;
   --peach: #ffffff;
   --gray: #79887B;
+  --Primary: #FFF3E1;
 }
 
 html {
@@ -422,42 +431,60 @@ body {
 }
 
 .mainBanner {
-  color: var(--peach);
+  color: var(--Primary);
   text-align: center;
-  font-family: "Inter", sans-serif;
-  font-size: 3.5rem;
+  font-family: "KT Higer", sans-serif;
   font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  letter-spacing: -0.088em;
-  line-height: 0.85em;
-  height: 408px;
+  font-weight: 900;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0;
+  padding: 4rem 0;
 }
 
 .title-line {
-  min-height: 1em;
-  line-height: 0.85em;
+  display: block;
+  text-transform: uppercase;
 }
 
+/* Designer - outlined/stroke style, larger */
 #line1 {
-  font-size: 3.5rem;
+  text-align: center;
+  -webkit-text-stroke-width: 8px;
+  -webkit-text-stroke-color: var(--Primary);
+  color: transparent;
+  font-family: "KT Higer", sans-serif;
+  font-size: 240px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 240px;
+  letter-spacing: 25.2px;
 }
 
+/* Mentor - filled style */
 #line2 {
-  font-size: calc(3.5rem + 8px);
+  color: var(--Primary);
+  text-align: center;
+  font-family: "KT Higer", sans-serif;
+  font-size: 140px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 160px;
+  letter-spacing: 47.6px;
 }
 
+/* Strategist - filled style */
 #line3 {
-  font-size: calc(3.5rem + 16px);
-}
-
-.designer-letter {
-  display: inline-block;
-  color: #DADADA;
+  color: var(--Primary);
+  text-align: center;
+  font-family: "KT Higer", sans-serif;
+  font-size: 140px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 160px;
+  letter-spacing: 47.6px;
 }
 
 .content {
@@ -797,6 +824,27 @@ body {
 
   .mainBanner {
     height:auto;
+    padding: 2rem 0;
+  }
+
+  /* Responsive mobile styles for title lines */
+  #line1 {
+    font-size: 80px;
+    line-height: 80px;
+    letter-spacing: 8px;
+    -webkit-text-stroke-width: 3px;
+  }
+
+  #line2 {
+    font-size: 60px;
+    line-height: 70px;
+    letter-spacing: 15px;
+  }
+
+  #line3 {
+    font-size: 60px;
+    line-height: 70px;
+    letter-spacing: 15px;
   }
 
   .wrapper {
@@ -1059,6 +1107,26 @@ body > h2,
     grid-template-columns: repeat(4, 203px);
     gap: 2rem;
   }
+
+  /* Tablet styles for title lines */
+  #line1 {
+    font-size: 160px;
+    line-height: 160px;
+    letter-spacing: 15px;
+    -webkit-text-stroke-width: 5px;
+  }
+
+  #line2 {
+    font-size: 100px;
+    line-height: 120px;
+    letter-spacing: 30px;
+  }
+
+  #line3 {
+    font-size: 100px;
+    line-height: 120px;
+    letter-spacing: 30px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1090,6 +1158,26 @@ body > h2,
   .logo-grid {
     grid-template-columns: repeat(2, 203px);
     gap: 1.5rem;
+  }
+
+  /* Extra small mobile styles for title lines */
+  #line1 {
+    font-size: 50px;
+    line-height: 50px;
+    letter-spacing: 5px;
+    -webkit-text-stroke-width: 2px;
+  }
+
+  #line2 {
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: 10px;
+  }
+
+  #line3 {
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: 10px;
   }
 }
 
@@ -1332,20 +1420,26 @@ body > h2,
     display: block;
   }
 
-  .mainBanner {
-    font-size: 10rem;
-  }
-
+  /* Designer - outlined/stroke style, larger on desktop */
   #line1 {
-    font-size: 10rem;
+    font-size: 240px;
+    line-height: 240px;
+    letter-spacing: 25.2px;
+    -webkit-text-stroke-width: 8px;
   }
 
+  /* Mentor - filled style on desktop */
   #line2 {
-    font-size: calc(10rem + 8px);
+    font-size: 140px;
+    line-height: 160px;
+    letter-spacing: 47.6px;
   }
 
+  /* Strategist - filled style on desktop */
   #line3 {
-    font-size: calc(10rem + 16px);
+    font-size: 140px;
+    line-height: 160px;
+    letter-spacing: 47.6px;
   }
 
   .nav-item {
