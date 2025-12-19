@@ -635,7 +635,7 @@ body {
 
 
 .main-wrapper {
-  padding: 0rem 6rem 96px 6rem;
+  padding: 0rem 6rem 0 6rem;
   position: relative;
   z-index: 2;
 }
@@ -821,7 +821,7 @@ body {
     flex-direction: column;
   }
   .main-wrapper {
-    padding: 1rem 1rem 3rem 1rem;
+    padding: 1rem 1rem 0 1rem;
   }
   .rotating-outer {
     display:none;
@@ -1517,7 +1517,7 @@ body > h2,
 
 @media (min-width: 1600px) {
   .main-wrapper {
-    padding: 2rem 20%;
+    padding: 2rem 20% 0 20%;
   }
 
 }
