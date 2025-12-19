@@ -449,8 +449,20 @@ body {
   text-transform: uppercase;
 }
 
-/* Designer - outlined/stroke style, larger */
+/* Mentor - filled style */
 #line1 {
+  color: var(--Primary);
+  text-align: center;
+  font-family: "KT Higer", sans-serif;
+  font-size: 140px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 160px;
+  letter-spacing: 251.3px;
+}
+
+/* Designer - outlined/stroke style, larger */
+#line2 {
   text-align: center;
   -webkit-text-stroke-width: 8px;
   -webkit-text-stroke-color: var(--Primary);
@@ -463,18 +475,6 @@ body {
   letter-spacing: 25.2px;
 }
 
-/* Mentor - filled style */
-#line2 {
-  color: var(--Primary);
-  text-align: center;
-  font-family: "KT Higer", sans-serif;
-  font-size: 140px;
-  font-style: normal;
-  font-weight: 900;
-  line-height: 160px;
-  letter-spacing: 47.6px;
-}
-
 /* Strategist - filled style */
 #line3 {
   color: var(--Primary);
@@ -484,7 +484,7 @@ body {
   font-style: normal;
   font-weight: 900;
   line-height: 160px;
-  letter-spacing: 47.6px;
+  letter-spacing: 77.4px;
 }
 
 .content {
@@ -828,23 +828,26 @@ body {
   }
 
   /* Responsive mobile styles for title lines */
+  /* Mentor - filled style */
   #line1 {
+    font-size: 60px;
+    line-height: 70px;
+    letter-spacing: 67.2px;
+  }
+
+  /* Designer - outlined style */
+  #line2 {
     font-size: 80px;
     line-height: 80px;
     letter-spacing: 8px;
     -webkit-text-stroke-width: 3px;
   }
 
-  #line2 {
-    font-size: 60px;
-    line-height: 70px;
-    letter-spacing: 15px;
-  }
-
+  /* Strategist - filled style */
   #line3 {
     font-size: 60px;
     line-height: 70px;
-    letter-spacing: 15px;
+    letter-spacing: 10.7px;
   }
 
   .wrapper {
@@ -1109,23 +1112,26 @@ body > h2,
   }
 
   /* Tablet styles for title lines */
+  /* Mentor - filled style */
   #line1 {
+    font-size: 100px;
+    line-height: 120px;
+    letter-spacing: 157px;
+  }
+
+  /* Designer - outlined style */
+  #line2 {
     font-size: 160px;
     line-height: 160px;
     letter-spacing: 15px;
     -webkit-text-stroke-width: 5px;
   }
 
-  #line2 {
-    font-size: 100px;
-    line-height: 120px;
-    letter-spacing: 30px;
-  }
-
+  /* Strategist - filled style */
   #line3 {
     font-size: 100px;
     line-height: 120px;
-    letter-spacing: 30px;
+    letter-spacing: 42.8px;
   }
 }
 
@@ -1161,23 +1167,26 @@ body > h2,
   }
 
   /* Extra small mobile styles for title lines */
+  /* Mentor - filled style */
   #line1 {
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: 39px;
+  }
+
+  /* Designer - outlined style */
+  #line2 {
     font-size: 50px;
     line-height: 50px;
     letter-spacing: 5px;
     -webkit-text-stroke-width: 2px;
   }
 
-  #line2 {
-    font-size: 40px;
-    line-height: 50px;
-    letter-spacing: 10px;
-  }
-
+  /* Strategist - filled style */
   #line3 {
     font-size: 40px;
     line-height: 50px;
-    letter-spacing: 10px;
+    letter-spacing: 3.9px;
   }
 }
 
@@ -1420,26 +1429,26 @@ body > h2,
     display: block;
   }
 
-  /* Designer - outlined/stroke style, larger on desktop */
+  /* Mentor - filled style on desktop */
   #line1 {
+    font-size: 140px;
+    line-height: 160px;
+    letter-spacing: 251.3px;
+  }
+
+  /* Designer - outlined/stroke style, larger on desktop */
+  #line2 {
     font-size: 240px;
     line-height: 240px;
     letter-spacing: 25.2px;
     -webkit-text-stroke-width: 8px;
   }
 
-  /* Mentor - filled style on desktop */
-  #line2 {
-    font-size: 140px;
-    line-height: 160px;
-    letter-spacing: 47.6px;
-  }
-
   /* Strategist - filled style on desktop */
   #line3 {
     font-size: 140px;
     line-height: 160px;
-    letter-spacing: 47.6px;
+    letter-spacing: 77.4px;
   }
 
   .nav-item {
