@@ -458,7 +458,7 @@ body {
   font-style: normal;
   font-weight: 900;
   line-height: 160px;
-  letter-spacing: 251.3px;
+  letter-spacing: 111.7px;
 }
 
 /* Designer - outlined/stroke style, larger */
@@ -484,7 +484,7 @@ body {
   font-style: normal;
   font-weight: 900;
   line-height: 160px;
-  letter-spacing: 77.4px;
+  letter-spacing: 40.1px;
 }
 
 .content {
@@ -832,7 +832,7 @@ body {
   #line1 {
     font-size: 60px;
     line-height: 70px;
-    letter-spacing: 67.2px;
+    letter-spacing: 31.0px;
   }
 
   /* Designer - outlined style */
@@ -847,7 +847,7 @@ body {
   #line3 {
     font-size: 60px;
     line-height: 70px;
-    letter-spacing: 10.7px;
+    letter-spacing: 7.8px;
   }
 
   .wrapper {
@@ -1116,7 +1116,7 @@ body > h2,
   #line1 {
     font-size: 100px;
     line-height: 120px;
-    letter-spacing: 157px;
+    letter-spacing: 69.1px;
   }
 
   /* Designer - outlined style */
@@ -1131,7 +1131,7 @@ body > h2,
   #line3 {
     font-size: 100px;
     line-height: 120px;
-    letter-spacing: 42.8px;
+    letter-spacing: 22.7px;
   }
 }
 
@@ -1171,7 +1171,7 @@ body > h2,
   #line1 {
     font-size: 40px;
     line-height: 50px;
-    letter-spacing: 39px;
+    letter-spacing: 18.3px;
   }
 
   /* Designer - outlined style */
@@ -1433,7 +1433,7 @@ body > h2,
   #line1 {
     font-size: 140px;
     line-height: 160px;
-    letter-spacing: 251.3px;
+    letter-spacing: 111.7px;
   }
 
   /* Designer - outlined/stroke style, larger on desktop */
@@ -1448,7 +1448,7 @@ body > h2,
   #line3 {
     font-size: 140px;
     line-height: 160px;
-    letter-spacing: 77.4px;
+    letter-spacing: 40.1px;
   }
 
   .nav-item {
