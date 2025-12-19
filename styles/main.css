@@ -448,6 +448,7 @@ body {
   justify-content: center;
   gap: 0;
   padding: 4rem 0;
+  width: fit-content;
 }
 
 .title-line {
