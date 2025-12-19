@@ -20,10 +20,12 @@ body::after {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 50px;
+  height: 100px;
   background: linear-gradient(to top, rgba(5, 7, 9, 0.3) 0%, rgba(5, 7, 9, 0.1) 60%, transparent 100%);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  mask-image: linear-gradient(to top, black 0%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, black 0%, transparent 100%);
   pointer-events: none;
   z-index: 10000;
 }
