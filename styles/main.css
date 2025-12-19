@@ -447,7 +447,7 @@ body {
   align-items: flex-start;
   justify-content: center;
   gap: 0;
-  padding: 4rem 0;
+  padding: 4rem 0 0 0;
   width: 856.09px;
   margin: 0 auto;
   white-space: nowrap;
@@ -838,7 +838,7 @@ body {
 
   .mainBanner {
     height:auto;
-    padding: 2rem 0;
+    padding: 2rem 0 0 0;
   }
 
   /* Responsive mobile styles for title lines */
