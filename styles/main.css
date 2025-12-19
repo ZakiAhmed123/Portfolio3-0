@@ -151,6 +151,17 @@ h3 {
   margin-bottom: 48px;
 }
 
+#headline-text {
+  color: var(--Primary, #FFF3E1);
+  font-family: Inter, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: left;
+  margin-top: 2rem;
+}
+
 h4 {
     color: var(--Black, #050709);
     font-family: "Spline Sans", sans-serif;
