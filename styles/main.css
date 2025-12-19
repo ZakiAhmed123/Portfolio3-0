@@ -130,14 +130,9 @@ line-height: normal;
 letter-spacing: -1px;
 text-align: center;
 margin-top: 96px;
+margin-bottom: 48px;
 position: relative;
 z-index: 2;
-}
-
-/* First section title should not have top margin */
-h2:first-of-type {
-  margin-top: 0;
-  padding-bottom: 48px;
 }
 
 
@@ -637,7 +632,7 @@ body {
 
 
 .main-wrapper {
-  padding: 0rem 6rem 0rem 6rem;
+  padding: 0rem 6rem 96px 6rem;
   position: relative;
   z-index: 2;
 }
@@ -814,11 +809,16 @@ body {
 }
 
 @media (max-width: 768px) {
+  h2 {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+
   .list {
     flex-direction: column;
   }
   .main-wrapper {
-    padding: 1rem;
+    padding: 1rem 1rem 3rem 1rem;
   }
   .rotating-outer {
     display:none;
@@ -976,7 +976,7 @@ body > h2,
   display: flex;
   align-items: center;
   gap: 3rem;
-  padding: 3rem 6rem;
+  padding: 0 6rem 96px 6rem;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
@@ -1041,7 +1041,7 @@ body > h2,
 @media (max-width: 768px) {
   .about-me-section {
     flex-direction: column;
-    padding: 2rem 1rem;
+    padding: 0 1rem 3rem 1rem;
     gap: 2rem;
   }
   
@@ -1058,9 +1058,8 @@ body > h2,
 /* Logo Marquee Styles */
 .logo-grid-container {
   width: 100%;
-  padding: 4rem 6rem 6rem 6rem;
+  padding: 0 6rem 96px 6rem;
   position: relative;
-  margin-bottom: 96px;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -1114,7 +1113,7 @@ body > h2,
 
 @media (max-width: 1024px) {
   .logo-grid-container {
-    padding: 3rem 4rem 4rem 4rem;
+    padding: 0 4rem 3rem 4rem;
   }
 
   .logo-grid {
@@ -1148,7 +1147,7 @@ body > h2,
 
 @media (max-width: 768px) {
   .logo-grid-container {
-    padding: 2rem 2rem 3rem 2rem;
+    padding: 0 2rem 3rem 2rem;
   }
 
   .logo-grid-subtitle {
@@ -1164,7 +1163,7 @@ body > h2,
 
 @media (max-width: 480px) {
   .logo-grid-container {
-    padding: 2rem 1rem 3rem 1rem;
+    padding: 0 1rem 3rem 1rem;
   }
 
   .logo-grid-subtitle {
@@ -1204,14 +1203,14 @@ body > h2,
 /* Experience Section Styles */
 .experience-section {
   width: 100%;
-  padding: 0 6rem 6rem 6rem;
+  padding: 0 6rem 96px 6rem;
   position: relative;
   z-index: 100;
   scroll-margin-top: 120px;
 }
 
 .experience-section h2 {
-  margin-bottom: 4rem;
+  margin-bottom: 48px;
 }
 
 .experience-list {
@@ -1289,7 +1288,7 @@ body > h2,
 
 @media (max-width: 768px) {
   .experience-section {
-    padding: 0 2rem 3rem 2rem;
+    padding: 0 1rem 3rem 1rem;
   }
 
   .experience-item {
@@ -1471,7 +1470,7 @@ body > h2,
   }
 
   .content {
-    padding: 6.5rem 6rem 0rem 6rem;
+    padding: 6rem 6rem 0rem 6rem;
   }
 
   nav {
