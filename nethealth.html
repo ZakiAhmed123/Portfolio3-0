@@ -80,7 +80,7 @@
 
         <!-- Left Side - Scrolling Text -->
         <div class="scroll-text-container" style="flex: 1; position: relative; height: 100vh;">
-          <div class="scroll-text-item" data-index="0" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 100%; opacity: 0;">
+          <div class="scroll-text-item" data-index="0" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 100%; opacity: 1;">
             <p style="color: #FFF; font-family: Inter; font-size: 48px; font-weight: 600; line-height: 1.2; letter-spacing: -1px; margin: 0;">
               Three different ways to schedule a patient
             </p>
@@ -223,6 +223,22 @@
     });
     scrollImage.style.willChange = 'transform';
 
+    // Set initial state for all items except the first
+    gsap.set(scrollTextItems.slice(1), {
+      opacity: 0,
+      y: 80,
+      scale: 0.95,
+      filter: 'blur(8px)'
+    });
+
+    // Set initial state for the first item
+    gsap.set(scrollTextItems[0], {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      filter: 'blur(0px)'
+    });
+
     // Create master timeline with pinning
     const masterTimeline = gsap.timeline({
       scrollTrigger: {
@@ -230,7 +246,7 @@
         start: 'top top',
         end: '+=300%',
         pin: true,
-        scrub: 3.5, // Higher value for smoother, slower scroll
+        scrub: 1.5,
         anticipatePin: 1,
         invalidateOnRefresh: true,
         onUpdate: (self) => {
@@ -251,61 +267,53 @@
 
     // Add crossfade text animations with movement and depth
     scrollTextItems.forEach((item, index) => {
-      const startProgress = index * 0.25;
-      const fadeInEnd = startProgress + 0.15;
-      const fadeOutStart = startProgress + 0.2;
-      const fadeOutEnd = startProgress + 0.25;
-
-      // Fade in with upward movement and scale
-      masterTimeline.fromTo(item,
-        {
-          opacity: 0,
-          y: 80,
-          scale: 0.95,
-          filter: 'blur(8px)'
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          filter: 'blur(0px)',
-          ease: 'power3.out',
-          duration: 0.15
-        },
-        startProgress
-      );
-
-      // Hold the text visible
-      masterTimeline.to(item, {
-        opacity: 1,
-        duration: 0.05
-      }, fadeInEnd);
-
-      // Fade out with slight downward movement (if not the last item)
-      if (index < scrollTextItems.length - 1) {
+      if (index === 0) {
+        // For the first item, just add fade out
         masterTimeline.to(item, {
           opacity: 0,
           y: -40,
           scale: 0.98,
           filter: 'blur(4px)',
           ease: 'power2.in',
+          duration: 0.2
+        }, 0.2);
+      } else {
+        const startProgress = index * 0.25;
+        const fadeInEnd = startProgress + 0.15;
+        const fadeOutStart = startProgress + 0.2;
+
+        // Fade in with upward movement and scale
+        masterTimeline.to(item,
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            filter: 'blur(0px)',
+            ease: 'power3.out',
+            duration: 0.15
+          },
+          startProgress
+        );
+
+        // Hold the text visible
+        masterTimeline.to(item, {
+          opacity: 1,
           duration: 0.05
-        }, fadeOutStart);
+        }, fadeInEnd);
+
+        // Fade out with slight downward movement (if not the last item)
+        if (index < scrollTextItems.length - 1) {
+          masterTimeline.to(item, {
+            opacity: 0,
+            y: -40,
+            scale: 0.98,
+            filter: 'blur(4px)',
+            ease: 'power2.in',
+            duration: 0.05
+          }, fadeOutStart);
+        }
       }
     });
-
-    // Add subtle brightness effect to image that responds to scroll
-    masterTimeline.to(scrollImage, {
-      filter: 'brightness(1.1)',
-      ease: 'power1.inOut',
-      duration: 0.5
-    }, 0);
-
-    masterTimeline.to(scrollImage, {
-      filter: 'brightness(1)',
-      ease: 'power1.inOut',
-      duration: 0.5
-    }, 0.5);
   </script>
 </body>
 </html>
