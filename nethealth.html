@@ -244,73 +244,56 @@
       scrollTrigger: {
         trigger: scrollSection,
         start: 'top top',
-        end: '+=300%',
+        end: '+=400%',
         pin: true,
-        scrub: 1.5,
+        scrub: 1,
         anticipatePin: 1,
-        invalidateOnRefresh: true,
-        onUpdate: (self) => {
-          // Sync image animations with scroll progress
-          const progress = self.progress;
-
-          // Parallax image effects - subtle scale and movement
-          gsap.to(scrollImage, {
-            scale: 1 + (progress * 0.08),
-            y: progress * 30,
-            rotationY: progress * 3,
-            ease: 'none',
-            duration: 0
-          });
-        }
+        invalidateOnRefresh: true
       }
     });
 
-    // Add crossfade text animations with movement and depth
+    // Add parallax image effects to the timeline
+    masterTimeline.to(scrollImage, {
+      scale: 1.08,
+      y: 30,
+      rotationY: 3,
+      ease: 'none'
+    }, 0);
+
+    // Each text item gets equal time in the timeline
+    const itemDuration = 1;
+
     scrollTextItems.forEach((item, index) => {
+      const startTime = index * itemDuration;
+
       if (index === 0) {
-        // For the first item, just add fade out
+        // First item: just fade out
         masterTimeline.to(item, {
           opacity: 0,
           y: -40,
           scale: 0.98,
           filter: 'blur(4px)',
-          ease: 'power2.in',
-          duration: 0.2
-        }, 0.2);
+          ease: 'power2.in'
+        }, startTime + 0.5);
       } else {
-        const startProgress = index * 0.25;
-        const fadeInEnd = startProgress + 0.15;
-        const fadeOutStart = startProgress + 0.2;
-
-        // Fade in with upward movement and scale
-        masterTimeline.to(item,
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            filter: 'blur(0px)',
-            ease: 'power3.out',
-            duration: 0.15
-          },
-          startProgress
-        );
-
-        // Hold the text visible
+        // Fade in
         masterTimeline.to(item, {
           opacity: 1,
-          duration: 0.05
-        }, fadeInEnd);
+          y: 0,
+          scale: 1,
+          filter: 'blur(0px)',
+          ease: 'power3.out'
+        }, startTime);
 
-        // Fade out with slight downward movement (if not the last item)
+        // Fade out (if not the last item)
         if (index < scrollTextItems.length - 1) {
           masterTimeline.to(item, {
             opacity: 0,
             y: -40,
             scale: 0.98,
             filter: 'blur(4px)',
-            ease: 'power2.in',
-            duration: 0.05
-          }, fadeOutStart);
+            ease: 'power2.in'
+          }, startTime + 0.5);
         }
       }
     });
