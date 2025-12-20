@@ -80,22 +80,22 @@
 
         <!-- Left Side - Scrolling Text -->
         <div class="scroll-text-container" style="flex: 1; position: relative; height: 100vh;">
-          <div class="scroll-text-item" data-index="0" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 100%; opacity: 1;">
+          <div class="scroll-text-item" data-index="0" style="position: absolute; top: 50%; left: 0; width: 100%; opacity: 1;">
             <p style="color: #FFF; font-family: Inter; font-size: 48px; font-weight: 600; line-height: 1.2; letter-spacing: -1px; margin: 0;">
               Three different ways to schedule a patient
             </p>
           </div>
-          <div class="scroll-text-item" data-index="1" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 100%; opacity: 0;">
+          <div class="scroll-text-item" data-index="1" style="position: absolute; top: 50%; left: 0; width: 100%; opacity: 0;">
             <p style="color: #FFF; font-family: Inter; font-size: 48px; font-weight: 600; line-height: 1.2; letter-spacing: -1px; margin: 0;">
               Nine different scheduler controls
             </p>
           </div>
-          <div class="scroll-text-item" data-index="2" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 100%; opacity: 0;">
+          <div class="scroll-text-item" data-index="2" style="position: absolute; top: 50%; left: 0; width: 100%; opacity: 0;">
             <p style="color: #FFF; font-family: Inter; font-size: 48px; font-weight: 600; line-height: 1.2; letter-spacing: -1px; margin: 0;">
               A lack of centralized actions
             </p>
           </div>
-          <div class="scroll-text-item" data-index="3" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 100%; opacity: 0;">
+          <div class="scroll-text-item" data-index="3" style="position: absolute; top: 50%; left: 0; width: 100%; opacity: 0;">
             <p style="color: #FFF; font-family: Inter; font-size: 48px; font-weight: 600; line-height: 1.2; letter-spacing: -1px; margin: 0;">
               Custom controls that don't map to modern web controls
             </p>
@@ -227,6 +227,7 @@
     gsap.set(scrollTextItems.slice(1), {
       opacity: 0,
       y: 80,
+      yPercent: -50,
       scale: 0.95,
       filter: 'blur(8px)'
     });
@@ -235,6 +236,7 @@
     gsap.set(scrollTextItems[0], {
       opacity: 1,
       y: 0,
+      yPercent: -50,
       scale: 1,
       filter: 'blur(0px)'
     });
@@ -271,6 +273,7 @@
         masterTimeline.to(item, {
           opacity: 0,
           y: -40,
+          yPercent: -50,
           scale: 0.98,
           filter: 'blur(4px)',
           ease: 'power2.in'
@@ -280,6 +283,7 @@
         masterTimeline.to(item, {
           opacity: 1,
           y: 0,
+          yPercent: -50,
           scale: 1,
           filter: 'blur(0px)',
           ease: 'power3.out'
@@ -290,6 +294,7 @@
           masterTimeline.to(item, {
             opacity: 0,
             y: -40,
+            yPercent: -50,
             scale: 0.98,
             filter: 'blur(4px)',
             ease: 'power2.in'
