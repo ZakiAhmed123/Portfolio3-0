@@ -75,27 +75,27 @@
     </div>
 
     <!-- Scroll Section with Fixed Image -->
-    <div class="scroll-section" style="width: 100%; max-width: 1440px; margin-top: 8rem; position: relative;">
-      <div class="scroll-section-wrapper" style="display: flex; gap: 4rem; align-items: flex-start;">
+    <div class="scroll-section" style="width: 100%; max-width: 1440px; margin-top: 8rem; position: relative; min-height: 100vh;">
+      <div class="scroll-section-wrapper" style="display: flex; gap: 4rem; align-items: center; height: 100vh;">
 
         <!-- Left Side - Scrolling Text -->
-        <div class="scroll-text-container" style="flex: 1; min-height: 300vh; position: relative;">
-          <div class="scroll-text-item" data-index="0" style="height: 100vh; display: flex; align-items: center; opacity: 0;">
+        <div class="scroll-text-container" style="flex: 1; position: relative; height: 100vh;">
+          <div class="scroll-text-item" data-index="0" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 100%; opacity: 0;">
             <p style="color: #FFF; font-family: Inter; font-size: 48px; font-weight: 600; line-height: 1.2; letter-spacing: -1px; margin: 0;">
               Three different ways to schedule a patient
             </p>
           </div>
-          <div class="scroll-text-item" data-index="1" style="height: 100vh; display: flex; align-items: center; opacity: 0;">
+          <div class="scroll-text-item" data-index="1" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 100%; opacity: 0;">
             <p style="color: #FFF; font-family: Inter; font-size: 48px; font-weight: 600; line-height: 1.2; letter-spacing: -1px; margin: 0;">
               Nine different scheduler controls
             </p>
           </div>
-          <div class="scroll-text-item" data-index="2" style="height: 100vh; display: flex; align-items: center; opacity: 0;">
+          <div class="scroll-text-item" data-index="2" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 100%; opacity: 0;">
             <p style="color: #FFF; font-family: Inter; font-size: 48px; font-weight: 600; line-height: 1.2; letter-spacing: -1px; margin: 0;">
               A lack of centralized actions
             </p>
           </div>
-          <div class="scroll-text-item" data-index="3" style="height: 100vh; display: flex; align-items: center; opacity: 0;">
+          <div class="scroll-text-item" data-index="3" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 100%; opacity: 0;">
             <p style="color: #FFF; font-family: Inter; font-size: 48px; font-weight: 600; line-height: 1.2; letter-spacing: -1px; margin: 0;">
               Custom controls that don't map to modern web controls
             </p>
@@ -103,8 +103,8 @@
         </div>
 
         <!-- Right Side - Fixed Image -->
-        <div class="scroll-image-container" style="flex: 1; position: sticky; top: 50%; transform: translateY(-50%); height: fit-content;">
-          <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/legacy1_ymseN4En-.png" alt="Legacy Scheduling Interface" style="width: 100%; height: auto; border-radius: 1.5rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
+        <div class="scroll-image-container" style="flex: 1; display: flex; align-items: center; justify-content: center; height: 100vh; perspective: 1000px;">
+          <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/legacy1_ymseN4En-.png" alt="Legacy Scheduling Interface" style="width: 100%; height: auto; border-radius: 1.5rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); transform-style: preserve-3d;">
         </div>
 
       </div>
@@ -212,21 +212,100 @@
       ScrollTrigger.refresh();
     });
 
-    // Scroll-triggered text animations for the fixed image section
-    gsap.utils.toArray(".scroll-text-item").forEach((item, index) => {
-      gsap.to(item, {
-        opacity: 1,
-        duration: 0.8,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: item,
-          start: "top 60%",
-          end: "top 40%",
-          scrub: 1,
-          toggleActions: "play none none reverse"
-        }
-      });
+    // Enhanced smooth scroll animation with unified timeline and parallax effects
+    const scrollSection = document.querySelector('.scroll-section');
+    const scrollTextItems = gsap.utils.toArray('.scroll-text-item');
+    const scrollImage = document.querySelector('.scroll-image-container img');
+
+    // Add performance optimization CSS
+    scrollTextItems.forEach(item => {
+      item.style.willChange = 'opacity, transform';
     });
+    scrollImage.style.willChange = 'transform';
+
+    // Create master timeline with pinning
+    const masterTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: scrollSection,
+        start: 'top top',
+        end: '+=300%',
+        pin: true,
+        scrub: 3.5, // Higher value for smoother, slower scroll
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+        onUpdate: (self) => {
+          // Sync image animations with scroll progress
+          const progress = self.progress;
+
+          // Parallax image effects - subtle scale and movement
+          gsap.to(scrollImage, {
+            scale: 1 + (progress * 0.08),
+            y: progress * 30,
+            rotationY: progress * 3,
+            ease: 'none',
+            duration: 0
+          });
+        }
+      }
+    });
+
+    // Add crossfade text animations with movement and depth
+    scrollTextItems.forEach((item, index) => {
+      const startProgress = index * 0.25;
+      const fadeInEnd = startProgress + 0.15;
+      const fadeOutStart = startProgress + 0.2;
+      const fadeOutEnd = startProgress + 0.25;
+
+      // Fade in with upward movement and scale
+      masterTimeline.fromTo(item,
+        {
+          opacity: 0,
+          y: 80,
+          scale: 0.95,
+          filter: 'blur(8px)'
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          filter: 'blur(0px)',
+          ease: 'power3.out',
+          duration: 0.15
+        },
+        startProgress
+      );
+
+      // Hold the text visible
+      masterTimeline.to(item, {
+        opacity: 1,
+        duration: 0.05
+      }, fadeInEnd);
+
+      // Fade out with slight downward movement (if not the last item)
+      if (index < scrollTextItems.length - 1) {
+        masterTimeline.to(item, {
+          opacity: 0,
+          y: -40,
+          scale: 0.98,
+          filter: 'blur(4px)',
+          ease: 'power2.in',
+          duration: 0.05
+        }, fadeOutStart);
+      }
+    });
+
+    // Add subtle brightness effect to image that responds to scroll
+    masterTimeline.to(scrollImage, {
+      filter: 'brightness(1.1)',
+      ease: 'power1.inOut',
+      duration: 0.5
+    }, 0);
+
+    masterTimeline.to(scrollImage, {
+      filter: 'brightness(1)',
+      ease: 'power1.inOut',
+      duration: 0.5
+    }, 0.5);
   </script>
 </body>
 </html>
