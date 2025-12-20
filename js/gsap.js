@@ -9,48 +9,38 @@ ScrollTrigger.matchMedia({
       const wrapper = section.querySelector(".wrapper");
       const items = wrapper.querySelectorAll(".item");
 
-      // Set initial states - all items hidden except first
+      // Layering: newer items on top
       items.forEach((item, index) => {
         item.style.zIndex = `${index}`;
-        if (index === 0) {
-          gsap.set(item, { opacity: 1, yPercent: 0 });
-        } else {
-          gsap.set(item, { opacity: 0, yPercent: 100 });
+        if (index !== 0) {
+          gsap.set(item, { yPercent: 140 });
         }
       });
 
-      // Calculate scroll distance for each item
-      const scrollDistance = items.length * 100;
-
-      // Pin the section
-      ScrollTrigger.create({
-        trigger: section,
-        pin: true,
-        start: "top 20%",
-        end: `+=${scrollDistance}%`,
-        invalidateOnRefresh: true,
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          pin: true,
+          start: "top 20%",
+          end: () => `+=${items.length * 100}%`,
+          scrub: 2,
+          invalidateOnRefresh: true,
+        },
+        defaults: { 
+          ease: "power3.in",
+          duration: 3.5
+           },
       });
 
-      // Create discrete transitions for each item
       items.forEach((item, index) => {
-        if (index < items.length - 1) {
-          const nextItem = items[index + 1];
-          const startProgress = (index / items.length) * 100;
-          const endProgress = ((index + 1) / items.length) * 100;
+        timeline.to(item, {
+          scale: 1.0,
+          borderRadius: "24px",
+        });
 
-          ScrollTrigger.create({
-            trigger: section,
-            start: `top+=${startProgress}% 20%`,
-            end: `top+=${endProgress}% 20%`,
-            onEnter: () => {
-              gsap.to(item, { opacity: 0, yPercent: -20, duration: 0.6, ease: "power2.inOut" });
-              gsap.to(nextItem, { opacity: 1, yPercent: 0, duration: 0.6, ease: "power2.out" });
-            },
-            onLeaveBack: () => {
-              gsap.to(item, { opacity: 1, yPercent: 0, duration: 0.6, ease: "power2.out" });
-              gsap.to(nextItem, { opacity: 0, yPercent: 100, duration: 0.6, ease: "power2.inOut" });
-            },
-          });
+        if (items[index + 1]) {
+          const yOffset = (index + 1) * 5;
+          timeline.to(items[index + 1], { yPercent: yOffset }, "<");
         }
       });
     });
