@@ -48,6 +48,14 @@
       </h1>
     </div>
 
+    <!-- Chips -->
+    <div class="d-flex flex-wrap justify-content-start align-items-center case-study-chips" style="gap: 24px; margin-top: 2rem;">
+      <div class="chip">Product Design</div>
+      <div class="chip">B2B SaaS Product</div>
+      <div class="chip">Healthcare</div>
+      <div class="chip">Legacy System Modernization</div>
+    </div>
+
     <!-- Hero Banner Image -->
     <div class="case-study-banner" style="width: 100%; max-width: 1440px; position: relative; z-index: 2;">
       <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/NetHealthBannerImage_2qINoyC4q.png" alt="NetHealth Case Study" style="width: 100%; height: auto; border-radius: 1.5rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
@@ -113,6 +121,28 @@
         delay: 0.2
       }
     );
+
+    // Staggered fade-in for chips
+    gsap.utils.toArray(".case-study-chips .chip").forEach((chip, index) => {
+      gsap.fromTo(chip,
+        {
+          opacity: 0,
+          y: 20
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.3,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".case-study-chips",
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+          },
+          delay: 0.3 + (index * 0.1)
+        }
+      );
+    });
 
     // Staggered fade-in for description text items
     gsap.utils.toArray(".case-study-desc").forEach((desc, index) => {
