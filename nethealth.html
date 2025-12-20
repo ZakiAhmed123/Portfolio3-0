@@ -15,7 +15,6 @@
   <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.57/build/spline-viewer.js"></script>
   <!-- JS -->
   <script src="./js/follower.js"></script>
-  <script src="./js/loadNav.js" defer></script>
   <!-- FAVICONS -->
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
@@ -36,272 +35,43 @@
   <div id="follower"></div>
 
 <!-- NAV -->
-<div id="nav-container"></div>
+  <nav class="navbar navbar-expand-lg ">
+  <a class="navbar-brand" href="index.html" id="logo-scroll-top">
+    <span class="nav-logo-text">Zaki</span>
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html"> <img src="./assets/images/icons/heart.png"> Work</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html"> <img src="./assets/images/icons/brain.png"> Philosophies </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html"> <img src="./assets/images/icons/shapes.png"> Design Ops</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html#experience"> <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/resumeIcon_Y4Bvt_nED.png?updatedAt=1757959688570"> Experience</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
 <!-- CONTENT -->
-  <div class="content" style="padding-top: 6rem; display: flex; flex-direction: column; align-items: flex-start;">
+  <div class="content">
+    <h1>NetHealth Case Study</h1>
+    <h2>Unifying Patient Scheduling for Efficiency, Consistency and Scalability</h2>
 
-    <!-- Main Title -->
-    <div class="case-study-title" style="width: 100%; max-width: 1440px; text-align: left;">
-      <h1 style="color: var(--Primary, #FFF3E1); font-family: Inter; font-size: 40px; font-style: normal; font-weight: 600; line-height: normal; letter-spacing: -1px;">
-        Unifying Scheduling to Drive Efficiency and Scale: Modernizing Net Health's Core Workflow for Business Growth
-      </h1>
-    </div>
-
-    <!-- Chips -->
-    <div class="d-flex flex-wrap justify-content-start align-items-center case-study-chips" style="gap: 24px; margin-top: 2rem;">
-      <div class="chip">Product Design</div>
-      <div class="chip">B2B SaaS Product</div>
-      <div class="chip">Healthcare</div>
-      <div class="chip">Legacy System Modernization</div>
-    </div>
-
-    <!-- Hero Banner Image -->
-    <div class="case-study-banner" style="width: 100%; max-width: 1440px; position: relative; z-index: 2;">
-      <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/NetHealthBannerImage_2qINoyC4q.png" alt="NetHealth Case Study" style="width: 100%; height: auto; border-radius: 1.5rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
-    </div>
-
-    <!-- Description Text -->
-    <div style="width: 100%; max-width: 1440px; margin-top: 3rem; display: flex; flex-direction: column; gap: 48px;">
-      <p class="case-study-desc" style="color: #FFF; text-align: center; font-family: Inter; font-size: 48px; font-style: normal; font-weight: 600; line-height: normal; letter-spacing: -1px; margin: 0;">
-        Modernizing scheduling for therapists by unifying fragmented workflows into a single, tablet-ready experience.
-      </p>
-      <p class="case-study-desc" style="color: #FFF; text-align: center; font-family: Inter; font-size: 36px; font-style: normal; font-weight: 600; line-height: normal; letter-spacing: -1px; margin: 0;">
-        I was the lead product designer for a team of 4
-      </p>
-      <p class="case-study-desc" style="color: #FFF; text-align: center; font-family: Inter; font-size: 36px; font-style: normal; font-weight: 600; line-height: normal; letter-spacing: -1px; margin: 0;">
-        We used Figma, FigJam, Miro & Material design
-      </p>
-    </div>
-
-    <!-- Scroll Section with Fixed Image -->
-    <div class="scroll-section" style="width: 100%; max-width: 1440px; margin-top: 8rem; position: relative; min-height: 100vh;">
-      <div class="scroll-section-wrapper" style="display: flex; gap: 4rem; align-items: center; height: 100vh;">
-
-        <!-- Left Side - Scrolling Text -->
-        <div class="scroll-text-container" style="flex: 1; position: relative; height: 100vh;">
-          <div class="scroll-text-item" data-index="0" style="position: absolute; top: 50%; left: 0; width: 100%; opacity: 1;">
-            <p style="color: #FFF; font-family: Inter; font-size: 48px; font-weight: 600; line-height: 1.2; letter-spacing: -1px; margin: 0;">
-              Three different ways to schedule a patient
-            </p>
-          </div>
-          <div class="scroll-text-item" data-index="1" style="position: absolute; top: 50%; left: 0; width: 100%; opacity: 0;">
-            <p style="color: #FFF; font-family: Inter; font-size: 48px; font-weight: 600; line-height: 1.2; letter-spacing: -1px; margin: 0;">
-              Nine different scheduler controls
-            </p>
-          </div>
-          <div class="scroll-text-item" data-index="2" style="position: absolute; top: 50%; left: 0; width: 100%; opacity: 0;">
-            <p style="color: #FFF; font-family: Inter; font-size: 48px; font-weight: 600; line-height: 1.2; letter-spacing: -1px; margin: 0;">
-              A lack of centralized actions
-            </p>
-          </div>
-          <div class="scroll-text-item" data-index="3" style="position: absolute; top: 50%; left: 0; width: 100%; opacity: 0;">
-            <p style="color: #FFF; font-family: Inter; font-size: 48px; font-weight: 600; line-height: 1.2; letter-spacing: -1px; margin: 0;">
-              Custom controls that don't map to modern web controls
-            </p>
-          </div>
-        </div>
-
-        <!-- Right Side - Fixed Image -->
-        <div class="scroll-image-container" style="flex: 1; display: flex; align-items: center; justify-content: center; height: 100vh; perspective: 1000px;">
-          <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/legacy1_ymseN4En-.png" alt="Legacy Scheduling Interface" style="width: 100%; height: auto; border-radius: 1.5rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); transform-style: preserve-3d;">
-        </div>
-
-      </div>
-    </div>
-
+    <p>Case study content coming soon...</p>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script type="text/javascript" src="./js/logoScroll.js"></script>
-
-  <script>
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Case Study Title fade-in
-    gsap.fromTo(".case-study-title",
-      {
-        opacity: 0,
-        y: 50
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".case-study-title",
-          start: "top 80%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-
-    // Hero Banner Image fade-in
-    gsap.fromTo(".case-study-banner",
-      {
-        opacity: 0,
-        y: 50
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".case-study-banner",
-          start: "top 80%",
-          toggleActions: "play none none reverse"
-        },
-        delay: 0.2
-      }
-    );
-
-    // Staggered fade-in for chips
-    gsap.utils.toArray(".case-study-chips .chip").forEach((chip, index) => {
-      gsap.fromTo(chip,
-        {
-          opacity: 0,
-          y: 20
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.3,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: ".case-study-chips",
-            start: "top 80%",
-            toggleActions: "play none none reverse"
-          },
-          delay: 0.3 + (index * 0.1)
-        }
-      );
-    });
-
-    // Staggered fade-in for description text items
-    gsap.utils.toArray(".case-study-desc").forEach((desc, index) => {
-      gsap.fromTo(desc,
-        {
-          opacity: 0,
-          y: 30
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: desc,
-            start: "top 85%",
-            toggleActions: "play none none reverse"
-          },
-          delay: index * 0.15
-        }
-      );
-    });
-
-    // Refresh ScrollTrigger on page load
-    window.addEventListener("load", () => {
-      ScrollTrigger.refresh();
-    });
-
-    // Recalculate on window resize
-    window.addEventListener("resize", () => {
-      ScrollTrigger.refresh();
-    });
-
-    // Enhanced smooth scroll animation with unified timeline and parallax effects
-    const scrollSection = document.querySelector('.scroll-section');
-    const scrollTextItems = gsap.utils.toArray('.scroll-text-item');
-    const scrollImage = document.querySelector('.scroll-image-container img');
-
-    // Add performance optimization CSS
-    scrollTextItems.forEach(item => {
-      item.style.willChange = 'opacity, transform';
-    });
-    scrollImage.style.willChange = 'transform';
-
-    // Set initial state for all items except the first
-    gsap.set(scrollTextItems.slice(1), {
-      opacity: 0,
-      y: 80,
-      yPercent: -50,
-      scale: 0.95,
-      filter: 'blur(8px)'
-    });
-
-    // Set initial state for the first item
-    gsap.set(scrollTextItems[0], {
-      opacity: 1,
-      y: 0,
-      yPercent: -50,
-      scale: 1,
-      filter: 'blur(0px)'
-    });
-
-    // Create master timeline with pinning
-    const masterTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: scrollSection,
-        start: 'top top',
-        end: '+=400%',
-        pin: true,
-        scrub: 1,
-        anticipatePin: 1,
-        invalidateOnRefresh: true
-      }
-    });
-
-    // Add parallax image effects to the timeline
-    masterTimeline.to(scrollImage, {
-      scale: 1.08,
-      y: 30,
-      rotationY: 3,
-      ease: 'none'
-    }, 0);
-
-    // Each text item gets equal time in the timeline
-    const itemDuration = 1;
-
-    scrollTextItems.forEach((item, index) => {
-      const startTime = index * itemDuration;
-
-      if (index === 0) {
-        // First item: just fade out
-        masterTimeline.to(item, {
-          opacity: 0,
-          y: -40,
-          yPercent: -50,
-          scale: 0.98,
-          filter: 'blur(4px)',
-          ease: 'power2.in'
-        }, startTime + 0.5);
-      } else {
-        // Fade in
-        masterTimeline.to(item, {
-          opacity: 1,
-          y: 0,
-          yPercent: -50,
-          scale: 1,
-          filter: 'blur(0px)',
-          ease: 'power3.out'
-        }, startTime);
-
-        // Fade out (if not the last item)
-        if (index < scrollTextItems.length - 1) {
-          masterTimeline.to(item, {
-            opacity: 0,
-            y: -40,
-            yPercent: -50,
-            scale: 0.98,
-            filter: 'blur(4px)',
-            ease: 'power2.in'
-          }, startTime + 0.5);
-        }
-      }
-    });
-  </script>
 </body>
 </html>
