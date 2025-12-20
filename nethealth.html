@@ -42,26 +42,26 @@
   <div class="content" style="padding-top: 6rem; display: flex; flex-direction: column; align-items: flex-start;">
 
     <!-- Main Title -->
-    <div style="max-width: 1000px; text-align: left;">
+    <div class="case-study-title" style="max-width: 1000px; text-align: left;">
       <h1 style="color: var(--Primary, #FFF3E1); font-family: Inter; font-size: 40px; font-style: normal; font-weight: 600; line-height: normal; letter-spacing: -1px;">
         Unifying Scheduling to Drive Efficiency and Scale: Modernizing Net Health's Core Workflow for Business Growth
       </h1>
     </div>
 
     <!-- Hero Banner Image -->
-    <div style="width: 100%; max-width: 1440px; position: relative; z-index: 2;">
+    <div class="case-study-banner" style="width: 100%; max-width: 1440px; position: relative; z-index: 2;">
       <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/NetHealthBannerImage_2qINoyC4q.png" alt="NetHealth Case Study" style="width: 100%; height: auto; border-radius: 1.5rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
     </div>
 
     <!-- Description Text -->
     <div style="width: 100%; max-width: 1440px; margin-top: 3rem; display: flex; flex-direction: column; gap: 48px;">
-      <p style="color: #FFF; text-align: center; font-family: Inter; font-size: 48px; font-style: normal; font-weight: 600; line-height: normal; letter-spacing: -1px; margin: 0;">
+      <p class="case-study-desc" style="color: #FFF; text-align: center; font-family: Inter; font-size: 48px; font-style: normal; font-weight: 600; line-height: normal; letter-spacing: -1px; margin: 0;">
         Modernizing scheduling for therapists by unifying fragmented workflows into a single, tablet-ready experience.
       </p>
-      <p style="color: #FFF; text-align: center; font-family: Inter; font-size: 36px; font-style: normal; font-weight: 600; line-height: normal; letter-spacing: -1px; margin: 0;">
+      <p class="case-study-desc" style="color: #FFF; text-align: center; font-family: Inter; font-size: 36px; font-style: normal; font-weight: 600; line-height: normal; letter-spacing: -1px; margin: 0;">
         I was the lead product designer for a team of 4
       </p>
-      <p style="color: #FFF; text-align: center; font-family: Inter; font-size: 36px; font-style: normal; font-weight: 600; line-height: normal; letter-spacing: -1px; margin: 0;">
+      <p class="case-study-desc" style="color: #FFF; text-align: center; font-family: Inter; font-size: 36px; font-style: normal; font-weight: 600; line-height: normal; letter-spacing: -1px; margin: 0;">
         We used Figma, FigJam, Miro & Material design
       </p>
     </div>
@@ -71,5 +71,80 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script type="text/javascript" src="./js/logoScroll.js"></script>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Case Study Title fade-in
+    gsap.fromTo(".case-study-title",
+      {
+        opacity: 0,
+        y: 50
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".case-study-title",
+          start: "top 80%",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+    // Hero Banner Image fade-in
+    gsap.fromTo(".case-study-banner",
+      {
+        opacity: 0,
+        y: 50
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".case-study-banner",
+          start: "top 80%",
+          toggleActions: "play none none reverse"
+        },
+        delay: 0.2
+      }
+    );
+
+    // Staggered fade-in for description text items
+    gsap.utils.toArray(".case-study-desc").forEach((desc, index) => {
+      gsap.fromTo(desc,
+        {
+          opacity: 0,
+          y: 30
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: desc,
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+          },
+          delay: index * 0.15
+        }
+      );
+    });
+
+    // Refresh ScrollTrigger on page load
+    window.addEventListener("load", () => {
+      ScrollTrigger.refresh();
+    });
+
+    // Recalculate on window resize
+    window.addEventListener("resize", () => {
+      ScrollTrigger.refresh();
+    });
+  </script>
 </body>
 </html>
