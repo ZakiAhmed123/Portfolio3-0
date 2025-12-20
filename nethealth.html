@@ -74,6 +74,42 @@
       </p>
     </div>
 
+    <!-- Scroll Section with Fixed Image -->
+    <div class="scroll-section" style="width: 100%; max-width: 1440px; margin-top: 8rem; position: relative;">
+      <div class="scroll-section-wrapper" style="display: flex; gap: 4rem; align-items: flex-start;">
+
+        <!-- Left Side - Scrolling Text -->
+        <div class="scroll-text-container" style="flex: 1; min-height: 300vh; position: relative;">
+          <div class="scroll-text-item" data-index="0" style="height: 100vh; display: flex; align-items: center; opacity: 0;">
+            <p style="color: #FFF; font-family: Inter; font-size: 48px; font-weight: 600; line-height: 1.2; letter-spacing: -1px; margin: 0;">
+              Three different ways to schedule a patient
+            </p>
+          </div>
+          <div class="scroll-text-item" data-index="1" style="height: 100vh; display: flex; align-items: center; opacity: 0;">
+            <p style="color: #FFF; font-family: Inter; font-size: 48px; font-weight: 600; line-height: 1.2; letter-spacing: -1px; margin: 0;">
+              Nine different scheduler controls
+            </p>
+          </div>
+          <div class="scroll-text-item" data-index="2" style="height: 100vh; display: flex; align-items: center; opacity: 0;">
+            <p style="color: #FFF; font-family: Inter; font-size: 48px; font-weight: 600; line-height: 1.2; letter-spacing: -1px; margin: 0;">
+              A lack of centralized actions
+            </p>
+          </div>
+          <div class="scroll-text-item" data-index="3" style="height: 100vh; display: flex; align-items: center; opacity: 0;">
+            <p style="color: #FFF; font-family: Inter; font-size: 48px; font-weight: 600; line-height: 1.2; letter-spacing: -1px; margin: 0;">
+              Custom controls that don't map to modern web controls
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Side - Fixed Image -->
+        <div class="scroll-image-container" style="flex: 1; position: sticky; top: 50%; transform: translateY(-50%); height: fit-content;">
+          <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/legacy1_ymseN4En-.png" alt="Legacy Scheduling Interface" style="width: 100%; height: auto; border-radius: 1.5rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
+        </div>
+
+      </div>
+    </div>
+
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
@@ -174,6 +210,22 @@
     // Recalculate on window resize
     window.addEventListener("resize", () => {
       ScrollTrigger.refresh();
+    });
+
+    // Scroll-triggered text animations for the fixed image section
+    gsap.utils.toArray(".scroll-text-item").forEach((item, index) => {
+      gsap.to(item, {
+        opacity: 1,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: item,
+          start: "top 60%",
+          end: "top 40%",
+          scrub: 1,
+          toggleActions: "play none none reverse"
+        }
+      });
     });
   </script>
 </body>
