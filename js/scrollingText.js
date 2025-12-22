@@ -27,24 +27,41 @@ window.addEventListener('load', () => {
   }
 
   textItems.forEach((item, index) => {
-    // Split text into individual letter spans for ripple effect
+    // Split text into words, then split each word into letters for ripple effect
     const text = item.textContent;
     item.innerHTML = '';
-    const letters = text.split('').map(char => {
-      const span = document.createElement('span');
-      span.textContent = char;
-      span.style.display = 'inline-block';
-      span.style.color = 'white';
-      span.style.fontSize = '36px';
-      span.style.fontWeight = '600';
-      span.style.fontFamily = 'Inter';
-      span.style.lineHeight = 'normal';
-      // Handle spaces - give them proper width to prevent collapse
-      if (char === ' ') {
-        span.style.minWidth = '0.3em';
+
+    // Split into words first
+    const words = text.split(' ');
+    const letters = [];
+
+    words.forEach((word, wordIndex) => {
+      // Create a wrapper for the word to keep it together
+      const wordWrapper = document.createElement('span');
+      wordWrapper.style.display = 'inline-block';
+      wordWrapper.style.whiteSpace = 'nowrap';
+
+      // Split the word into individual letters
+      word.split('').forEach(char => {
+        const span = document.createElement('span');
+        span.textContent = char;
+        span.style.display = 'inline-block';
+        span.style.color = 'white';
+        span.style.fontSize = '36px';
+        span.style.fontWeight = '600';
+        span.style.fontFamily = 'Inter';
+        span.style.lineHeight = 'normal';
+        wordWrapper.appendChild(span);
+        letters.push(span);
+      });
+
+      item.appendChild(wordWrapper);
+
+      // Add space between words (except after the last word)
+      if (wordIndex < words.length - 1) {
+        const space = document.createTextNode(' ');
+        item.appendChild(space);
       }
-      item.appendChild(span);
-      return span;
     });
 
     // Set initial state - all items visible but dimmed
