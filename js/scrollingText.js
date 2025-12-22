@@ -99,18 +99,28 @@ window.addEventListener('load', () => {
             ease: 'power1.out'
           });
 
-          // Ripple color animation for each letter
+          // Sequential ripple color animation - each letter completes before next starts
           letters.forEach((letter, letterIndex) => {
-            const letterDelay = letterIndex / letters.length;
-            const letterProgress = Math.max(0, Math.min(1, (progress - letterDelay * 0.3) / 0.7));
+            // Each letter gets its own time slice of the total progress
+            const letterTimeSlice = 1 / letters.length;
+            const letterStartProgress = letterIndex * letterTimeSlice;
+            const letterEndProgress = (letterIndex + 1) * letterTimeSlice;
+
+            // Calculate progress within this letter's time window (0 to 1)
+            let letterProgress = 0;
+            if (progress >= letterStartProgress && progress <= letterEndProgress) {
+              letterProgress = (progress - letterStartProgress) / letterTimeSlice;
+            } else if (progress > letterEndProgress) {
+              letterProgress = 1;
+            }
 
             let color;
             if (letterProgress < 0.5) {
-              // Transition from white to #518D78
+              // First half: white to green
               const t = letterProgress * 2;
               color = interpolateColor('rgb(255, 255, 255)', 'rgb(81, 141, 120)', t);
             } else {
-              // Transition from #518D78 back to white
+              // Second half: green back to white
               const t = (letterProgress - 0.5) * 2;
               color = interpolateColor('rgb(81, 141, 120)', 'rgb(255, 255, 255)', t);
             }
