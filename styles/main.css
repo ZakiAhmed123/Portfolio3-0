@@ -121,6 +121,21 @@ body {
 }
 
 
+h1 {
+  color: var(--Primary);
+  font-family: "Spline Sans", sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -1px;
+  text-align: center;
+  margin-top: 48px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 2;
+}
+
 h2 {color: var(--peach);
 font-family: "Spline Sans", sans-serif;
 font-size: 40px;
