@@ -1,6 +1,5 @@
-gsap.registerPlugin(ScrollTrigger);
-
 window.addEventListener('load', () => {
+  gsap.registerPlugin(ScrollTrigger);
   const textItems = document.querySelectorAll('.scroll-text-item');
   const counterTrack = document.getElementById('counter-track');
   let currentFocusedIndex = 0;
