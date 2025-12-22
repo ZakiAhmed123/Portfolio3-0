@@ -29,15 +29,15 @@ window.addEventListener('load', () => {
 
           // Opacity transition
           let opacity;
-          if (progress < 0.3) {
+          if (progress < 0.25) {
             // Fading in from below - barely visible
-            opacity = 0.05 + (progress / 0.3) * 0.15;
-          } else if (progress < 0.7) {
-            // Main focus area - ramping up to full opacity
-            opacity = 0.2 + ((progress - 0.3) / 0.4) * 0.8;
+            opacity = 0.05 + (progress / 0.25) * 0.2;
+          } else if (progress < 0.75) {
+            // Main focus area - full white opacity
+            opacity = 1.0;
           } else {
             // Fading out as it passes
-            opacity = 1 - ((progress - 0.7) / 0.3) * 0.8;
+            opacity = 1 - ((progress - 0.75) / 0.25) * 0.75;
           }
 
           // Scale transition - creates wheel effect
