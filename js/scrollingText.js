@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
         trigger: item,
         start: 'top 80%',
         end: 'top 20%',
-        scrub: 2,
+        scrub: 4,
         onUpdate: (self) => {
           const progress = self.progress;
 
