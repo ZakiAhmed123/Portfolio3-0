@@ -51,13 +51,9 @@ window.addEventListener('load', () => {
             scale = 1.0 - ((progress - 0.5) * 2) * 0.4;
           }
 
-          // Subtle parallax transform effect
-          const yOffset = (progress - 0.5) * -8;
-
           gsap.to(item, {
             opacity: opacity,
             scale: scale,
-            y: yOffset,
             duration: 0.5,
             ease: 'power1.out'
           });
