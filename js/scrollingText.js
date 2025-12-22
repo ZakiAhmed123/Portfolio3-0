@@ -16,7 +16,7 @@ window.addEventListener('load', () => {
 
   textItems.forEach((item, index) => {
     // Set initial state
-    gsap.set(item, { opacity: 0.25, scale: 0.6, y: 0 });
+    gsap.set(item, { opacity: 0.05, scale: 0.6, y: 0 });
 
     gsap.timeline({
       scrollTrigger: {
@@ -30,14 +30,14 @@ window.addEventListener('load', () => {
           // Opacity transition
           let opacity;
           if (progress < 0.3) {
-            // Fading in from below
-            opacity = 0.25 + (progress / 0.3) * 0.25;
+            // Fading in from below - barely visible
+            opacity = 0.05 + (progress / 0.3) * 0.15;
           } else if (progress < 0.7) {
-            // Main focus area
-            opacity = 0.5 + ((progress - 0.3) / 0.4) * 0.5;
+            // Main focus area - ramping up to full opacity
+            opacity = 0.2 + ((progress - 0.3) / 0.4) * 0.8;
           } else {
             // Fading out as it passes
-            opacity = 1 - ((progress - 0.7) / 0.3) * 0.5;
+            opacity = 1 - ((progress - 0.7) / 0.3) * 0.8;
           }
 
           // Scale transition - creates wheel effect
