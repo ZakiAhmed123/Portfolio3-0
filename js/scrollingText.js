@@ -35,6 +35,14 @@ window.addEventListener('load', () => {
       span.textContent = char;
       span.style.display = 'inline-block';
       span.style.color = 'white';
+      span.style.fontSize = '36px';
+      span.style.fontWeight = '600';
+      span.style.fontFamily = 'Inter';
+      span.style.lineHeight = 'normal';
+      // Handle spaces - give them proper width to prevent collapse
+      if (char === ' ') {
+        span.style.minWidth = '0.3em';
+      }
       item.appendChild(span);
       return span;
     });
