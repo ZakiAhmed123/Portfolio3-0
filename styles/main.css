@@ -954,8 +954,6 @@ body {
   display: inline-block;
   position: relative;
   margin-right: 0.5rem;
-  opacity: 0;
-  transition: opacity 0.3s ease-in;
   color: var(--Primary, #FFF3E1);
   font-weight: 500;
 }
@@ -969,10 +967,6 @@ body {
   height: 2px;
   background-color: var(--peach, #FFF3E1);
   transition: width 0.6s ease-out;
-}
-
-.headline-underline.active {
-  opacity: 1;
 }
 
 .headline-underline.active::after {
