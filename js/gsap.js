@@ -1,5 +1,5 @@
 import { gsap } from "./GSAP/gsap-core.js";
-import { ScrollTrigger } from "./GSAP/ScrollTrigger.js";
+import { ScrollTrigger } from "./GSAP/scrolltrigger.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
