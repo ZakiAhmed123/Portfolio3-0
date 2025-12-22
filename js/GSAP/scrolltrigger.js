@@ -8,7 +8,7 @@
 */
 /* eslint-disable */
 
-import { Observer, _getTarget, _vertical, _horizontal, _scrollers, _proxies, _getScrollFunc, _getProxyProp, _getVelocityProp } from "./Observer.js";
+import { Observer, _getTarget, _vertical, _horizontal, _scrollers, _proxies, _getScrollFunc, _getProxyProp, _getVelocityProp } from "./observer.js";
 
 let gsap, _coreInitted, _win, _doc, _docEl, _body, _root, _resizeDelay, _toArray, _clamp, _time2, _syncInterval, _refreshing, _pointerIsDown, _transformProp, _i, _prevWidth, _prevHeight, _autoRefresh, _sort, _suppressOverwrites, _ignoreResize, _normalizer, _ignoreMobileResize, _baseScreenHeight, _baseScreenWidth, _fixIOSBug, _context, _scrollRestoration, _div100vh, _100vh, _isReverted, _clampingMax,
 	_limitCallbacks, // if true, we'll only trigger callbacks if the active state toggles, so if you scroll immediately past both the start and end positions of a ScrollTrigger (thus inactive to inactive), neither its onEnter nor onLeave will be called. This is useful during startup.
