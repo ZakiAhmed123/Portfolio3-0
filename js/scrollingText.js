@@ -27,17 +27,17 @@ window.addEventListener('load', () => {
         onUpdate: (self) => {
           const progress = self.progress;
 
-          // Opacity transition
+          // Opacity transition with smooth gradient
           let opacity;
-          if (progress < 0.25) {
-            // Fading in from below - barely visible
-            opacity = 0.05 + (progress / 0.25) * 0.2;
-          } else if (progress < 0.75) {
+          if (progress < 0.4) {
+            // Gradually increasing from 0.1 as it approaches focus
+            opacity = 0.1 + (progress / 0.4) * 0.9;
+          } else if (progress >= 0.4 && progress <= 0.6) {
             // Main focus area - full white opacity
             opacity = 1.0;
           } else {
-            // Fading out as it passes
-            opacity = 1 - ((progress - 0.75) / 0.25) * 0.75;
+            // Gradually fading out as it passes
+            opacity = 1.0 - ((progress - 0.6) / 0.4) * 0.9;
           }
 
           // Scale transition - creates wheel effect
