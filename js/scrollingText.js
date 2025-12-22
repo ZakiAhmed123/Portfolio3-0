@@ -5,6 +5,18 @@ window.addEventListener('load', () => {
   const counterTrack = document.getElementById('counter-track');
   let currentFocusedIndex = 0;
 
+  // Function to interpolate between two RGB colors
+  function interpolateColor(color1, color2, t) {
+    const rgb1 = color1.match(/\d+/g).map(Number);
+    const rgb2 = color2.match(/\d+/g).map(Number);
+
+    const r = Math.round(rgb1[0] + (rgb2[0] - rgb1[0]) * t);
+    const g = Math.round(rgb1[1] + (rgb2[1] - rgb1[1]) * t);
+    const b = Math.round(rgb1[2] + (rgb2[2] - rgb1[2]) * t);
+
+    return `rgb(${r}, ${g}, ${b})`;
+  }
+
   // Function to update counter display
   function updateCounter(index) {
     if (counterTrack && index !== currentFocusedIndex) {
@@ -15,6 +27,18 @@ window.addEventListener('load', () => {
   }
 
   textItems.forEach((item, index) => {
+    // Split text into individual letter spans for ripple effect
+    const text = item.textContent;
+    item.innerHTML = '';
+    const letters = text.split('').map(char => {
+      const span = document.createElement('span');
+      span.textContent = char;
+      span.style.display = 'inline-block';
+      span.style.color = 'white';
+      item.appendChild(span);
+      return span;
+    });
+
     // Set initial state - all items visible but dimmed
     gsap.set(item, { opacity: 0.25, y: 0 });
 
@@ -48,6 +72,25 @@ window.addEventListener('load', () => {
             y: yOffset,
             duration: 0.5,
             ease: 'power1.out'
+          });
+
+          // Ripple color animation for each letter
+          letters.forEach((letter, letterIndex) => {
+            const letterDelay = letterIndex / letters.length;
+            const letterProgress = Math.max(0, Math.min(1, (progress - letterDelay * 0.3) / 0.7));
+
+            let color;
+            if (letterProgress < 0.5) {
+              // Transition from white to #518D78
+              const t = letterProgress * 2;
+              color = interpolateColor('rgb(255, 255, 255)', 'rgb(81, 141, 120)', t);
+            } else {
+              // Transition from #518D78 back to white
+              const t = (letterProgress - 0.5) * 2;
+              color = interpolateColor('rgb(81, 141, 120)', 'rgb(255, 255, 255)', t);
+            }
+
+            letter.style.color = color;
           });
 
           // Update counter when this item is in focus (progress between 0.4 and 0.6 = peak focus)
