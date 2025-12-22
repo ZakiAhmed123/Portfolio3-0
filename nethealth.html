@@ -84,8 +84,37 @@
     </div>
   </div>
 
+  <!-- SCROLLING TEXT SECTION -->
+  <section id="scrolling-section" style="min-height: 400vh; position: relative; padding: 10rem 0;">
+    <div style="display: flex; gap: 4rem; max-width: 1512px; margin: 0 auto; padding: 0 2rem; align-items: flex-start;">
+      <!-- LEFT SIDE - SCROLLING TEXT -->
+      <div id="text-container" style="flex: 1; display: flex; flex-direction: column; gap: 30rem; padding-top: 20vh;">
+        <div class="scroll-text-item" data-index="0" style="opacity: 0.3; transform: translateY(0);">
+          <p style="color: #FFF; font-family: Inter; font-size: 64px; font-weight: 700; line-height: 1.2; letter-spacing: -1px; margin: 0;">3 different ways to schedule a patient</p>
+        </div>
+        <div class="scroll-text-item" data-index="1" style="opacity: 0.3; transform: translateY(0);">
+          <p style="color: #FFF; font-family: Inter; font-size: 64px; font-weight: 700; line-height: 1.2; letter-spacing: -1px; margin: 0;">9 different scheduler controls</p>
+        </div>
+        <div class="scroll-text-item" data-index="2" style="opacity: 0.3; transform: translateY(0);">
+          <p style="color: #FFF; font-family: Inter; font-size: 64px; font-weight: 700; line-height: 1.2; letter-spacing: -1px; margin: 0;">A lack of centralized actions</p>
+        </div>
+        <div class="scroll-text-item" data-index="3" style="opacity: 0.3; transform: translateY(0);">
+          <p style="color: #FFF; font-family: Inter; font-size: 64px; font-weight: 700; line-height: 1.2; letter-spacing: -1px; margin: 0;">Custom controls that don't map to modern web controls</p>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE - FIXED IMAGE CARD -->
+      <div id="fixed-card" style="flex: 1; position: sticky; top: 20vh; height: 60vh; display: flex; align-items: center; justify-content: center;">
+        <div style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border-radius: 24px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);">
+          <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/legacy1_ymseN4En-.png?updatedAt=1766192186280" alt="Legacy Scheduler" style="width: 100%; height: auto; border-radius: 12px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script type="text/javascript" src="./js/logoScroll.js"></script>
+  <script type="text/javascript" src="./js/scrollingText.js"></script>
 </body>
 </html>
