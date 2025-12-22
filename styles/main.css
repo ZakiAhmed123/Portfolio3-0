@@ -978,29 +978,7 @@ body {
   text-stroke: 4px var(--peach);
 }
 
-/* Fade-in animation classes */
-.fade-in-section {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade-in-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Initial hidden state for scroll animations */
-.experience-item,
-.content > h2,
-body > h2,
-#experience h2,
-.logo-grid-subtitle,
-.logo-wrapper,
-.quote-container,
-.headshot-container {
-  opacity: 0;
-}
+/* Fade-in animations removed for better ScrollSmoother performance */
 
 .about-me-section {
   display: flex;
