@@ -199,10 +199,10 @@ h3 {
 
 h4 {
     color: var(--Black, #050709);
-    font-family: "Spline Sans", sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 40px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     line-height: normal;
     letter-spacing: -1px;
 }
