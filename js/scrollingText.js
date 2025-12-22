@@ -1,6 +1,61 @@
 gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener('load', () => {
+  // INTRO SECTION ANIMATION
+  const introTextItems = document.querySelectorAll('.intro-scroll-text-item');
+
+  introTextItems.forEach((item, index) => {
+    // Set initial state
+    gsap.set(item, { opacity: 0.05, scale: 0.85, y: 0 });
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: item,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 4,
+        onUpdate: (self) => {
+          const progress = self.progress;
+
+          // Very slow opacity transition
+          let opacity;
+          if (progress < 0.35) {
+            // Very slow fade in from below
+            opacity = 0.05 + (progress / 0.35) * 0.20;
+          } else if (progress < 0.65) {
+            // Main focus area - slowly ramping up to full opacity
+            opacity = 0.25 + ((progress - 0.35) / 0.30) * 0.75;
+          } else {
+            // Very slow fade out as it passes
+            opacity = 1 - ((progress - 0.65) / 0.35) * 0.85;
+          }
+
+          // Very subtle scale transition
+          let scale;
+          if (progress < 0.5) {
+            // Slowly growing from 0.85 to 1.0
+            scale = 0.85 + (progress * 2) * 0.15;
+          } else {
+            // Slowly shrinking back
+            scale = 1.0 - ((progress - 0.5) * 2) * 0.15;
+          }
+
+          // Minimal parallax transform effect
+          const yOffset = (progress - 0.5) * -15;
+
+          gsap.to(item, {
+            opacity: opacity,
+            scale: scale,
+            y: yOffset,
+            duration: 0.8,
+            ease: 'power1.out'
+          });
+        }
+      }
+    });
+  });
+
+  // MAIN SCROLLING SECTION ANIMATION (existing)
   const textItems = document.querySelectorAll('.scroll-text-item');
   const counterTrack = document.getElementById('counter-track');
   let currentFocusedIndex = 0;
