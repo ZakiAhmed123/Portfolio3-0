@@ -21,9 +21,9 @@ window.addEventListener('load', () => {
     gsap.timeline({
       scrollTrigger: {
         trigger: item,
-        start: 'top 80%',
-        end: 'top 20%',
-        scrub: 8,
+        start: 'top 150%',
+        end: 'top -50%',
+        scrub: 3,
         onUpdate: (self) => {
           const progress = self.progress;
 
