@@ -1,6 +1,3 @@
-import { gsap } from "./GSAP/gsap-core.js";
-import { ScrollTrigger } from "./GSAP/scrolltrigger.js";
-
 gsap.registerPlugin(ScrollTrigger);
 
 ScrollTrigger.matchMedia({
