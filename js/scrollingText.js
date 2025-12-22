@@ -4,30 +4,40 @@ window.addEventListener('load', () => {
   const textItems = document.querySelectorAll('.scroll-text-item');
 
   textItems.forEach((item, index) => {
+    // Set initial state - all items visible but dimmed
+    gsap.set(item, { opacity: 0.25, y: 0 });
+
     gsap.timeline({
       scrollTrigger: {
         trigger: item,
-        start: 'top center',
-        end: 'bottom center',
-        scrub: 1,
+        start: 'top 80%',
+        end: 'top 20%',
+        scrub: 2,
         onUpdate: (self) => {
           const progress = self.progress;
 
-          if (progress < 0.5) {
-            const opacity = 0.7 + (progress * 2) * 0.3;
-            gsap.to(item, {
-              opacity: opacity,
-              duration: 0.3,
-              ease: 'none'
-            });
+          // Smoother opacity transition with parallax feel
+          let opacity;
+          if (progress < 0.3) {
+            // Fading in from below (upcoming lyric)
+            opacity = 0.25 + (progress / 0.3) * 0.25;
+          } else if (progress < 0.7) {
+            // Main focus area (current lyric)
+            opacity = 0.5 + ((progress - 0.3) / 0.4) * 0.5;
           } else {
-            const opacity = 1 - ((progress - 0.5) * 2) * 0.3;
-            gsap.to(item, {
-              opacity: opacity,
-              duration: 0.3,
-              ease: 'none'
-            });
+            // Fading out as it passes
+            opacity = 1 - ((progress - 0.7) / 0.3) * 0.5;
           }
+
+          // Parallax transform effect - slow vertical movement
+          const yOffset = (progress - 0.5) * -30;
+
+          gsap.to(item, {
+            opacity: opacity,
+            y: yOffset,
+            duration: 0.5,
+            ease: 'power1.out'
+          });
         }
       }
     });
