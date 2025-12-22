@@ -9,12 +9,18 @@ window.gsap = gsap;
 window.ScrollTrigger = ScrollTrigger;
 window.ScrollSmoother = ScrollSmoother;
 
-ScrollSmoother.create({
+const smoother = ScrollSmoother.create({
   wrapper: "#smooth-wrapper",
   content: "#smooth-content",
   smooth: 1.5,
-  effects: true
+  effects: true,
+  normalizeScroll: true
 });
+
+setTimeout(() => {
+  smoother.scrollTo(0, false);
+  ScrollTrigger.refresh();
+}, 100);
 
 ScrollTrigger.matchMedia({
   "(min-width: 769px)": function () {
@@ -66,6 +72,9 @@ ScrollTrigger.matchMedia({
 
 window.addEventListener("load", () => {
   ScrollTrigger.refresh();
+  setTimeout(() => {
+    ScrollTrigger.refresh();
+  }, 100);
 });
 
 window.addEventListener("resize", () => {
