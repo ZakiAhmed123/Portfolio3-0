@@ -14,14 +14,14 @@ window.addEventListener('load', () => {
           const progress = self.progress;
 
           if (progress < 0.5) {
-            const opacity = 0.3 + (progress * 2) * 0.7;
+            const opacity = 0.7 + (progress * 2) * 0.3;
             gsap.to(item, {
               opacity: opacity,
               duration: 0.3,
               ease: 'none'
             });
           } else {
-            const opacity = 1 - ((progress - 0.5) * 2) * 0.7;
+            const opacity = 1 - ((progress - 0.5) * 2) * 0.3;
             gsap.to(item, {
               opacity: opacity,
               duration: 0.3,
