@@ -124,12 +124,12 @@ body {
 h1 {
   color: var(--Primary);
   font-family: "Spline Sans", sans-serif;
-  font-size: 48px;
+  font-size: 40px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: normal;
   letter-spacing: -1px;
-  text-align: center;
+  text-align: left;
   margin-top: 48px;
   margin-bottom: 24px;
   position: relative;
