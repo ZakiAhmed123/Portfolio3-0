@@ -1,7 +1,9 @@
+import { gsap } from "./GSAP/gsap-core.js";
+import { ScrollTrigger } from "./GSAP/ScrollTrigger.js";
+
 gsap.registerPlugin(ScrollTrigger);
 
 ScrollTrigger.matchMedia({
-  // ✅ Desktop and tablet (769px and up)
   "(min-width: 769px)": function () {
     const scrollSection = document.querySelectorAll(".scroll-section");
 
@@ -9,7 +11,6 @@ ScrollTrigger.matchMedia({
       const wrapper = section.querySelector(".wrapper");
       const items = wrapper.querySelectorAll(".item");
 
-      // Layering: newer items on top
       items.forEach((item, index) => {
         item.style.zIndex = `${index}`;
         if (index !== 0) {
@@ -26,10 +27,10 @@ ScrollTrigger.matchMedia({
           scrub: 2,
           invalidateOnRefresh: true,
         },
-        defaults: { 
+        defaults: {
           ease: "power3.in",
           duration: 3.5
-           },
+        },
       });
 
       items.forEach((item, index) => {
@@ -46,19 +47,14 @@ ScrollTrigger.matchMedia({
     });
   },
 
-  // ❌ Mobile (768px and below)
   "(max-width: 768px)": function () {
-    // No scroll animation
   }
 });
 
-// ✅ Ensure everything recalculates after full page load
 window.addEventListener("load", () => {
   ScrollTrigger.refresh();
 });
 
-// Also recalculate on window resize
 window.addEventListener("resize", () => {
   ScrollTrigger.refresh();
 });
-
