@@ -181,6 +181,12 @@ h3 {
   margin-bottom: 48px;
 }
 
+.hero-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
 #headline-text {
   color: var(--Primary, #FFF3E1);
   font-family: Inter, sans-serif;
@@ -189,7 +195,7 @@ h3 {
   font-weight: 300;
   line-height: normal;
   text-align: left;
-  margin-top: 2rem;
+  margin-top: 0;
 }
 
 h4 {
