@@ -2,6 +2,17 @@ gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener('load', () => {
   const textItems = document.querySelectorAll('.scroll-text-item');
+  const counterTrack = document.getElementById('counter-track');
+  let currentFocusedIndex = 0;
+
+  // Function to update counter display
+  function updateCounter(index) {
+    if (counterTrack && index !== currentFocusedIndex) {
+      currentFocusedIndex = index;
+      const offset = -index * 60; // Each number is 60px tall
+      counterTrack.style.transform = `translateY(${offset}px)`;
+    }
+  }
 
   textItems.forEach((item, index) => {
     // Set initial state - all items visible but dimmed
@@ -38,6 +49,11 @@ window.addEventListener('load', () => {
             duration: 0.5,
             ease: 'power1.out'
           });
+
+          // Update counter when this item is in focus (progress between 0.4 and 0.6 = peak focus)
+          if (progress >= 0.4 && progress <= 0.6) {
+            updateCounter(index);
+          }
         }
       }
     });
