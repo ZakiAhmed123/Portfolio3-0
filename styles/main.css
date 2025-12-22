@@ -184,7 +184,7 @@ h3 {
 .hero-group {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 #headline-text {
