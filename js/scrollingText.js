@@ -30,7 +30,7 @@ window.addEventListener('load', () => {
           }
 
           // Parallax transform effect - slow vertical movement
-          const yOffset = (progress - 0.5) * -30;
+          const yOffset = (progress - 0.5) * -15;
 
           gsap.to(item, {
             opacity: opacity,
