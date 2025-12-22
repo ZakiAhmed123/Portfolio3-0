@@ -156,13 +156,12 @@ h1 {
   z-index: 2;
 }
 
-h2 {color: var(--peach);
+h2 {color: var(--Primary, #FFF3E1);
 font-family: "Spline Sans", sans-serif;
 font-size: 40px;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
-letter-spacing: -1px;
 text-align: center;
 margin-top: 96px;
 margin-bottom: 48px;
