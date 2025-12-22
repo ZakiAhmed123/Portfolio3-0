@@ -23,7 +23,7 @@ window.addEventListener('load', () => {
         trigger: item,
         start: 'top 80%',
         end: 'top 20%',
-        scrub: 4,
+        scrub: 8,
         onUpdate: (self) => {
           const progress = self.progress;
 
@@ -41,7 +41,7 @@ window.addEventListener('load', () => {
           }
 
           // Parallax transform effect - slow vertical movement
-          const yOffset = (progress - 0.5) * -15;
+          const yOffset = (progress - 0.5) * -8;
 
           gsap.to(item, {
             opacity: opacity,
