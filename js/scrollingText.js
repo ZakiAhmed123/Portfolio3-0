@@ -14,51 +14,45 @@ window.addEventListener('load', () => {
   }
 
   textItems.forEach((item, index) => {
-    // Set initial state
-    gsap.set(item, { opacity: 0.05, scale: 0.6, y: 0 });
+    // Set initial state - completely hidden
+    gsap.set(item, { opacity: 0, y: 50 });
 
     gsap.timeline({
       scrollTrigger: {
         trigger: item,
-        start: 'top 250%',
-        end: 'top -150%',
-        scrub: 3,
+        start: 'top 80%',
+        end: 'top 20%',
+        scrub: 1,
         onUpdate: (self) => {
           const progress = self.progress;
 
-          // Opacity transition with smooth gradient
+          // Simple fade in and stay visible
           let opacity;
-          if (progress < 0.4) {
-            // Gradually increasing from 0.1 as it approaches focus
-            opacity = 0.1 + (progress / 0.4) * 0.9;
-          } else if (progress >= 0.4 && progress <= 0.6) {
-            // Main focus area - full white opacity
-            opacity = 1.0;
+          if (progress < 0.3) {
+            // Fading in
+            opacity = progress / 0.3;
           } else {
-            // Gradually fading out as it passes
-            opacity = 1.0 - ((progress - 0.6) / 0.4) * 0.9;
+            // Stay visible
+            opacity = 1.0;
           }
 
-          // Scale transition - creates wheel effect
-          // Items start small (0.6) and scale up to full size (1.0) as they approach center
-          let scale;
-          if (progress < 0.5) {
-            // Growing from 0.6 to 1.0 as it approaches center
-            scale = 0.6 + (progress * 2) * 0.4;
+          // Simple slide up
+          let y;
+          if (progress < 0.3) {
+            y = 50 - (progress / 0.3) * 50;
           } else {
-            // Shrinking from 1.0 back to 0.6 as it moves past center
-            scale = 1.0 - ((progress - 0.5) * 2) * 0.4;
+            y = 0;
           }
 
           gsap.to(item, {
             opacity: opacity,
-            scale: scale,
-            duration: 0.5,
-            ease: 'power1.out'
+            y: y,
+            duration: 0.3,
+            ease: 'power2.out'
           });
 
-          // Update counter when this item is in focus
-          if (progress >= 0.4 && progress <= 0.6) {
+          // Update counter when this item is in view
+          if (progress >= 0.3) {
             updateCounter(index);
           }
         }
