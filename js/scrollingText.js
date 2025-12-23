@@ -1,69 +1,46 @@
-import { gsap } from './GSAP/index.js';
+import { gsap } from './GSAP/gsap-core.js';
+import { ScrollTrigger } from './GSAP/scrolltrigger.js';
+
+gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener('load', () => {
-  const textItems = document.querySelectorAll('.scroll-text-item');
-  const counterTrack = document.getElementById('counter-track');
-  let currentFocusedIndex = -1;
+  setTimeout(() => {
+    const textItems = document.querySelectorAll('.scroll-text-item');
+    const fixedCard = document.getElementById('fixed-card');
+    const scrollingSection = document.getElementById('scrolling-section');
 
-  function updateCounter(index) {
-    if (counterTrack && index !== currentFocusedIndex) {
-      currentFocusedIndex = index;
-      const offset = -index * 60;
-      counterTrack.style.transform = `translateY(${offset}px)`;
+    gsap.set(textItems, { opacity: 0.2, filter: 'blur(4px)' });
+
+    if (textItems.length > 0) {
+      gsap.set(textItems[0], { opacity: 1, filter: 'blur(0px)' });
     }
-  }
 
-  function updateLyrics() {
-    const viewportCenter = window.innerHeight / 2;
-    let closestIndex = 0;
-    let closestDistance = Infinity;
-
-    textItems.forEach((item, index) => {
-      const rect = item.getBoundingClientRect();
-      const itemCenter = rect.top + rect.height / 2;
-      const distanceFromCenter = Math.abs(itemCenter - viewportCenter);
-
-      if (distanceFromCenter < closestDistance) {
-        closestDistance = distanceFromCenter;
-        closestIndex = index;
-      }
-    });
+    if (fixedCard && scrollingSection) {
+      ScrollTrigger.create({
+        trigger: scrollingSection,
+        start: 'top top',
+        end: 'bottom bottom',
+        pin: fixedCard,
+        pinSpacing: false
+      });
+    }
 
     textItems.forEach((item, index) => {
-      const rect = item.getBoundingClientRect();
-      const itemCenter = rect.top + rect.height / 2;
-      const distanceFromCenter = Math.abs(itemCenter - viewportCenter);
-      const maxDistance = window.innerHeight * 0.5;
-      const normalizedDistance = Math.min(distanceFromCenter / maxDistance, 1);
-
-      const isFocused = index === closestIndex;
-
-      let opacity, blur;
-
-      if (isFocused) {
-        opacity = 1;
-        blur = 0;
-      } else {
-        opacity = Math.max(0.3, 1 - normalizedDistance * 0.7);
-        blur = Math.min(normalizedDistance * 8, 8);
-      }
-
-      gsap.to(item, {
-        opacity: opacity,
-        filter: `blur(${blur}px)`,
-        duration: 0.4,
-        ease: 'power2.out'
+      ScrollTrigger.create({
+        trigger: item,
+        start: 'top 60%',
+        end: 'top 40%',
+        onEnter: () => {
+          gsap.to(textItems, { opacity: 0.2, filter: 'blur(4px)', duration: 0.5, ease: 'power2.out' });
+          gsap.to(item, { opacity: 1, filter: 'blur(0px)', duration: 0.5, ease: 'power2.out' });
+        },
+        onEnterBack: () => {
+          gsap.to(textItems, { opacity: 0.2, filter: 'blur(4px)', duration: 0.5, ease: 'power2.out' });
+          gsap.to(item, { opacity: 1, filter: 'blur(0px)', duration: 0.5, ease: 'power2.out' });
+        }
       });
     });
 
-    updateCounter(closestIndex);
-  }
-
-  textItems.forEach((item) => {
-    gsap.set(item, { opacity: 0.3, filter: 'blur(8px)' });
-  });
-
-  updateLyrics();
-
-  window.addEventListener('scroll', updateLyrics, { passive: true });
+    ScrollTrigger.refresh();
+  }, 500);
 });
