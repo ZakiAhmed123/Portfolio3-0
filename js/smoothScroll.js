@@ -40,6 +40,7 @@ ScrollTrigger.matchMedia({
         scrollTrigger: {
           trigger: section,
           pin: true,
+          pinType: "transform",
           pinSpacing: true,
           anticipatePin: 1,
           start: "top 20%",
