@@ -169,6 +169,10 @@ position: relative;
 z-index: 2;
 }
 
+.case-studies-heading {
+  margin-top: 0;
+}
+
 
 h3 {
   color: var(--white);
