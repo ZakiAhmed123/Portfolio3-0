@@ -169,7 +169,8 @@ position: relative;
 z-index: 2;
 }
 
-.case-studies-heading {
+.case-studies-heading,
+.about-me-heading {
   margin-top: 0;
 }
 
