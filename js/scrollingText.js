@@ -1,8 +1,12 @@
+import { gsap } from './GSAP/index.js';
+import { ScrollTrigger } from './GSAP/scrolltrigger.js';
+
+gsap.registerPlugin(ScrollTrigger);
+
 window.addEventListener('load', () => {
-  gsap.registerPlugin(ScrollTrigger);
   const textItems = document.querySelectorAll('.scroll-text-item');
   const counterTrack = document.getElementById('counter-track');
-  let currentFocusedIndex = 0;
+  let currentFocusedIndex = -1;
 
   // Function to update counter display
   function updateCounter(index) {
@@ -15,44 +19,35 @@ window.addEventListener('load', () => {
 
   textItems.forEach((item, index) => {
     // Set initial state - completely hidden
-    gsap.set(item, { opacity: 0, y: 50 });
+    gsap.set(item, { opacity: 0, y: 0 });
 
     gsap.timeline({
       scrollTrigger: {
         trigger: item,
-        start: 'top 80%',
-        end: 'top 20%',
+        start: 'center center',
+        end: 'center top',
         scrub: 1,
         onUpdate: (self) => {
           const progress = self.progress;
 
-          // Simple fade in and stay visible
+          // Fade in as approaching center, fade out after passing center
           let opacity;
-          if (progress < 0.3) {
-            // Fading in
-            opacity = progress / 0.3;
+          if (progress < 0.5) {
+            // Fading in (0 to center)
+            opacity = progress * 2; // 0 to 1
           } else {
-            // Stay visible
-            opacity = 1.0;
-          }
-
-          // Simple slide up
-          let y;
-          if (progress < 0.3) {
-            y = 50 - (progress / 0.3) * 50;
-          } else {
-            y = 0;
+            // Fading out (center to end)
+            opacity = (1 - progress) * 2; // 1 to 0
           }
 
           gsap.to(item, {
             opacity: opacity,
-            y: y,
             duration: 0.3,
             ease: 'power2.out'
           });
 
-          // Update counter when this item is in view
-          if (progress >= 0.3) {
+          // Update counter when item is at center (peak visibility)
+          if (progress >= 0.4 && progress <= 0.6) {
             updateCounter(index);
           }
         }
