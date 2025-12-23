@@ -13,14 +13,13 @@ const smoother = ScrollSmoother.create({
   wrapper: "#smooth-wrapper",
   content: "#smooth-content",
   smooth: 1.5,
-  effects: true,
-  normalizeScroll: true
+  effects: true
 });
 
 setTimeout(() => {
   smoother.scrollTo(0, false);
   ScrollTrigger.refresh();
-}, 100);
+}, 200);
 
 ScrollTrigger.matchMedia({
   "(min-width: 769px)": function () {
@@ -41,6 +40,8 @@ ScrollTrigger.matchMedia({
         scrollTrigger: {
           trigger: section,
           pin: true,
+          pinSpacing: true,
+          anticipatePin: 1,
           start: "top 20%",
           end: () => `+=${items.length * 100}%`,
           scrub: 2,
@@ -74,9 +75,18 @@ window.addEventListener("load", () => {
   ScrollTrigger.refresh();
   setTimeout(() => {
     ScrollTrigger.refresh();
-  }, 100);
+  }, 300);
+  setTimeout(() => {
+    ScrollTrigger.refresh();
+  }, 800);
 });
 
 window.addEventListener("resize", () => {
   ScrollTrigger.refresh();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    ScrollTrigger.refresh();
+  }, 100);
 });
