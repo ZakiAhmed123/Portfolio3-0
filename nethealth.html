@@ -160,6 +160,29 @@
     </div>
   </div>
 
+  <style>
+    #carousel-prev svg,
+    #carousel-next svg {
+      transition: stroke 0.2s ease;
+    }
+
+    #carousel-prev:hover {
+      background: rgba(30, 30, 30, 0.9) !important;
+    }
+
+    #carousel-prev:hover svg {
+      stroke: white;
+    }
+
+    #carousel-next:hover {
+      background: rgba(255, 255, 255, 0.15) !important;
+    }
+
+    #carousel-next:hover svg {
+      stroke: black;
+    }
+  </style>
+
   <script type="module" src="./js/smoothScroll.js"></script>
   <script type="text/javascript" src="./js/logoScroll.js"></script>
   <script type="module" src="./js/scrollingText.js"></script>
