@@ -186,6 +186,12 @@ h3 {
   gap: 1rem;
 }
 
+.headline-chips-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 #headline-text {
   color: var(--Primary, #FFF3E1);
   font-family: Inter, sans-serif;
