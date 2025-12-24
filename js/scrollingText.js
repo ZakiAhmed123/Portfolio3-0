@@ -41,6 +41,42 @@ window.addEventListener('load', () => {
       });
     });
 
+    const textItems2 = document.querySelectorAll('.scroll-text-item-2');
+    const fixedCard2 = document.getElementById('fixed-card-2');
+    const scrollingSection2 = document.getElementById('scrolling-section-2');
+
+    gsap.set(textItems2, { opacity: 0.2, filter: 'blur(4px)' });
+
+    if (textItems2.length > 0) {
+      gsap.set(textItems2[0], { opacity: 1, filter: 'blur(0px)' });
+    }
+
+    if (fixedCard2 && scrollingSection2) {
+      ScrollTrigger.create({
+        trigger: scrollingSection2,
+        start: 'top top',
+        end: 'bottom bottom',
+        pin: fixedCard2,
+        pinSpacing: false
+      });
+    }
+
+    textItems2.forEach((item, index) => {
+      ScrollTrigger.create({
+        trigger: item,
+        start: 'top 60%',
+        end: 'top 40%',
+        onEnter: () => {
+          gsap.to(textItems2, { opacity: 0.2, filter: 'blur(4px)', duration: 0.5, ease: 'power2.out' });
+          gsap.to(item, { opacity: 1, filter: 'blur(0px)', duration: 0.5, ease: 'power2.out' });
+        },
+        onEnterBack: () => {
+          gsap.to(textItems2, { opacity: 0.2, filter: 'blur(4px)', duration: 0.5, ease: 'power2.out' });
+          gsap.to(item, { opacity: 1, filter: 'blur(0px)', duration: 0.5, ease: 'power2.out' });
+        }
+      });
+    });
+
     ScrollTrigger.refresh();
   }, 500);
 });
