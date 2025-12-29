@@ -16,7 +16,7 @@ const initMeshGradients = () => {
     return;
   }
 
-  const cardIds = ['cs1', 'cs2', 'cs3', 'cs4'];
+  const cardIds = ['cs1', 'cs2', 'cs3', 'cs4', 'nethealth'];
 
   cardIds.forEach(cardId => {
     const cardElement = document.getElementById(cardId);

@@ -17,6 +17,10 @@ const COLOR_CONFIGS = {
   cs4: {
     colors: ['#FFA07A', '#FA8BFF', '#2BD2FF', '#2BFF88'],
     wireframe: false
+  },
+  nethealth: {
+    colors: ['#A67B84', '#76597F', '#D4835F', '#5D907B'],
+    wireframe: false
   }
 };
 
