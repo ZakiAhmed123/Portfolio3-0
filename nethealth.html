@@ -235,6 +235,13 @@
     </div>
   </div>
 
+  <!-- MESH GRADIENT CARD -->
+  <div class="content" style="padding-top: 4rem; padding-bottom: 8rem; display: flex; justify-content: center; align-items: center;">
+    <div style="width: 120px; height: 120px; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.1);">
+      <canvas id="meshGradientCanvas" width="120" height="120"></canvas>
+    </div>
+  </div>
+
   <style>
     #carousel-prev svg,
     #carousel-next svg,
@@ -313,6 +320,91 @@
         currentIndex = (currentIndex + 1) % slides.length;
         showSlide(currentIndex);
       });
+    })();
+
+    // Mesh Gradient Animation
+    (function() {
+      const canvas = document.getElementById('meshGradientCanvas');
+      if (!canvas) return;
+
+      const ctx = canvas.getContext('2d');
+      const width = canvas.width;
+      const height = canvas.height;
+
+      const colors = ['#A67B84', '#76597F', '#D4835F', '#5D907B'];
+
+      // Create gradient points
+      const points = [];
+      const numPoints = 4;
+
+      for (let i = 0; i < numPoints; i++) {
+        points.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3,
+          color: colors[i]
+        });
+      }
+
+      function hexToRgb(hex) {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? {
+          r: parseInt(result[1], 16),
+          g: parseInt(result[2], 16),
+          b: parseInt(result[3], 16)
+        } : null;
+      }
+
+      function animate() {
+        // Clear canvas
+        ctx.clearRect(0, 0, width, height);
+
+        // Update points
+        points.forEach(point => {
+          point.x += point.vx;
+          point.y += point.vy;
+
+          // Bounce off edges
+          if (point.x < 0 || point.x > width) point.vx *= -1;
+          if (point.y < 0 || point.y > height) point.vy *= -1;
+        });
+
+        // Draw gradient mesh
+        const imageData = ctx.createImageData(width, height);
+        const data = imageData.data;
+
+        for (let y = 0; y < height; y++) {
+          for (let x = 0; x < width; x++) {
+            let totalWeight = 0;
+            let r = 0, g = 0, b = 0;
+
+            points.forEach(point => {
+              const dx = x - point.x;
+              const dy = y - point.y;
+              const distance = Math.sqrt(dx * dx + dy * dy);
+              const weight = 1 / (1 + distance * 0.05);
+
+              totalWeight += weight;
+              const rgb = hexToRgb(point.color);
+              r += rgb.r * weight;
+              g += rgb.g * weight;
+              b += rgb.b * weight;
+            });
+
+            const index = (y * width + x) * 4;
+            data[index] = r / totalWeight;
+            data[index + 1] = g / totalWeight;
+            data[index + 2] = b / totalWeight;
+            data[index + 3] = 255;
+          }
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+        requestAnimationFrame(animate);
+      }
+
+      animate();
     })();
   </script>
 </body>
