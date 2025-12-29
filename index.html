@@ -127,6 +127,7 @@
         <div class="wrapper">
           <div role="list" class="list">
               <div role="listitem" class="item" id="cs4">
+              <div class="mesh-gradient-container"></div>
               <div class="item_content">
                 <!-- <h2 class="item_number">4</h2> -->
                 <h4>Unifying Patient Scheduling for Efficiency, Consistency and Scalability</h2>
@@ -137,6 +138,7 @@
               </div>
             </div>
             <div role="listitem" class="item" id="cs1">
+              <div class="mesh-gradient-container"></div>
               <div class="item_content">
                 <!-- <h2 class="item_number">1</h2> -->
                 <h4>Enhancing Fleet Efficiency and Profitability Through AI-Powered Load Scheduling for Trucking Planners.</h2>
@@ -147,6 +149,7 @@
               </div>
             </div>
             <div role="listitem" class="item" id="cs2">
+              <div class="mesh-gradient-container"></div>
               <div class="item_content">
                 <!-- <h2 class="item_number">2</h2> -->
                 <h4>Bringing freedom and speed to building and restructuring business orgs.</h2>
@@ -157,6 +160,7 @@
               </div>
             </div>
             <div role="listitem" class="item" id="cs3">
+              <div class="mesh-gradient-container"></div>
               <div class="item_content">
                 <!-- <h2 class="item_number">3</h2> -->
                 <h4>Unlocking insight and efficiency by enabling asset managers to analyze financial documents with Gen AI powered Chat RAG.</h2>
@@ -317,5 +321,15 @@
     <script type="text/javascript" src="./js/swapIconColor.js"></script>
     <script type="text/javascript" src="./js/logoScroll.js"></script>
     <script type="text/javascript" src="./js/waveAnimation.js"></script>
+    <script src="./js/components/mesh-gradient-cards.umd.js"></script>
+    <script>
+      if (window.initMeshGradients) {
+        window.addEventListener('load', () => {
+          setTimeout(() => {
+            window.initMeshGradients();
+          }, 500);
+        });
+      }
+    </script>
   </body>
 </html>

@@ -768,6 +768,8 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 1rem;
+  position: relative;
+  z-index: 1;
 
   /*background: var(--black);*/
 }
@@ -805,6 +807,24 @@ body {
   left: 3rem;
 }
 
+.mesh-gradient-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.mesh-gradient-container.loaded {
+  opacity: 1;
+}
+
+.mesh-gradient-container.disabled {
+  display: none;
+}
+
 .item_content {
   color: var(--black);
   flex-flow: column;
@@ -814,6 +834,7 @@ body {
   position: relative;
   width: 50%;
   gap: 2rem;
+  z-index: 1;
 }
 
 .item_media {

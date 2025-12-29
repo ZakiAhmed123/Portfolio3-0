@@ -5,9 +5,25 @@
   "main": "index.html",
   "scripts": {
     "start": "npx http-server . -p 3000",
-    "dev": "npx http-server . -p 3000"
+    "dev": "npx http-server . -p 3000",
+    "build": "npm run build:components",
+    "build:components": "vite build",
+    "dev:components": "vite build --watch"
   },
-  "keywords": ["portfolio", "design"],
+  "keywords": [
+    "portfolio",
+    "design"
+  ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.2",
+    "terser": "^5.44.1",
+    "vite": "^7.3.0"
+  },
+  "dependencies": {
+    "@paper-design/shaders-react": "^0.0.68",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  }
 }
