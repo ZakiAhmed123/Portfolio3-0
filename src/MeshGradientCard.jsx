@@ -137,7 +137,7 @@ const MeshGradientCard = ({ cardId, containerRef }) => {
       {isVisible && isActive && (
         <>
           <PerformanceMonitor onPerformanceIssue={handlePerformanceIssue} />
-          <div ref={meshRef} style={{ width: '100%', height: '100%', position: 'absolute', inset: 0 }}>
+          <div ref={meshRef} style={{ width: '100%', height: '100%' }}>
             <MeshGradient
               colors={config.colors}
               speed={1.58}
@@ -145,7 +145,7 @@ const MeshGradientCard = ({ cardId, containerRef }) => {
               distortion={0.8}
               swirl={0.72}
               wireframe={config.wireframe}
-              style={{ width: '100%', height: '100%' }}
+              style={{ width: '100%', height: '100%', display: 'block' }}
             />
           </div>
         </>
