@@ -825,6 +825,23 @@ body {
   display: none;
 }
 
+.mesh-gradient-icon {
+  position: relative;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mesh-gradient-icon.loaded {
+  opacity: 1;
+}
+
+.mesh-gradient-icon.disabled {
+  display: none;
+}
+
 .item_content {
   color: var(--black);
   flex-flow: column;

@@ -16,7 +16,7 @@ const initMeshGradients = () => {
     return;
   }
 
-  const containers = document.querySelectorAll('.mesh-gradient-container');
+  const containers = document.querySelectorAll('.mesh-gradient-container, .mesh-gradient-icon');
 
   containers.forEach((container, index) => {
     const parentId = container.closest('[id]')?.id || `gradient-${index}`;
