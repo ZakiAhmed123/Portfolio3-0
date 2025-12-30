@@ -1,27 +1,37 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { MeshGradient } from '@paper-design/shaders-react';
 
-const COLOR_CONFIGS = {
-  cs1: {
-    colors: ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4'],
-    wireframe: false
-  },
-  cs2: {
-    colors: ['#A8E6CF', '#FFD3B6', '#FFAAA5', '#FF8B94'],
-    wireframe: false
-  },
-  cs3: {
-    colors: ['#667EEA', '#764BA2', '#F093FB', '#4FACFE'],
-    wireframe: false
-  },
-  cs4: {
-    colors: ['#FFA07A', '#FA8BFF', '#2BD2FF', '#2BFF88'],
-    wireframe: false
-  },
-  nethealth: {
-    colors: ['#A67B84', '#76597F', '#D4835F', '#5D907B'],
-    wireframe: false
+const BASE_COLORS = ['#A67B84', '#76597F', '#D4835F', '#5D907B'];
+
+const BASE_SPEED = 1.58;
+const BASE_DISTORTION = 0.8;
+const BASE_SWIRL = 0.72;
+
+const GRADIENT_VARIATIONS = {
+  cs1: { speedMod: 1.0, distortionMod: 1.0, swirlMod: 1.0 },
+  cs2: { speedMod: 1.08, distortionMod: 0.95, swirlMod: 1.06 },
+  cs3: { speedMod: 0.94, distortionMod: 1.07, swirlMod: 0.93 },
+  cs4: { speedMod: 1.05, distortionMod: 0.92, swirlMod: 1.09 },
+  nethealth: { speedMod: 0.97, distortionMod: 1.04, swirlMod: 0.96 },
+  'gradient-0': { speedMod: 1.03, distortionMod: 0.98, swirlMod: 1.02 },
+  'gradient-1': { speedMod: 0.92, distortionMod: 1.06, swirlMod: 0.94 },
+  'gradient-2': { speedMod: 1.07, distortionMod: 0.93, swirlMod: 1.08 },
+  'gradient-3': { speedMod: 0.95, distortionMod: 1.02, swirlMod: 0.91 },
+  'gradient-4': { speedMod: 1.04, distortionMod: 0.96, swirlMod: 1.05 },
+  'gradient-5': { speedMod: 0.98, distortionMod: 1.09, swirlMod: 0.97 },
+  'gradient-6': { speedMod: 1.06, distortionMod: 0.91, swirlMod: 1.03 },
+};
+
+const getVariation = (cardId) => {
+  if (GRADIENT_VARIATIONS[cardId]) {
+    return GRADIENT_VARIATIONS[cardId];
   }
+  const hash = cardId.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  return {
+    speedMod: 0.9 + (hash % 20) / 100,
+    distortionMod: 0.9 + ((hash * 7) % 20) / 100,
+    swirlMod: 0.9 + ((hash * 13) % 20) / 100,
+  };
 };
 
 const PerformanceMonitor = ({ onPerformanceIssue }) => {
@@ -130,7 +140,10 @@ const MeshGradientCard = ({ cardId, containerRef }) => {
     return null;
   }
 
-  const config = COLOR_CONFIGS[cardId] || COLOR_CONFIGS.cs1;
+  const variation = getVariation(cardId);
+  const speed = BASE_SPEED * variation.speedMod;
+  const distortion = BASE_DISTORTION * variation.distortionMod;
+  const swirl = BASE_SWIRL * variation.swirlMod;
 
   return (
     <ErrorBoundary fallback={null}>
@@ -139,12 +152,12 @@ const MeshGradientCard = ({ cardId, containerRef }) => {
           <PerformanceMonitor onPerformanceIssue={handlePerformanceIssue} />
           <div ref={meshRef} style={{ width: '100%', height: '100%' }}>
             <MeshGradient
-              colors={config.colors}
-              speed={1.58}
+              colors={BASE_COLORS}
+              speed={speed}
               scale={0.81}
-              distortion={0.8}
-              swirl={0.72}
-              wireframe={config.wireframe}
+              distortion={distortion}
+              swirl={swirl}
+              wireframe={false}
               style={{ width: '100%', height: '100%', display: 'block' }}
             />
           </div>
