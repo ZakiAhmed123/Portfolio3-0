@@ -16,25 +16,14 @@ const initMeshGradients = () => {
     return;
   }
 
-  const cardIds = ['cs1', 'cs2', 'cs3', 'cs4', 'nethealth'];
+  const containers = document.querySelectorAll('.mesh-gradient-container');
 
-  cardIds.forEach(cardId => {
-    const cardElement = document.getElementById(cardId);
-    if (!cardElement) {
-      console.warn(`Card element ${cardId} not found`);
-      return;
-    }
-
-    const container = cardElement.querySelector('.mesh-gradient-container');
-    if (!container) {
-      console.warn(`Mesh gradient container not found for ${cardId}`);
-      return;
-    }
-
+  containers.forEach((container, index) => {
+    const parentId = container.closest('[id]')?.id || `gradient-${index}`;
     const containerRef = { current: container };
     const root = createRoot(container);
 
-    root.render(<MeshGradientCard cardId={cardId} containerRef={containerRef} />);
+    root.render(<MeshGradientCard cardId={parentId} containerRef={containerRef} />);
 
     setTimeout(() => {
       container.classList.add('loaded');
