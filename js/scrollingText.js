@@ -3,72 +3,80 @@ import { ScrollTrigger } from './GSAP/scrolltrigger.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
-function setupKaraokeSection(sectionId, containerId, itemClass) {
-  const section = document.getElementById(sectionId);
-  const container = document.getElementById(containerId);
-  const items = document.querySelectorAll(`.${itemClass}`);
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const textItems = document.querySelectorAll('.scroll-text-item');
+    const fixedCard = document.getElementById('fixed-card');
+    const scrollingSection = document.getElementById('scrolling-section');
 
-  if (!section || !container || items.length === 0) return;
+    gsap.set(textItems, { opacity: 0.2, filter: 'blur(4px)' });
 
-  const itemSpacing = 40;
-  const totalItems = items.length;
+    if (textItems.length > 0) {
+      gsap.set(textItems[0], { opacity: 1, filter: 'blur(0px)' });
+    }
 
-  function updateItemStyles(progress) {
-    const activeIndex = Math.min(Math.floor(progress * totalItems), totalItems - 1);
-    const progressWithinItem = (progress * totalItems) - activeIndex;
+    if (fixedCard && scrollingSection) {
+      ScrollTrigger.create({
+        trigger: scrollingSection,
+        start: 'top top',
+        end: 'bottom bottom',
+        pin: fixedCard,
+        pinSpacing: false
+      });
+    }
 
-    items.forEach((item, index) => {
-      const distance = index - activeIndex;
-      const adjustedDistance = distance - progressWithinItem;
-
-      let blur = 0;
-      let opacity = 1;
-
-      if (Math.abs(adjustedDistance) < 0.5) {
-        blur = 0;
-        opacity = 1;
-      } else {
-        const absDistance = Math.abs(adjustedDistance);
-        blur = Math.min(absDistance * 4, 12);
-        opacity = Math.max(1 - (absDistance * 0.25), 0.3);
-      }
-
-      gsap.set(item, {
-        filter: `blur(${blur}px)`,
-        opacity: opacity
+    textItems.forEach((item, index) => {
+      ScrollTrigger.create({
+        trigger: item,
+        start: 'top 60%',
+        end: 'top 40%',
+        onEnter: () => {
+          gsap.to(textItems, { opacity: 0.2, filter: 'blur(4px)', duration: 0.5, ease: 'power2.out' });
+          gsap.to(item, { opacity: 1, filter: 'blur(0px)', duration: 0.5, ease: 'power2.out' });
+        },
+        onEnterBack: () => {
+          gsap.to(textItems, { opacity: 0.2, filter: 'blur(4px)', duration: 0.5, ease: 'power2.out' });
+          gsap.to(item, { opacity: 1, filter: 'blur(0px)', duration: 0.5, ease: 'power2.out' });
+        }
       });
     });
 
-    const topPadding = 100;
-    const scrollAmount = progress * (totalItems - 1) * (items[0].offsetHeight + itemSpacing);
-    const translateY = topPadding - scrollAmount;
+    const textItems2 = document.querySelectorAll('.scroll-text-item-2');
+    const fixedCard2 = document.getElementById('fixed-card-2');
+    const scrollingSection2 = document.getElementById('scrolling-section-2');
 
-    gsap.set(container, {
-      y: translateY
-    });
-  }
+    gsap.set(textItems2, { opacity: 0.2, filter: 'blur(4px)' });
 
-  updateItemStyles(0);
-
-  const scrollDistance = totalItems * 50;
-
-  ScrollTrigger.create({
-    trigger: section,
-    start: 'center center',
-    end: `+=${scrollDistance}%`,
-    pin: true,
-    pinSpacing: true,
-    scrub: 0.5,
-    onUpdate: (self) => {
-      updateItemStyles(self.progress);
+    if (textItems2.length > 0) {
+      gsap.set(textItems2[0], { opacity: 1, filter: 'blur(0px)' });
     }
-  });
-}
 
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    setupKaraokeSection('scrolling-section', 'text-container', 'scroll-text-item');
-    setupKaraokeSection('scrolling-section-2', 'text-container-2', 'scroll-text-item-2');
+    if (fixedCard2 && scrollingSection2) {
+      ScrollTrigger.create({
+        trigger: scrollingSection2,
+        start: 'top top',
+        end: 'bottom bottom',
+        pin: fixedCard2,
+        pinSpacing: false
+      });
+    }
+
+    textItems2.forEach((item, index) => {
+      ScrollTrigger.create({
+        trigger: item,
+        start: 'top 60%',
+        end: 'top 40%',
+        onEnter: () => {
+          gsap.to(textItems2, { opacity: 0.2, filter: 'blur(4px)', duration: 0.5, ease: 'power2.out' });
+          gsap.to(item, { opacity: 1, filter: 'blur(0px)', duration: 0.5, ease: 'power2.out' });
+        },
+        onEnterBack: () => {
+          gsap.to(textItems2, { opacity: 0.2, filter: 'blur(4px)', duration: 0.5, ease: 'power2.out' });
+          gsap.to(item, { opacity: 1, filter: 'blur(0px)', duration: 0.5, ease: 'power2.out' });
+        }
+      });
+    });
+
     ScrollTrigger.refresh();
   }, 500);
 });
