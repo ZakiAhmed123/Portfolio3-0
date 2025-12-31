@@ -10,7 +10,7 @@ function setupKaraokeSection(sectionId, containerId, itemClass) {
 
   if (!section || !container || items.length === 0) return;
 
-  const itemSpacing = 80;
+  const itemSpacing = 40;
   const totalItems = items.length;
 
   function updateItemStyles(progress) {
