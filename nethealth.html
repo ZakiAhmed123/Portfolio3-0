@@ -107,14 +107,26 @@
       <div id="fixed-card" style="position: absolute; right: 2rem; top: 3rem; width: calc(50% - 4rem);">
         <div style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border-radius: 24px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); width: 100%; position: relative;">
           <div id="legacy-carousel" style="position: relative; width: 100%;">
-            <div class="carousel-slide active" style="width: 100%;">
-              <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/scheduler1-big_I5faluhmo.png" alt="Legacy Scheduler 1" style="width: 100%; height: auto; border-radius: 12px;">
+            <div class="carousel-slide active" style="width: 100%; position: relative;">
+              <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/scheduler1-big_I5faluhmo.png" alt="Legacy Scheduler 1" style="width: 100%; height: auto; border-radius: 12px; filter: blur(8px);">
+              <div class="carousel-overlay">
+                <span class="carousel-label">Legacy Scheduler 1</span>
+                <button class="carousel-view-btn" data-index="0">View</button>
+              </div>
             </div>
-            <div class="carousel-slide" style="display: none; width: 100%;">
-              <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/scheduler2_j4hJsqUve.png" alt="Legacy Scheduler 2" style="width: 100%; height: auto; border-radius: 12px;">
+            <div class="carousel-slide" style="display: none; width: 100%; position: relative;">
+              <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/scheduler2_j4hJsqUve.png" alt="Legacy Scheduler 2" style="width: 100%; height: auto; border-radius: 12px; filter: blur(8px);">
+              <div class="carousel-overlay">
+                <span class="carousel-label">Legacy Scheduler 2</span>
+                <button class="carousel-view-btn" data-index="1">View</button>
+              </div>
             </div>
-            <div class="carousel-slide" style="display: none; width: 100%;">
-              <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/scheduler3_KZH-_QE7s.png" alt="Legacy Scheduler 3" style="width: 100%; height: auto; border-radius: 12px;">
+            <div class="carousel-slide" style="display: none; width: 100%; position: relative;">
+              <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/scheduler3_KZH-_QE7s.png" alt="Legacy Scheduler 3" style="width: 100%; height: auto; border-radius: 12px; filter: blur(8px);">
+              <div class="carousel-overlay">
+                <span class="carousel-label">Legacy Scheduler 3</span>
+                <button class="carousel-view-btn" data-index="2">View</button>
+              </div>
             </div>
           </div>
           <div style="position: absolute; bottom: 2.5rem; right: 2.5rem; display: flex; gap: 0.5rem;">
@@ -225,6 +237,39 @@
     </div>
   </div>
 
+  <!-- LEGACY SCHEDULER MODAL -->
+  <div id="legacy-modal" class="legacy-modal">
+    <div class="legacy-modal-content">
+      <button id="modal-close" class="modal-close-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="modal-image-container">
+        <img id="modal-image" src="" alt="Legacy Scheduler" style="width: 100%; height: auto; border-radius: 12px;">
+      </div>
+      <div class="modal-info">
+        <div class="modal-text">
+          <h3 id="modal-title">Legacy Scheduler 1</h3>
+          <p id="modal-description">This legacy scheduler interface showcases the original design patterns and workflows that therapists have been using for years. The system required extensive training due to its complex navigation and non-standard controls.</p>
+        </div>
+        <div class="modal-nav">
+          <button id="modal-prev" class="modal-nav-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button id="modal-next" class="modal-nav-btn modal-nav-btn-dark">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <style>
     #carousel-prev svg,
     #carousel-next svg {
@@ -250,6 +295,163 @@
     .research-item:hover {
       background: rgba(255, 255, 255, 0.08);
     }
+
+    .carousel-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .carousel-label {
+      color: #FFF;
+      font-family: Inter;
+      font-size: 24px;
+      font-weight: 600;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .carousel-view-btn {
+      padding: 12px 32px;
+      background: rgba(255, 255, 255, 0.95);
+      border: none;
+      border-radius: 12px;
+      color: #000;
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .carousel-view-btn:hover {
+      background: #FFF;
+      transform: scale(1.05);
+    }
+
+    .legacy-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 10000;
+      overflow-y: auto;
+    }
+
+    .legacy-modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .legacy-modal-content {
+      width: 100%;
+      max-width: 1200px;
+      margin: 2rem;
+      position: relative;
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: -3rem;
+      right: 0;
+      width: 48px;
+      height: 48px;
+      border: none;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+      z-index: 10;
+    }
+
+    .modal-close-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .modal-image-container {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .modal-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 2rem;
+      gap: 2rem;
+    }
+
+    .modal-text {
+      flex: 1;
+    }
+
+    .modal-text h3 {
+      color: #FFF;
+      font-family: Inter;
+      font-size: 28px;
+      font-weight: 600;
+      margin: 0 0 0.75rem 0;
+    }
+
+    .modal-text p {
+      color: rgba(255, 255, 255, 0.7);
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .modal-nav {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .modal-nav-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      border: none;
+      background: rgba(255, 255, 255, 0.15);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+    }
+
+    .modal-nav-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .modal-nav-btn-dark {
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .modal-nav-btn-dark svg {
+      stroke: #000;
+    }
+
+    .modal-nav-btn-dark:hover {
+      background: #FFF;
+    }
   </style>
 
   <script type="module" src="./js/smoothScroll.js"></script>
@@ -263,10 +465,58 @@
       const nextBtn = document.getElementById('carousel-next');
       let currentIndex = 0;
 
+      const modal = document.getElementById('legacy-modal');
+      const modalImage = document.getElementById('modal-image');
+      const modalTitle = document.getElementById('modal-title');
+      const modalDescription = document.getElementById('modal-description');
+      const modalClose = document.getElementById('modal-close');
+      const modalPrev = document.getElementById('modal-prev');
+      const modalNext = document.getElementById('modal-next');
+      const viewBtns = document.querySelectorAll('.carousel-view-btn');
+
+      const schedulerData = [
+        {
+          image: 'https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/scheduler1-big_I5faluhmo.png',
+          title: 'Legacy Scheduler 1',
+          description: 'This legacy scheduler interface showcases the original design patterns and workflows that therapists have been using for years. The system required extensive training due to its complex navigation and non-standard controls.'
+        },
+        {
+          image: 'https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/scheduler2_j4hJsqUve.png',
+          title: 'Legacy Scheduler 2',
+          description: 'The second scheduler variant introduced additional complexity with multiple overlapping features. Users struggled to understand when to use this version versus other scheduling options available in the system.'
+        },
+        {
+          image: 'https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/scheduler3_KZH-_QE7s.png',
+          title: 'Legacy Scheduler 3',
+          description: 'This third scheduling interface attempted to address some usability concerns but added another layer of confusion. The lack of unified controls made it difficult for therapists to develop consistent workflows.'
+        }
+      ];
+
+      let modalIndex = 0;
+
       function showSlide(index) {
         slides.forEach((slide, i) => {
           slide.style.display = i === index ? 'block' : 'none';
         });
+      }
+
+      function updateModal(index) {
+        modalIndex = index;
+        const data = schedulerData[index];
+        modalImage.src = data.image;
+        modalTitle.textContent = data.title;
+        modalDescription.textContent = data.description;
+      }
+
+      function openModal(index) {
+        updateModal(index);
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
       }
 
       prevBtn.addEventListener('click', () => {
@@ -277,6 +527,44 @@
       nextBtn.addEventListener('click', () => {
         currentIndex = (currentIndex + 1) % slides.length;
         showSlide(currentIndex);
+      });
+
+      viewBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const index = parseInt(btn.getAttribute('data-index'));
+          openModal(index);
+        });
+      });
+
+      modalClose.addEventListener('click', closeModal);
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+
+      modalPrev.addEventListener('click', () => {
+        modalIndex = (modalIndex - 1 + schedulerData.length) % schedulerData.length;
+        updateModal(modalIndex);
+      });
+
+      modalNext.addEventListener('click', () => {
+        modalIndex = (modalIndex + 1) % schedulerData.length;
+        updateModal(modalIndex);
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('active')) return;
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowLeft') {
+          modalIndex = (modalIndex - 1 + schedulerData.length) % schedulerData.length;
+          updateModal(modalIndex);
+        }
+        if (e.key === 'ArrowRight') {
+          modalIndex = (modalIndex + 1) % schedulerData.length;
+          updateModal(modalIndex);
+        }
       });
     })();
 
