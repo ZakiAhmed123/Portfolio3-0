@@ -3,11 +3,10 @@ import { ScrollTrigger } from './GSAP/scrolltrigger.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
-function setupKaraokeSection(sectionId, containerId, itemClass, cardId) {
+function setupKaraokeSection(sectionId, containerId, itemClass) {
   const section = document.getElementById(sectionId);
   const container = document.getElementById(containerId);
   const items = document.querySelectorAll(`.${itemClass}`);
-  const card = document.getElementById(cardId);
 
   if (!section || !container || items.length === 0) return;
 
@@ -40,7 +39,8 @@ function setupKaraokeSection(sectionId, containerId, itemClass, cardId) {
       });
     });
 
-    const centerOffset = container.parentElement.offsetHeight / 2;
+    const parentHeight = window.innerHeight;
+    const centerOffset = parentHeight / 2;
     const firstItemOffset = items[0].offsetHeight / 2;
     const scrollAmount = progress * (totalItems - 1) * (items[0].offsetHeight + itemSpacing);
     const translateY = centerOffset - firstItemOffset - scrollAmount;
@@ -54,29 +54,21 @@ function setupKaraokeSection(sectionId, containerId, itemClass, cardId) {
 
   ScrollTrigger.create({
     trigger: section,
-    start: 'top top',
-    end: 'bottom bottom',
+    start: 'center center',
+    end: '+=100%',
+    pin: true,
+    pinSpacing: true,
     scrub: 0.5,
     onUpdate: (self) => {
       updateItemStyles(self.progress);
     }
   });
-
-  if (card) {
-    ScrollTrigger.create({
-      trigger: section,
-      start: 'top top',
-      end: 'bottom bottom',
-      pin: card,
-      pinSpacing: false
-    });
-  }
 }
 
 window.addEventListener('load', () => {
   setTimeout(() => {
-    setupKaraokeSection('scrolling-section', 'text-container', 'scroll-text-item', 'fixed-card');
-    setupKaraokeSection('scrolling-section-2', 'text-container-2', 'scroll-text-item-2', 'fixed-card-2');
+    setupKaraokeSection('scrolling-section', 'text-container', 'scroll-text-item');
+    setupKaraokeSection('scrolling-section-2', 'text-container-2', 'scroll-text-item-2');
     ScrollTrigger.refresh();
   }, 500);
 });

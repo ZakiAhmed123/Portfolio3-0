@@ -83,30 +83,28 @@
   </div>
 
   <!-- SCROLLING TEXT SECTION -->
-  <section id="scrolling-section" style="min-height: 200vh; position: relative; padding: 0; z-index: 2;">
-    <div style="max-width: 1512px; margin: 0 auto; padding: 0 2rem; position: relative;">
+  <section id="scrolling-section" style="position: relative; padding: 0; z-index: 2;">
+    <div style="max-width: 1512px; margin: 0 auto; padding: 0 2rem; position: relative; display: flex; height: 100vh;">
       <!-- LEFT SIDE - KARAOKE STYLE LYRICS -->
-      <div style="width: 50%; padding-right: 4rem;">
-        <div id="karaoke-container" style="position: sticky; top: 0; height: 100vh; overflow: hidden; display: flex; align-items: center;">
-          <div id="text-container" style="display: flex; flex-direction: column; gap: 80px; width: 100%;">
-            <div class="scroll-text-item" data-index="0">
-              <p class="lyric-text" style="color: #FFF; font-family: Inter; font-size: 36px; font-weight: 600; line-height: 1.3; letter-spacing: -1px; margin: 0;">3 different ways to schedule a patient</p>
-            </div>
-            <div class="scroll-text-item" data-index="1">
-              <p class="lyric-text" style="color: #FFF; font-family: Inter; font-size: 36px; font-weight: 600; line-height: 1.3; letter-spacing: -1px; margin: 0;">9 different scheduler controls</p>
-            </div>
-            <div class="scroll-text-item" data-index="2">
-              <p class="lyric-text" style="color: #FFF; font-family: Inter; font-size: 36px; font-weight: 600; line-height: 1.3; letter-spacing: -1px; margin: 0;">A lack of centralized actions</p>
-            </div>
-            <div class="scroll-text-item" data-index="3">
-              <p class="lyric-text" style="color: #FFF; font-family: Inter; font-size: 36px; font-weight: 600; line-height: 1.3; letter-spacing: -1px; margin: 0;">Custom controls that don't map to modern web controls</p>
-            </div>
+      <div style="width: 50%; padding-right: 4rem; display: flex; align-items: center;">
+        <div id="text-container" style="display: flex; flex-direction: column; gap: 80px; width: 100%;">
+          <div class="scroll-text-item" data-index="0">
+            <p class="lyric-text" style="color: #FFF; font-family: Inter; font-size: 36px; font-weight: 600; line-height: 1.3; letter-spacing: -1px; margin: 0;">3 different ways to schedule a patient</p>
+          </div>
+          <div class="scroll-text-item" data-index="1">
+            <p class="lyric-text" style="color: #FFF; font-family: Inter; font-size: 36px; font-weight: 600; line-height: 1.3; letter-spacing: -1px; margin: 0;">9 different scheduler controls</p>
+          </div>
+          <div class="scroll-text-item" data-index="2">
+            <p class="lyric-text" style="color: #FFF; font-family: Inter; font-size: 36px; font-weight: 600; line-height: 1.3; letter-spacing: -1px; margin: 0;">A lack of centralized actions</p>
+          </div>
+          <div class="scroll-text-item" data-index="3">
+            <p class="lyric-text" style="color: #FFF; font-family: Inter; font-size: 36px; font-weight: 600; line-height: 1.3; letter-spacing: -1px; margin: 0;">Custom controls that don't map to modern web controls</p>
           </div>
         </div>
       </div>
 
       <!-- RIGHT SIDE - PINNED IMAGE CARD -->
-      <div id="fixed-card" style="position: absolute; right: 2rem; top: 3rem; width: calc(50% - 4rem);">
+      <div id="fixed-card" style="width: 50%; display: flex; align-items: center; justify-content: center;">
         <div style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border-radius: 24px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); width: 100%; position: relative;">
           <div id="legacy-carousel" style="position: relative; width: 100%;">
             <div class="carousel-slide active" style="width: 100%;">
@@ -148,34 +146,32 @@
   </div>
 
   <!-- SCROLLING TEXT SECTION 2 -->
-  <section id="scrolling-section-2" style="min-height: 250vh; position: relative; padding: 0; z-index: 2;">
-    <div style="max-width: 1512px; margin: 0 auto; padding: 0 2rem; position: relative;">
+  <section id="scrolling-section-2" style="position: relative; padding: 0; z-index: 2;">
+    <div style="max-width: 1512px; margin: 0 auto; padding: 0 2rem; position: relative; display: flex; height: 100vh;">
       <!-- LEFT SIDE - KARAOKE STYLE LYRICS -->
-      <div style="width: 50%; padding-right: 4rem;">
-        <div id="karaoke-container-2" style="position: sticky; top: 0; height: 100vh; overflow: hidden; display: flex; align-items: center;">
-          <div id="text-container-2" style="display: flex; flex-direction: column; gap: 80px; width: 100%;">
-            <div class="scroll-text-item-2" data-index="0">
-              <p class="lyric-text" style="color: #FFF; font-family: Inter; font-size: 36px; font-weight: 600; line-height: 1.3; letter-spacing: -1px; margin: 0;">Therapists, our core users, are highly educated, which helps with training, but many have used the same legacy systems for years. This requires balancing modern design with familiar workflows to support adoption.</p>
-            </div>
-            <div class="scroll-text-item-2" data-index="1">
-              <p class="lyric-text" style="color: #FFF; font-family: Inter; font-size: 36px; font-weight: 600; line-height: 1.3; letter-spacing: -1px; margin: 0;">Readability, scan-ability and transparency on therapist's availability was lacking in every scheduler, making decision making and initial onboarding for new users challenging.</p>
-            </div>
-            <div class="scroll-text-item-2" data-index="2">
-              <p class="lyric-text" style="color: #FFF; font-family: Inter; font-size: 36px; font-weight: 600; line-height: 1.3; letter-spacing: -1px; margin: 0;">The scheduler had too many redundant legacy and custom fragmented schedulers which were confusing to navigate and learn, training therapists when to use which scheduler was challenging for the business.</p>
-            </div>
-            <div class="scroll-text-item-2" data-index="3">
-              <p class="lyric-text" style="color: #FFF; font-family: Inter; font-size: 36px; font-weight: 600; line-height: 1.3; letter-spacing: -1px; margin: 0;">Therapists move frequently throughout the facility using iPads, so they need a mobile experience that is both readable and easy to tap, with offline capabilities to ensure they can continue working in areas without Wi-Fi access.</p>
-            </div>
-            <div class="scroll-text-item-2" data-index="4">
-              <p class="lyric-text" style="color: #FFF; font-family: Inter; font-size: 36px; font-weight: 600; line-height: 1.3; letter-spacing: -1px; margin: 0;">The legacy schedulers used outdated, custom controls that do not map to modern web components. Each type of scheduling such as patient, therapist, group, queue, and non-therapy was handled in separate modules with no centralized actions, creating a disjointed and inefficient experience.</p>
-            </div>
+      <div style="width: 50%; padding-right: 4rem; display: flex; align-items: center;">
+        <div id="text-container-2" style="display: flex; flex-direction: column; gap: 80px; width: 100%;">
+          <div class="scroll-text-item-2" data-index="0">
+            <p class="lyric-text" style="color: #FFF; font-family: Inter; font-size: 36px; font-weight: 600; line-height: 1.3; letter-spacing: -1px; margin: 0;">Therapists, our core users, are highly educated, which helps with training, but many have used the same legacy systems for years. This requires balancing modern design with familiar workflows to support adoption.</p>
+          </div>
+          <div class="scroll-text-item-2" data-index="1">
+            <p class="lyric-text" style="color: #FFF; font-family: Inter; font-size: 36px; font-weight: 600; line-height: 1.3; letter-spacing: -1px; margin: 0;">Readability, scan-ability and transparency on therapist's availability was lacking in every scheduler, making decision making and initial onboarding for new users challenging.</p>
+          </div>
+          <div class="scroll-text-item-2" data-index="2">
+            <p class="lyric-text" style="color: #FFF; font-family: Inter; font-size: 36px; font-weight: 600; line-height: 1.3; letter-spacing: -1px; margin: 0;">The scheduler had too many redundant legacy and custom fragmented schedulers which were confusing to navigate and learn, training therapists when to use which scheduler was challenging for the business.</p>
+          </div>
+          <div class="scroll-text-item-2" data-index="3">
+            <p class="lyric-text" style="color: #FFF; font-family: Inter; font-size: 36px; font-weight: 600; line-height: 1.3; letter-spacing: -1px; margin: 0;">Therapists move frequently throughout the facility using iPads, so they need a mobile experience that is both readable and easy to tap, with offline capabilities to ensure they can continue working in areas without Wi-Fi access.</p>
+          </div>
+          <div class="scroll-text-item-2" data-index="4">
+            <p class="lyric-text" style="color: #FFF; font-family: Inter; font-size: 36px; font-weight: 600; line-height: 1.3; letter-spacing: -1px; margin: 0;">The legacy schedulers used outdated, custom controls that do not map to modern web components. Each type of scheduling such as patient, therapist, group, queue, and non-therapy was handled in separate modules with no centralized actions, creating a disjointed and inefficient experience.</p>
           </div>
         </div>
       </div>
 
       <!-- RIGHT SIDE - RESEARCH ARTIFACTS LIST -->
-      <div id="fixed-card-2" style="position: absolute; right: 2rem; top: 3rem; width: calc(50% - 4rem);">
-        <div style="display: flex; flex-direction: column; gap: 0;">
+      <div id="fixed-card-2" style="width: 50%; display: flex; align-items: center; justify-content: center;">
+        <div style="display: flex; flex-direction: column; gap: 0; width: 100%;">
           <div class="research-item" style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0.75rem 1.5rem 0.75rem; border-bottom: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; transition: background 0.2s ease; cursor: pointer;">
             <div class="mesh-gradient-icon" style="width: 64px; height: 64px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);"></div>
             <div style="display: flex; flex-direction: column; gap: 0.25rem;">
