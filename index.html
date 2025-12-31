@@ -27,6 +27,15 @@
 </head>
 <body>
 
+  <!-- SPLASH SCREEN -->
+  <div id="splash-screen" class="splash-screen">
+    <div class="splash-mesh-background"></div>
+    <div class="splash-content">
+      <div class="splash-title">BREEZY LIFE</div>
+      <div class="splash-subtitle">A UX Portfolio by Zaki Ahmed</div>
+    </div>
+  </div>
+
   <!-- FOLLOWER -->
   <div id="follower"></div>
 
@@ -319,11 +328,16 @@
     <script>
       if (window.initMeshGradients) {
         window.addEventListener('load', () => {
+          // Initialize splash screen mesh gradient immediately
+          window.initMeshGradients('.splash-mesh-background');
+
+          // Initialize other mesh gradients after a delay
           setTimeout(() => {
             window.initMeshGradients();
           }, 500);
         });
       }
     </script>
+    <script type="text/javascript" src="./js/splashScreen.js"></script>
   </body>
 </html>

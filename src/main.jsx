@@ -16,7 +16,7 @@ const initMeshGradients = (selector) => {
     return;
   }
 
-  const defaultSelector = '.mesh-gradient-container, .mesh-gradient-icon, .carousel-mesh-background';
+  const defaultSelector = '.mesh-gradient-container, .mesh-gradient-icon, .carousel-mesh-background, .splash-mesh-background';
   const containers = document.querySelectorAll(selector || defaultSelector);
 
   containers.forEach((container, index) => {
