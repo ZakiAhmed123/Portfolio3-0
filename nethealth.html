@@ -108,24 +108,27 @@
         <div style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border-radius: 24px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); width: 100%; position: relative;">
           <div id="legacy-carousel" style="position: relative; width: 100%;">
             <div class="carousel-slide active" style="width: 100%; position: relative;">
-              <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/scheduler1-big_I5faluhmo.png" alt="Legacy Scheduler 1" style="width: 100%; height: auto; border-radius: 12px; filter: blur(8px);">
-              <div class="carousel-overlay">
-                <span class="carousel-label">Legacy Scheduler 1</span>
-                <button class="carousel-view-btn" data-index="0">View</button>
+              <div class="carousel-mesh-gradient" style="width: 100%; aspect-ratio: 16/10; border-radius: 12px; position: relative; overflow: hidden;">
+                <div class="carousel-overlay">
+                  <span class="carousel-label">Legacy Scheduler 1</span>
+                  <button class="carousel-view-btn" data-index="0">View</button>
+                </div>
               </div>
             </div>
             <div class="carousel-slide" style="display: none; width: 100%; position: relative;">
-              <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/scheduler2_j4hJsqUve.png" alt="Legacy Scheduler 2" style="width: 100%; height: auto; border-radius: 12px; filter: blur(8px);">
-              <div class="carousel-overlay">
-                <span class="carousel-label">Legacy Scheduler 2</span>
-                <button class="carousel-view-btn" data-index="1">View</button>
+              <div class="carousel-mesh-gradient" style="width: 100%; aspect-ratio: 16/10; border-radius: 12px; position: relative; overflow: hidden;">
+                <div class="carousel-overlay">
+                  <span class="carousel-label">Legacy Scheduler 2</span>
+                  <button class="carousel-view-btn" data-index="1">View</button>
+                </div>
               </div>
             </div>
             <div class="carousel-slide" style="display: none; width: 100%; position: relative;">
-              <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/scheduler3_KZH-_QE7s.png" alt="Legacy Scheduler 3" style="width: 100%; height: auto; border-radius: 12px; filter: blur(8px);">
-              <div class="carousel-overlay">
-                <span class="carousel-label">Legacy Scheduler 3</span>
-                <button class="carousel-view-btn" data-index="2">View</button>
+              <div class="carousel-mesh-gradient" style="width: 100%; aspect-ratio: 16/10; border-radius: 12px; position: relative; overflow: hidden;">
+                <div class="carousel-overlay">
+                  <span class="carousel-label">Legacy Scheduler 3</span>
+                  <button class="carousel-view-btn" data-index="2">View</button>
+                </div>
               </div>
             </div>
           </div>
@@ -297,6 +300,16 @@
       background: rgba(255, 255, 255, 0.08);
     }
 
+    .carousel-mesh-gradient {
+      position: relative;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    .carousel-mesh-gradient.loaded {
+      opacity: 1;
+    }
+
     .carousel-overlay {
       position: absolute;
       top: 0;
@@ -309,15 +322,17 @@
       justify-content: center;
       gap: 1.5rem;
       border-radius: 12px;
-      background: rgba(0, 0, 0, 0.3);
+      background: transparent;
+      z-index: 2;
     }
 
     .carousel-label {
-      color: #FFF;
-      font-family: Inter;
-      font-size: 24px;
-      font-weight: 600;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      color: #FEDEC5;
+      font-family: 'KT Higer', sans-serif;
+      font-size: 32px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
 
     .carousel-view-btn {

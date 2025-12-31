@@ -10,15 +10,19 @@ const isMobileDevice = () => {
   return isTouchOnly || isSmallScreen || isMobileUA;
 };
 
-const initMeshGradients = () => {
+const initMeshGradients = (selector) => {
   if (isMobileDevice()) {
     console.log('Mobile device detected, skipping mesh gradients');
     return;
   }
 
-  const containers = document.querySelectorAll('.mesh-gradient-container, .mesh-gradient-icon');
+  const defaultSelector = '.mesh-gradient-container, .mesh-gradient-icon, .carousel-mesh-gradient';
+  const containers = document.querySelectorAll(selector || defaultSelector);
 
   containers.forEach((container, index) => {
+    if (container.dataset.meshInitialized) return;
+    container.dataset.meshInitialized = 'true';
+
     const parentId = container.closest('[id]')?.id || `gradient-${index}`;
     const containerRef = { current: container };
     const root = createRoot(container);
