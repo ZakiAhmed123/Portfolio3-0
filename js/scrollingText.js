@@ -52,10 +52,12 @@ function setupKaraokeSection(sectionId, containerId, itemClass) {
 
   updateItemStyles(0);
 
+  const scrollDistance = totalItems * 100;
+
   ScrollTrigger.create({
     trigger: section,
     start: 'center center',
-    end: '+=100%',
+    end: `+=${scrollDistance}%`,
     pin: true,
     pinSpacing: true,
     scrub: 0.5,
