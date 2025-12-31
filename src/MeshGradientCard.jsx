@@ -150,7 +150,7 @@ const MeshGradientCard = ({ cardId, containerRef }) => {
       {isVisible && isActive && (
         <>
           <PerformanceMonitor onPerformanceIssue={handlePerformanceIssue} />
-          <div ref={meshRef} style={{ width: '100%', height: '100%' }}>
+          <div ref={meshRef} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1 }}>
             <MeshGradient
               colors={BASE_COLORS}
               speed={speed}
