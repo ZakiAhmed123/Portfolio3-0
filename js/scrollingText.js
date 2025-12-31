@@ -39,11 +39,9 @@ function setupKaraokeSection(sectionId, containerId, itemClass) {
       });
     });
 
-    const parentHeight = window.innerHeight;
-    const centerOffset = parentHeight / 2;
-    const firstItemOffset = items[0].offsetHeight / 2;
+    const topPadding = 100;
     const scrollAmount = progress * (totalItems - 1) * (items[0].offsetHeight + itemSpacing);
-    const translateY = centerOffset - firstItemOffset - scrollAmount;
+    const translateY = topPadding - scrollAmount;
 
     gsap.set(container, {
       y: translateY
