@@ -9,7 +9,7 @@ const square3 = document.getElementById('square-3');
 const square4 = document.getElementById('square-4');
 
 gsap.to(square2, {
-  y: 50,
+  y: 100,
   ease: 'none',
   scrollTrigger: {
     trigger: square2,
@@ -20,7 +20,7 @@ gsap.to(square2, {
 });
 
 gsap.to(square3, {
-  y: 100,
+  y: 200,
   ease: 'none',
   scrollTrigger: {
     trigger: square3,
@@ -31,7 +31,7 @@ gsap.to(square3, {
 });
 
 gsap.to(square4, {
-  y: 150,
+  y: 300,
   ease: 'none',
   scrollTrigger: {
     trigger: square4,
