@@ -82,7 +82,7 @@ body {
 
 .splash-subtitle {
   color: #FFF;
-  font-family: Inter, sans-serif;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 52px;
   font-style: normal;
   font-weight: 600;
@@ -285,7 +285,7 @@ h3 {
 
 #headline-text {
   color: var(--Primary, #FEDEC5);
-  font-family: Inter, sans-serif;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -296,7 +296,7 @@ h3 {
 
 h4 {
     color: var(--Black, #050709);
-    font-family: "Inter", sans-serif;
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 40px;
     font-style: normal;
     font-weight: 500;
@@ -430,7 +430,7 @@ nav {
 }
 
 .nav-logo-text {
-  font-family: 'Inter', sans-serif;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 700;
   font-size: 32px;
   color: white;
@@ -598,7 +598,7 @@ body {
 
 .hero-subtitle {
   color: var(--Primary);
-  font-family: 'Inter', sans-serif;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 600;
   font-size: 40px;
   text-align: center;
