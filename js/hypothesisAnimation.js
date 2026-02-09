@@ -27,7 +27,23 @@ class HypothesisAnimation {
     // Clear existing content
     this.container.innerHTML = '';
 
-    // Item 1 - Placeholder (the 3 circles we just created)
+    // Make container relative for absolute positioning
+    this.container.style.position = 'relative';
+    this.container.style.display = 'flex';
+    this.container.style.flexDirection = 'column';
+
+    // Create permanent circles header
+    this.createCirclesHeader();
+
+    // Create content area for animations
+    this.contentArea = document.createElement('div');
+    this.contentArea.className = 'hypothesis-content-area';
+    this.contentArea.style.position = 'relative';
+    this.contentArea.style.flex = '1';
+    this.contentArea.style.width = '100%';
+    this.container.appendChild(this.contentArea);
+
+    // Item 1 - Placeholder
     const item1 = this.createItem1();
     this.items.push(item1);
 
@@ -39,7 +55,7 @@ class HypothesisAnimation {
     const item3 = this.createItem3();
     this.items.push(item3);
 
-    // Add all items to container
+    // Add all items to content area
     this.items.forEach((item, index) => {
       item.style.position = 'absolute';
       item.style.top = '0';
@@ -52,23 +68,20 @@ class HypothesisAnimation {
       item.style.opacity = index === 0 ? '1' : '0';
       item.style.transition = `opacity ${this.transitionDuration}ms ease-in-out`;
       item.style.pointerEvents = 'none';
-      this.container.appendChild(item);
+      this.contentArea.appendChild(item);
     });
-
-    // Make container relative for absolute positioning
-    this.container.style.position = 'relative';
   }
 
-  createItem1() {
-    // Placeholder - 3 numbered circles
-    const item = document.createElement('div');
-    item.className = 'hypothesis-item hypothesis-item-1';
-    item.style.paddingTop = '60px';
-    item.style.alignItems = 'flex-start';
+  createCirclesHeader() {
+    const header = document.createElement('div');
+    header.className = 'hypothesis-circles-header';
+    header.style.display = 'flex';
+    header.style.justifyContent = 'center';
+    header.style.gap = '24px';
+    header.style.paddingTop = '40px';
+    header.style.paddingBottom = '30px';
 
-    const circlesContainer = document.createElement('div');
-    circlesContainer.style.display = 'flex';
-    circlesContainer.style.gap = '24px';
+    this.circles = [];
 
     [1, 2, 3].forEach(num => {
       const circle = document.createElement('div');
@@ -83,11 +96,29 @@ class HypothesisAnimation {
       circle.style.fontFamily = 'Inter';
       circle.style.fontSize = '32px';
       circle.style.fontWeight = '600';
+      circle.style.transition = 'all 0.3s ease';
+      circle.style.opacity = num === 1 ? '1' : '0.3';
       circle.textContent = num;
-      circlesContainer.appendChild(circle);
+      this.circles.push(circle);
+      header.appendChild(circle);
     });
 
-    item.appendChild(circlesContainer);
+    this.container.appendChild(header);
+  }
+
+  createItem1() {
+    // Stage 1 content
+    const item = document.createElement('div');
+    item.className = 'hypothesis-item hypothesis-item-1';
+
+    const placeholder = document.createElement('div');
+    placeholder.style.color = '#333';
+    placeholder.style.fontFamily = 'Inter';
+    placeholder.style.fontSize = '24px';
+    placeholder.style.fontWeight = '500';
+    placeholder.textContent = 'Item 1 Placeholder';
+
+    item.appendChild(placeholder);
     return item;
   }
 
@@ -228,6 +259,11 @@ class HypothesisAnimation {
 
     // Fade out current item
     this.items[this.currentItem].style.opacity = '0';
+
+    // Update circle indicators
+    this.circles.forEach((circle, i) => {
+      circle.style.opacity = i === index ? '1' : '0.3';
+    });
 
     // Update current item
     this.currentItem = index;
