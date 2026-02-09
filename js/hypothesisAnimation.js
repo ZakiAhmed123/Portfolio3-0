@@ -96,7 +96,26 @@ class HypothesisAnimation {
     const item = document.createElement('div');
     item.className = 'hypothesis-item hypothesis-item-2';
     item.style.flexDirection = 'column';
-    item.style.gap = '16px';
+    item.style.gap = '24px';
+    item.style.alignItems = 'center';
+
+    // Add title
+    const title = document.createElement('div');
+    title.className = 'typo-title';
+    title.style.color = '#333333';
+    title.style.fontFamily = 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+    title.style.fontSize = '24px';
+    title.style.fontWeight = '600';
+    title.style.marginBottom = '8px';
+    title.textContent = 'Typographical Hierarchy';
+    item.appendChild(title);
+
+    // Typography samples container
+    const samplesContainer = document.createElement('div');
+    samplesContainer.style.display = 'flex';
+    samplesContainer.style.flexDirection = 'column';
+    samplesContainer.style.gap = '16px';
+    samplesContainer.style.alignItems = 'center';
 
     const sizes = [
       { label: 'H1', size: '64px', weight: '700' },
@@ -117,8 +136,10 @@ class HypothesisAnimation {
       line.style.transform = 'translateY(10px)';
       line.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
       line.textContent = 'Aa';
-      item.appendChild(line);
+      samplesContainer.appendChild(line);
     });
+
+    item.appendChild(samplesContainer);
 
     return item;
   }
