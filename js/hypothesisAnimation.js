@@ -117,7 +117,7 @@ class HypothesisAnimation {
     const title = document.createElement('div');
     title.style.color = '#333333';
     title.style.fontFamily = 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-    title.style.fontSize = '24px';
+    title.style.fontSize = '32px';
     title.style.fontWeight = '600';
     title.textContent = 'Design for speed';
     item.appendChild(title);
@@ -148,7 +148,7 @@ class HypothesisAnimation {
     title.className = 'typo-title';
     title.style.color = '#333333';
     title.style.fontFamily = 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-    title.style.fontSize = '24px';
+    title.style.fontSize = '32px';
     title.style.fontWeight = '600';
     title.style.marginBottom = '8px';
     title.textContent = 'Typographical Hierarchy';
@@ -196,7 +196,7 @@ class HypothesisAnimation {
     const placeholder = document.createElement('div');
     placeholder.style.color = '#333';
     placeholder.style.fontFamily = 'Inter';
-    placeholder.style.fontSize = '24px';
+    placeholder.style.fontSize = '32px';
     placeholder.style.fontWeight = '500';
     placeholder.textContent = 'Item 3 Placeholder';
 
