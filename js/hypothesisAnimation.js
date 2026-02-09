@@ -107,18 +107,20 @@ class HypothesisAnimation {
   }
 
   createItem1() {
-    // Stage 1 content
+    // Stage 1 content - Apple Cycle Animation
     const item = document.createElement('div');
     item.className = 'hypothesis-item hypothesis-item-1';
 
-    const placeholder = document.createElement('div');
-    placeholder.style.color = '#333';
-    placeholder.style.fontFamily = 'Inter';
-    placeholder.style.fontSize = '24px';
-    placeholder.style.fontWeight = '500';
-    placeholder.textContent = 'Item 1 Placeholder';
+    const lottiePlayer = document.createElement('dotlottie-player');
+    lottiePlayer.setAttribute('src', './assets/lottiefiles/apple_cycle_animation.json');
+    lottiePlayer.setAttribute('background', 'transparent');
+    lottiePlayer.setAttribute('speed', '1');
+    lottiePlayer.style.width = '400px';
+    lottiePlayer.style.height = '400px';
+    lottiePlayer.setAttribute('loop', '');
+    lottiePlayer.setAttribute('autoplay', '');
 
-    item.appendChild(placeholder);
+    item.appendChild(lottiePlayer);
     return item;
   }
 
