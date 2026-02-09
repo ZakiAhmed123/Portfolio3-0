@@ -112,7 +112,7 @@ class HypothesisAnimation {
     item.className = 'hypothesis-item hypothesis-item-1';
 
     const lottiePlayer = document.createElement('dotlottie-player');
-    lottiePlayer.setAttribute('src', './assets/lottiefiles/apple_cycle_animation.json');
+    lottiePlayer.setAttribute('src', './assets/lottiefiles/apple_cycling_animation.json');
     lottiePlayer.setAttribute('background', 'transparent');
     lottiePlayer.setAttribute('speed', '1');
     lottiePlayer.style.width = '400px';
