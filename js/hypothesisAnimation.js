@@ -110,6 +110,17 @@ class HypothesisAnimation {
     // Stage 1 content - Apple Cycle Animation
     const item = document.createElement('div');
     item.className = 'hypothesis-item hypothesis-item-1';
+    item.style.flexDirection = 'column';
+    item.style.gap = '24px';
+
+    // Add title
+    const title = document.createElement('div');
+    title.style.color = '#333333';
+    title.style.fontFamily = 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+    title.style.fontSize = '24px';
+    title.style.fontWeight = '600';
+    title.textContent = 'Design for speed';
+    item.appendChild(title);
 
     const lottiePlayer = document.createElement('dotlottie-player');
     lottiePlayer.setAttribute('src', './assets/lottiefiles/apple_cycling_animation.json');
