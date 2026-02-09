@@ -84,23 +84,23 @@ class HypothesisAnimation {
     this.circles = [];
 
     [1, 2, 3].forEach(num => {
-      const circle = document.createElement('div');
-      circle.style.width = '74px';
-      circle.style.height = '74px';
-      circle.style.borderRadius = '50%';
-      circle.style.background = '#333';
-      circle.style.display = 'flex';
-      circle.style.alignItems = 'center';
-      circle.style.justifyContent = 'center';
-      circle.style.color = 'white';
-      circle.style.fontFamily = 'Inter';
-      circle.style.fontSize = '32px';
-      circle.style.fontWeight = '600';
-      circle.style.transition = 'all 0.3s ease';
-      circle.style.opacity = num === 1 ? '1' : '0.3';
-      circle.textContent = num;
-      this.circles.push(circle);
-      header.appendChild(circle);
+      const octagon = document.createElement('div');
+      octagon.style.width = '74px';
+      octagon.style.aspectRatio = '1 / 1';
+      octagon.style.background = '#333';
+      octagon.style.clipPath = 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)';
+      octagon.style.display = 'flex';
+      octagon.style.alignItems = 'center';
+      octagon.style.justifyContent = 'center';
+      octagon.style.color = 'white';
+      octagon.style.fontFamily = 'Inter';
+      octagon.style.fontSize = '32px';
+      octagon.style.fontWeight = '600';
+      octagon.style.transition = 'all 0.3s ease';
+      octagon.style.opacity = num === 1 ? '1' : '0.3';
+      octagon.textContent = num;
+      this.circles.push(octagon);
+      header.appendChild(octagon);
     });
 
     this.container.appendChild(header);
