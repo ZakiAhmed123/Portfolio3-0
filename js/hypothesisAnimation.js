@@ -229,7 +229,7 @@ class HypothesisAnimation {
     title.style.fontFamily = 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
     title.style.fontSize = '32px';
     title.style.fontWeight = '600';
-    title.style.marginTop = '80px';
+    title.style.marginTop = '0px';
     title.textContent = 'Re-architect schedulers';
     item.appendChild(title);
 
