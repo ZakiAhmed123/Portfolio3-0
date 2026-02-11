@@ -206,7 +206,17 @@
   <div class="content" style="margin-top: 80px; margin-bottom: 80px; padding-top: 6rem; padding-bottom: 6rem; display: flex; justify-content: center; align-items: center;">
     <div style="display: flex; flex-direction: column; align-items: center; gap: 2rem;">
       <h2 style="color: #FEDEC5; font-family: 'KT Higer', sans-serif; font-size: 96px; font-weight: 600; margin: 0; text-transform: uppercase; letter-spacing: 2px;">Re-architecture approach</h2>
-      <div style="border-radius: 16px; border: 4px solid #EAAE94; background: #D4835F; width: 648px; height: 648px; box-shadow: 0 15px 60px -30px rgba(255, 255, 255, 0.15), 0 50px 100px -20px rgba(255, 255, 255, 0.15), 0 1px 1px 0 rgba(255, 255, 255, 0.10) inset; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-top: 80px;">
+      <div class="rearchitecture-square" style="border-radius: 16px; border: 4px solid #EAAE94; background: #D4835F; width: 648px; height: 648px; box-shadow: 0 15px 60px -30px rgba(255, 255, 255, 0.15), 0 50px 100px -20px rgba(255, 255, 255, 0.15), 0 1px 1px 0 rgba(255, 255, 255, 0.10) inset; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-top: 80px; position: relative;">
+        <div class="rolodex-fade-top"></div>
+        <div class="rolodex-fade-bottom"></div>
+        <div class="rolodex-container">
+          <div class="rolodex-track">
+            <div class="rolodex-item">Therapists first</div>
+            <div class="rolodex-item">Reduce and merge</div>
+            <div class="rolodex-item">Technical feasibility</div>
+            <div class="rolodex-item">Fixed bid budgeting</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -421,6 +431,76 @@
     .modal-nav-btn-dark:hover {
       background: #000;
     }
+
+    .rearchitecture-square {
+      position: relative;
+    }
+
+    .rolodex-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .rolodex-track {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .rolodex-item {
+      width: 520px;
+      height: 100px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFF;
+      font-family: Inter;
+      font-size: 28px;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0.4;
+      transform: scale(0.9);
+      flex-shrink: 0;
+    }
+
+    .rolodex-item.active {
+      background: rgba(255, 255, 255, 0.25);
+      opacity: 1;
+      transform: scale(1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    }
+
+    .rolodex-fade-top,
+    .rolodex-fade-bottom {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 150px;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .rolodex-fade-top {
+      top: 0;
+      background: linear-gradient(to bottom, #D4835F 0%, #D4835F 20%, transparent 100%);
+      border-radius: 16px 16px 0 0;
+    }
+
+    .rolodex-fade-bottom {
+      bottom: 0;
+      background: linear-gradient(to top, #D4835F 0%, #D4835F 20%, transparent 100%);
+      border-radius: 0 0 16px 16px;
+    }
   </style>
 
   <script type="module" src="./js/smoothScroll.js"></script>
@@ -632,5 +712,6 @@
     }
   </script>
   <script src="./js/hypothesisAnimation.js"></script>
+  <script src="./js/rolodexAnimation.js"></script>
 </body>
 </html>
