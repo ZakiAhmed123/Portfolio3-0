@@ -166,6 +166,19 @@ class HypothesisAnimation {
     title.textContent = 'Typographical Hierarchy';
     item.appendChild(title);
 
+    // Add description text
+    const description = document.createElement('div');
+    description.style.color = '#ffffff';
+    description.style.fontFamily = 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+    description.style.fontSize = '16px';
+    description.style.fontWeight = '400';
+    description.style.lineHeight = '1.5';
+    description.style.textAlign = 'center';
+    description.style.maxWidth = '500px';
+    description.style.marginBottom = '16px';
+    description.textContent = 'Larger fonts, clear hierarchy & color contrast to maximize readability, scan-ability and therapist availability.';
+    item.appendChild(description);
+
     // Typography samples container
     const samplesContainer = document.createElement('div');
     samplesContainer.style.display = 'flex';
