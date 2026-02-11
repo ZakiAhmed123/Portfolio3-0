@@ -119,6 +119,7 @@ class HypothesisAnimation {
     title.style.fontFamily = 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
     title.style.fontSize = '32px';
     title.style.fontWeight = '600';
+    title.style.marginTop = '24px';
     title.textContent = 'Design for speed';
     item.appendChild(title);
 
@@ -126,7 +127,7 @@ class HypothesisAnimation {
     const description = document.createElement('div');
     description.style.color = '#333';
     description.style.fontFamily = 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-    description.style.fontSize = '16px';
+    description.style.fontSize = '24px';
     description.style.fontWeight = '400';
     description.style.lineHeight = '1.5';
     description.style.textAlign = 'center';
@@ -162,6 +163,7 @@ class HypothesisAnimation {
     title.style.fontFamily = 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
     title.style.fontSize = '32px';
     title.style.fontWeight = '600';
+    title.style.marginTop = '24px';
     title.style.marginBottom = '8px';
     title.textContent = 'Typographical Hierarchy';
     item.appendChild(title);
@@ -170,7 +172,7 @@ class HypothesisAnimation {
     const description = document.createElement('div');
     description.style.color = '#333';
     description.style.fontFamily = 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-    description.style.fontSize = '16px';
+    description.style.fontSize = '24px';
     description.style.fontWeight = '400';
     description.style.lineHeight = '1.5';
     description.style.textAlign = 'center';
