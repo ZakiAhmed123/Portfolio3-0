@@ -122,6 +122,18 @@ class HypothesisAnimation {
     title.textContent = 'Design for speed';
     item.appendChild(title);
 
+    // Add description text
+    const description = document.createElement('div');
+    description.style.color = '#666666';
+    description.style.fontFamily = 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+    description.style.fontSize = '16px';
+    description.style.fontWeight = '400';
+    description.style.lineHeight = '1.5';
+    description.style.textAlign = 'center';
+    description.style.maxWidth = '500px';
+    description.textContent = 'Therapists are on the go and under pressure, so the design should focus on speed and reducing time to task.';
+    item.appendChild(description);
+
     const lottiePlayer = document.createElement('dotlottie-player');
     lottiePlayer.setAttribute('src', './assets/lottiefiles/apple_cycling_animation.json');
     lottiePlayer.setAttribute('background', 'transparent');
