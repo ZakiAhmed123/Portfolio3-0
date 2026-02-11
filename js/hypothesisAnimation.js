@@ -247,7 +247,7 @@ class HypothesisAnimation {
 
     // Workflow lottie animation
     const lottiePlayer = document.createElement('dotlottie-player');
-    lottiePlayer.setAttribute('src', './assets/lottiefiles/workflow.json');
+    lottiePlayer.setAttribute('src', './assets/lottiefiles/workflow-gray.json');
     lottiePlayer.setAttribute('background', 'transparent');
     lottiePlayer.setAttribute('speed', '1');
     lottiePlayer.style.width = '400px';
