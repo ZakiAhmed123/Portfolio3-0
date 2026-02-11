@@ -127,7 +127,12 @@
   <!-- RESEARCH FINDINGS SECTION -->
   <div style="margin-top: 80px; margin-bottom: 80px;">
     <div class="content">
-      <h2 style="color: #FFF; font-family: Inter; font-size: 48px; font-weight: 600; margin: 0 0 4rem 0; text-align: center;">Research findings</h2>
+      <div style="display: flex; justify-content: center; align-items: center; position: relative; margin: 0 0 4rem 0;">
+        <h2 style="color: #FFF; font-family: Inter; font-size: 48px; font-weight: 600; margin: 0; text-align: center;">Research findings</h2>
+        <button id="view-research-btn" style="position: absolute; right: 0; padding: 12px 32px; background: rgba(255, 255, 255, 0.95); border: none; border-radius: 12px; color: #000; font-family: Inter, sans-serif; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.2s ease;">
+          View research artifacts
+        </button>
+      </div>
     </div>
 
     <!-- SQUARES SECTION -->
@@ -219,6 +224,39 @@
             </svg>
           </button>
           <button id="modal-next" class="modal-nav-btn modal-nav-btn-dark">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESEARCH ARTIFACTS MODAL -->
+  <div id="research-modal" class="legacy-modal">
+    <button id="research-modal-close" class="modal-close-btn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <div class="legacy-modal-content">
+      <div class="modal-image-container">
+        <img id="research-modal-image" src="" alt="Research Artifact">
+      </div>
+      <div class="modal-info">
+        <div class="modal-text">
+          <h3 id="research-modal-title"></h3>
+          <p id="research-modal-description"></p>
+        </div>
+        <div class="modal-nav">
+          <button id="research-modal-prev" class="modal-nav-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button id="research-modal-next" class="modal-nav-btn modal-nav-btn-dark">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
@@ -471,6 +509,122 @@
       });
     })();
 
+  </script>
+  <script>
+    (function() {
+      const modal = document.getElementById('research-modal');
+      const modalImage = document.getElementById('research-modal-image');
+      const modalTitle = document.getElementById('research-modal-title');
+      const modalDescription = document.getElementById('research-modal-description');
+      const modalClose = document.getElementById('research-modal-close');
+      const modalPrev = document.getElementById('research-modal-prev');
+      const modalNext = document.getElementById('research-modal-next');
+      const viewBtn = document.getElementById('view-research-btn');
+
+      const researchData = [
+        {
+          image: 'https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/Discovery%20items/Creative%20Solutioning%20Workshop_nxkOBBs-lT.png',
+          title: 'Creative solutioning workshop',
+          description: ''
+        },
+        {
+          image: 'https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/Discovery%20items/People,%20Processes%20and%20Tools%20Workshop_y3rD-G-qO.png',
+          title: 'People, processes and tools workshop',
+          description: ''
+        },
+        {
+          image: 'https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/Discovery%20items/Faceboook%20Group%20user%20Feedback_Ahnvd8ara.png',
+          title: 'Facebook group feedback',
+          description: ''
+        },
+        {
+          image: 'https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/Discovery%20items/Competitive%20Analysis_gU7AB-o2G.png',
+          title: 'Competitive analysis',
+          description: ''
+        },
+        {
+          image: 'https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/Discovery%20items/User%20Journey_tVtO6MM7ff.png',
+          title: 'User journey',
+          description: ''
+        },
+        {
+          image: 'https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/Discovery%20items/Stakeholder%20mapping_CWMyoeXmH.png',
+          title: 'Stakeholder mapping',
+          description: ''
+        },
+        {
+          image: 'https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/Discovery%20items/Product%20Team%20Interviews_Zk7Jnoab4.png',
+          title: 'Product team interview questions',
+          description: ''
+        }
+      ];
+
+      let researchIndex = 0;
+
+      function updateResearchModal(index) {
+        researchIndex = index;
+        const data = researchData[index];
+        modalImage.src = data.image;
+        modalTitle.textContent = data.title;
+        modalDescription.textContent = data.description;
+      }
+
+      function openResearchModal(index) {
+        updateResearchModal(index);
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeResearchModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      viewBtn.addEventListener('click', () => {
+        openResearchModal(0);
+      });
+
+      viewBtn.addEventListener('mouseenter', () => {
+        viewBtn.style.background = '#FFF';
+        viewBtn.style.transform = 'scale(1.02)';
+      });
+
+      viewBtn.addEventListener('mouseleave', () => {
+        viewBtn.style.background = 'rgba(255, 255, 255, 0.95)';
+        viewBtn.style.transform = 'scale(1)';
+      });
+
+      modalClose.addEventListener('click', closeResearchModal);
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeResearchModal();
+        }
+      });
+
+      modalPrev.addEventListener('click', () => {
+        researchIndex = (researchIndex - 1 + researchData.length) % researchData.length;
+        updateResearchModal(researchIndex);
+      });
+
+      modalNext.addEventListener('click', () => {
+        researchIndex = (researchIndex + 1) % researchData.length;
+        updateResearchModal(researchIndex);
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('active')) return;
+        if (e.key === 'Escape') closeResearchModal();
+        if (e.key === 'ArrowLeft') {
+          researchIndex = (researchIndex - 1 + researchData.length) % researchData.length;
+          updateResearchModal(researchIndex);
+        }
+        if (e.key === 'ArrowRight') {
+          researchIndex = (researchIndex + 1) % researchData.length;
+          updateResearchModal(researchIndex);
+        }
+      });
+    })();
   </script>
   <script src="./js/components/mesh-gradient-cards.umd.js"></script>
   <script>
