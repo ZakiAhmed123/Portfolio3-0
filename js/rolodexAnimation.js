@@ -97,5 +97,5 @@
 
   render();
 
-  setInterval(animateToNext, 2000);
+  setInterval(animateToNext, 4000);
 })();
