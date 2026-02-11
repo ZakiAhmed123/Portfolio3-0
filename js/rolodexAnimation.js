@@ -6,19 +6,23 @@
   const itemData = [
     {
       title: 'Therapists first',
-      description: 'Prioritized therapist needs based on their user journey over admin-focused features.'
+      description: 'Prioritized therapist needs based on their user journey over admin-focused features.',
+      icon: 'assets/images/icons/therapist_first.png'
     },
     {
       title: 'Reduce and merge',
-      description: 'Merge redundant and similarly themed functionality.'
+      description: 'Merge redundant and similarly themed functionality.',
+      icon: 'assets/images/icons/Reduce_and_merge.png'
     },
     {
       title: 'Technical feasibility',
-      description: 'Assess legacy controls mappability to modern web controls within Kendo UI, Material Design and React.'
+      description: 'Assess legacy controls mappability to modern web controls within Kendo UI, Material Design and React.',
+      icon: 'assets/images/icons/technical_feasability.png'
     },
     {
       title: 'Fixed bid budgeting',
-      description: 'Focused on speed and execution to meet fixed-bid budget constraints.'
+      description: 'Focused on speed and execution to meet fixed-bid budget constraints.',
+      icon: 'assets/images/icons/fixed_bid_budgeting.png'
     }
   ];
 
@@ -34,6 +38,14 @@
     const item = document.createElement('div');
     item.className = 'rolodex-item';
 
+    const icon = document.createElement('img');
+    icon.className = 'rolodex-item-icon';
+    icon.src = data.icon;
+    icon.alt = '';
+
+    const textContainer = document.createElement('div');
+    textContainer.className = 'rolodex-item-text';
+
     const title = document.createElement('div');
     title.className = 'rolodex-item-title';
     title.textContent = data.title;
@@ -42,8 +54,11 @@
     desc.className = 'rolodex-item-desc';
     desc.textContent = data.description;
 
-    item.appendChild(title);
-    item.appendChild(desc);
+    textContainer.appendChild(title);
+    textContainer.appendChild(desc);
+
+    item.appendChild(icon);
+    item.appendChild(textContainer);
 
     return item;
   }
