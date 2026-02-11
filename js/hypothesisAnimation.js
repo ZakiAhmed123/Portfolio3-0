@@ -124,7 +124,7 @@ class HypothesisAnimation {
 
     // Add description text
     const description = document.createElement('div');
-    description.style.color = '#ffffff';
+    description.style.color = '#333';
     description.style.fontFamily = 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
     description.style.fontSize = '16px';
     description.style.fontWeight = '400';
@@ -168,7 +168,7 @@ class HypothesisAnimation {
 
     // Add description text
     const description = document.createElement('div');
-    description.style.color = '#ffffff';
+    description.style.color = '#333';
     description.style.fontFamily = 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
     description.style.fontSize = '16px';
     description.style.fontWeight = '400';
