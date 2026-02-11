@@ -111,8 +111,8 @@
         <div style="width: 100%; border-radius: 12px; overflow: hidden; background: #000;">
           <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/ScreenRecording2026-01-21at5.51.52PM-ezgif.com-video-to-gif-converter_5ivT_8cFW.gif?updatedAt=1769125641329" alt="Legacy scheduler workflow demonstration showing multiple scheduling interfaces" style="width: 100%; height: auto; display: block;">
         </div>
-        <button id="view-legacy-btn" style="padding: 12px 32px; background: rgba(255, 255, 255, 0.95); border: none; border-radius: 12px; color: #000; font-family: Inter, sans-serif; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.2s ease;">
-          View Legacy Schedulers
+        <button id="view-legacy-btn" class="button2" style="border: none; white-space: nowrap;">
+          <span>View Legacy Schedulers</span>
         </button>
       </div>
     </div>
@@ -468,16 +468,6 @@
 
       viewLegacyBtn.addEventListener('click', () => {
         openModal(0);
-      });
-
-      viewLegacyBtn.addEventListener('mouseenter', () => {
-        viewLegacyBtn.style.background = '#FFF';
-        viewLegacyBtn.style.transform = 'scale(1.02)';
-      });
-
-      viewLegacyBtn.addEventListener('mouseleave', () => {
-        viewLegacyBtn.style.background = 'rgba(255, 255, 255, 0.95)';
-        viewLegacyBtn.style.transform = 'scale(1)';
       });
 
       modalClose.addEventListener('click', closeModal);
