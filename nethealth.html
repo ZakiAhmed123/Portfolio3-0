@@ -455,21 +455,36 @@
 
     .rolodex-item {
       width: 520px;
-      height: 100px;
+      height: 140px;
       background: rgba(255, 255, 255, 0.15);
       border-radius: 16px;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: #FFF;
-      font-family: Inter;
-      font-size: 28px;
-      font-weight: 600;
+      padding: 20px 24px;
+      box-sizing: border-box;
       text-align: center;
       transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
       opacity: 0.4;
       transform: scale(0.9);
       flex-shrink: 0;
+      gap: 8px;
+    }
+
+    .rolodex-item-title {
+      color: #FFF;
+      font-family: Inter;
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    .rolodex-item-desc {
+      color: rgba(255, 255, 255, 0.85);
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.4;
     }
 
     .rolodex-item.active {
