@@ -250,8 +250,8 @@ class HypothesisAnimation {
     lottiePlayer.setAttribute('src', './assets/lottiefiles/workflow-gray.json');
     lottiePlayer.setAttribute('background', 'transparent');
     lottiePlayer.setAttribute('speed', '1');
-    lottiePlayer.style.width = '400px';
-    lottiePlayer.style.height = '400px';
+    lottiePlayer.style.width = '280px';
+    lottiePlayer.style.height = '280px';
     lottiePlayer.style.marginTop = '-24px';
     lottiePlayer.setAttribute('loop', '');
     lottiePlayer.setAttribute('autoplay', '');
