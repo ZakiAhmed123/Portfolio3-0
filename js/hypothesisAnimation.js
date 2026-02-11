@@ -217,18 +217,51 @@ class HypothesisAnimation {
   }
 
   createItem3() {
-    // Placeholder for future animation
+    // Re-architect schedulers content
     const item = document.createElement('div');
     item.className = 'hypothesis-item hypothesis-item-3';
+    item.style.flexDirection = 'column';
+    item.style.gap = '24px';
 
-    const placeholder = document.createElement('div');
-    placeholder.style.color = '#333';
-    placeholder.style.fontFamily = 'Inter';
-    placeholder.style.fontSize = '32px';
-    placeholder.style.fontWeight = '500';
-    placeholder.textContent = 'Item 3 Placeholder';
+    // Add title
+    const title = document.createElement('div');
+    title.style.color = '#333333';
+    title.style.fontFamily = 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+    title.style.fontSize = '32px';
+    title.style.fontWeight = '600';
+    title.style.marginTop = '80px';
+    title.textContent = 'Re-architect schedulers';
+    item.appendChild(title);
 
-    item.appendChild(placeholder);
+    // Add description text
+    const description = document.createElement('div');
+    description.style.color = '#333';
+    description.style.fontFamily = 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+    description.style.fontSize = '20px';
+    description.style.fontWeight = '400';
+    description.style.lineHeight = '1.5';
+    description.style.textAlign = 'center';
+    description.style.maxWidth = '500px';
+    description.textContent = 'Simplify the schedulers by merging overlapping features, removing outdated controls, and reducing redundancy to ease onboarding and lower maintenance for developers.';
+    item.appendChild(description);
+
+    // Placeholder for future lottie animation
+    const placeholderBox = document.createElement('div');
+    placeholderBox.style.width = '400px';
+    placeholderBox.style.height = '400px';
+    placeholderBox.style.marginTop = '-24px';
+    placeholderBox.style.display = 'flex';
+    placeholderBox.style.alignItems = 'center';
+    placeholderBox.style.justifyContent = 'center';
+    placeholderBox.style.border = '2px dashed #ccc';
+    placeholderBox.style.borderRadius = '8px';
+    placeholderBox.style.color = '#999';
+    placeholderBox.style.fontFamily = 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+    placeholderBox.style.fontSize = '18px';
+    placeholderBox.style.fontWeight = '500';
+    placeholderBox.textContent = 'Lottie Animation Placeholder';
+    item.appendChild(placeholderBox);
+
     return item;
   }
 
