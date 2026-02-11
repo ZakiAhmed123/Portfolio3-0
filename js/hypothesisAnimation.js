@@ -245,22 +245,17 @@ class HypothesisAnimation {
     description.textContent = 'Simplify the schedulers by merging overlapping features, removing outdated controls, and reducing redundancy to ease onboarding and lower maintenance for developers.';
     item.appendChild(description);
 
-    // Placeholder for future lottie animation
-    const placeholderBox = document.createElement('div');
-    placeholderBox.style.width = '400px';
-    placeholderBox.style.height = '400px';
-    placeholderBox.style.marginTop = '-24px';
-    placeholderBox.style.display = 'flex';
-    placeholderBox.style.alignItems = 'center';
-    placeholderBox.style.justifyContent = 'center';
-    placeholderBox.style.border = '2px dashed #ccc';
-    placeholderBox.style.borderRadius = '8px';
-    placeholderBox.style.color = '#999';
-    placeholderBox.style.fontFamily = 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-    placeholderBox.style.fontSize = '18px';
-    placeholderBox.style.fontWeight = '500';
-    placeholderBox.textContent = 'Lottie Animation Placeholder';
-    item.appendChild(placeholderBox);
+    // Workflow lottie animation
+    const lottiePlayer = document.createElement('dotlottie-player');
+    lottiePlayer.setAttribute('src', './assets/lottiefiles/workflow.json');
+    lottiePlayer.setAttribute('background', 'transparent');
+    lottiePlayer.setAttribute('speed', '1');
+    lottiePlayer.style.width = '400px';
+    lottiePlayer.style.height = '400px';
+    lottiePlayer.style.marginTop = '-24px';
+    lottiePlayer.setAttribute('loop', '');
+    lottiePlayer.setAttribute('autoplay', '');
+    item.appendChild(lottiePlayer);
 
     return item;
   }
