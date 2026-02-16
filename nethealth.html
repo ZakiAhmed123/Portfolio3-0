@@ -77,6 +77,75 @@
   <!-- FULL WIDTH MESH GRADIENT -->
   <div style="width: 100%; max-width: 1440px; height: 600px; overflow: hidden; position: relative; margin: 80px auto 0 auto;">
     <div class="mesh-gradient-container" style="width: 100%; height: 100%;"></div>
+
+    <!-- CAROUSEL ON TOP OF MESH GRADIENT -->
+    <div class="gradient-carousel-container">
+      <div class="gradient-carousel-wrapper">
+        <div class="gradient-carousel-track">
+          <div class="gradient-carousel-slide active">
+            <div class="gradient-carousel-content">
+              <h3 class="gradient-carousel-title">Compare therapists schedules</h3>
+              <div class="gradient-carousel-image-container">
+                <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/Dev%20ready%20images/Schedule%20comparison_CAK-lZKTq.png" alt="Compare therapists schedules">
+              </div>
+            </div>
+          </div>
+          <div class="gradient-carousel-slide">
+            <div class="gradient-carousel-content">
+              <h3 class="gradient-carousel-title">Schedule a therapist</h3>
+              <div class="gradient-carousel-image-container">
+                <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/Dev%20ready%20images/Schedule%20a%20patient%20-%20month%20view_nbC9DeT23.png" alt="Schedule a therapist">
+              </div>
+            </div>
+          </div>
+          <div class="gradient-carousel-slide">
+            <div class="gradient-carousel-content">
+              <h3 class="gradient-carousel-title">Check in a patient</h3>
+              <div class="gradient-carousel-image-container">
+                <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/Dev%20ready%20images/Check%20in%20patient_zK0nXZ83p.png" alt="Check in a patient">
+              </div>
+            </div>
+          </div>
+          <div class="gradient-carousel-slide">
+            <div class="gradient-carousel-content">
+              <h3 class="gradient-carousel-title">Help schedulers find therapist availability</h3>
+              <div class="gradient-carousel-image-container">
+                <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/Dev%20ready%20images/Month%20view%20-%20scheduling%20availability%20helper_cXaHh7xky.png" alt="Help schedulers find therapist availability">
+              </div>
+            </div>
+          </div>
+          <div class="gradient-carousel-slide">
+            <div class="gradient-carousel-content">
+              <h3 class="gradient-carousel-title">Project therapists monthly hours</h3>
+              <div class="gradient-carousel-image-container">
+                <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/Dev%20ready%20images/Projections_w6gl_6FZB.png" alt="Project therapists monthly hours">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Navigation -->
+      <button class="gradient-carousel-nav gradient-carousel-prev">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <button class="gradient-carousel-nav gradient-carousel-next">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+
+      <!-- Carousel Indicators -->
+      <div class="gradient-carousel-indicators">
+        <span class="gradient-carousel-indicator active" data-slide="0"></span>
+        <span class="gradient-carousel-indicator" data-slide="1"></span>
+        <span class="gradient-carousel-indicator" data-slide="2"></span>
+        <span class="gradient-carousel-indicator" data-slide="3"></span>
+        <span class="gradient-carousel-indicator" data-slide="4"></span>
+      </div>
+    </div>
   </div>
 
   <div class="content">
@@ -297,6 +366,144 @@
   </div>
 
   <style>
+    .gradient-carousel-container {
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .gradient-carousel-wrapper {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gradient-carousel-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .gradient-carousel-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .gradient-carousel-slide.active {
+      opacity: 1;
+    }
+
+    .gradient-carousel-content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .gradient-carousel-title {
+      color: #FEDEC5;
+      font-family: 'Inter', sans-serif;
+      font-size: 32px;
+      font-weight: 600;
+      text-align: center;
+      margin: 0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .gradient-carousel-image-container {
+      max-width: 90%;
+      max-height: 70%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .gradient-carousel-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .gradient-carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 56px;
+      height: 56px;
+      border: none;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 20;
+    }
+
+    .gradient-carousel-nav:hover {
+      background: rgba(0, 0, 0, 0.7);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .gradient-carousel-prev {
+      left: 2rem;
+    }
+
+    .gradient-carousel-next {
+      right: 2rem;
+    }
+
+    .gradient-carousel-indicators {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.75rem;
+      z-index: 20;
+    }
+
+    .gradient-carousel-indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .gradient-carousel-indicator:hover {
+      background: rgba(255, 255, 255, 0.7);
+      transform: scale(1.2);
+    }
+
+    .gradient-carousel-indicator.active {
+      background: #FEDEC5;
+      width: 32px;
+      border-radius: 5px;
+    }
+
     .research-item:hover {
       background: rgba(255, 255, 255, 0.08);
     }
@@ -734,6 +941,84 @@
           updateResearchModal(researchIndex);
         }
       });
+    })();
+  </script>
+  <script>
+    (function() {
+      const slides = document.querySelectorAll('.gradient-carousel-slide');
+      const indicators = document.querySelectorAll('.gradient-carousel-indicator');
+      const prevBtn = document.querySelector('.gradient-carousel-prev');
+      const nextBtn = document.querySelector('.gradient-carousel-next');
+      const track = document.querySelector('.gradient-carousel-track');
+
+      let currentSlide = 0;
+      const totalSlides = slides.length;
+      let autoplayInterval;
+
+      function updateCarousel(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+
+        indicators.forEach((indicator, i) => {
+          indicator.classList.toggle('active', i === index);
+        });
+
+        track.style.transform = `translateX(-${index * 100}%)`;
+        currentSlide = index;
+      }
+
+      function nextSlide() {
+        const next = (currentSlide + 1) % totalSlides;
+        updateCarousel(next);
+      }
+
+      function prevSlide() {
+        const prev = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel(prev);
+      }
+
+      function startAutoplay() {
+        autoplayInterval = setInterval(nextSlide, 5000);
+      }
+
+      function stopAutoplay() {
+        clearInterval(autoplayInterval);
+      }
+
+      prevBtn.addEventListener('click', () => {
+        stopAutoplay();
+        prevSlide();
+        startAutoplay();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        stopAutoplay();
+        nextSlide();
+        startAutoplay();
+      });
+
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+          stopAutoplay();
+          updateCarousel(index);
+          startAutoplay();
+        });
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          stopAutoplay();
+          prevSlide();
+          startAutoplay();
+        } else if (e.key === 'ArrowRight') {
+          stopAutoplay();
+          nextSlide();
+          startAutoplay();
+        }
+      });
+
+      startAutoplay();
     })();
   </script>
   <script src="./js/components/mesh-gradient-cards.umd.js"></script>
