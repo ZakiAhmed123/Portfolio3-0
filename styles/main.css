@@ -570,7 +570,7 @@ body {
 /*  background: url("../assets/images/geo-terrain.svg");
   background-position: center;
   background-size: auto auto;*/
-  background: var(--black);
+  background: transparent;
 }
 
 .mainBanner {
