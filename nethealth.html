@@ -178,6 +178,16 @@
         </svg>
       </button>
 
+      <!-- Expand Button (mobile only) -->
+      <button class="carousel-expand-btn" aria-label="Expand carousel" id="carousel-expand-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <polyline points="9 21 3 21 3 15"></polyline>
+          <line x1="21" y1="3" x2="14" y2="10"></line>
+          <line x1="3" y1="21" x2="10" y2="14"></line>
+        </svg>
+      </button>
+
       <!-- Carousel Indicators -->
       <div class="gradient-carousel-indicators">
         <span class="gradient-carousel-indicator active" data-slide="0"></span>
@@ -1387,6 +1397,10 @@
         }
       });
 
+      window._carouselStopAutoplay = stopAutoplay;
+      window._carouselStartAutoplay = startAutoplay;
+      window._carouselUpdateSlide = updateCarousel;
+
       startAutoplay();
     })();
   </script>
@@ -1426,6 +1440,26 @@
       });
     })();
   </script>
+
+  <!-- CAROUSEL FULLSCREEN OVERLAY (mobile) -->
+  <div id="carousel-fullscreen" role="dialog" aria-modal="true" aria-label="Expanded carousel viewer">
+    <button id="carousel-fs-close" aria-label="Close expanded view">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div id="carousel-fs-viewport">
+      <div id="carousel-fs-track"></div>
+    </div>
+    <div id="carousel-fs-indicators"></div>
+    <div id="carousel-fs-nav">
+      <button id="carousel-fs-prev" aria-label="Previous slide">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <span id="carousel-fs-counter">1 / 5</span>
+      <button id="carousel-fs-next" aria-label="Next slide">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </div>
+  </div>
 
   <!-- IMAGE LIGHTBOX OVERLAY (mobile) -->
   <div id="nh-lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
@@ -1637,5 +1671,6 @@
       }, { passive: false });
     })();
   </script>
+  <script src="./js/carouselFullscreen.js"></script>
 </body>
 </html>
