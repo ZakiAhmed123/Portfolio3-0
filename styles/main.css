@@ -109,6 +109,20 @@ body {
     font-size: 28px;
     letter-spacing: -1.4px;
   }
+
+  .splash-mesh-background {
+    background-image: url('https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/NetHealth_sEIapC7kj.png?updatedAt=1752356060844');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .splash-mesh-background::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 20, 0.72);
+  }
 }
 
 @media (max-width: 480px) {
