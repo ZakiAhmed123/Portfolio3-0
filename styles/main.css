@@ -809,6 +809,10 @@ body {
   display: none;
 }
 
+.item-title-desktop {
+  display: block;
+}
+
 .item {
   display: flex;
   position: absolute;
