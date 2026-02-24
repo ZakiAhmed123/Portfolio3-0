@@ -600,8 +600,8 @@ body {
   .title-line {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    font-size: clamp(72px, 22vw, 180px);
+    align-items: center;
+    font-size: clamp(60px, 44vw, 180px);
     line-height: 0.92;
   }
 
@@ -998,8 +998,25 @@ body {
   }
 
   .mainBanner {
-    height:auto;
-    padding: 2rem 0 0 0;
+    height: auto;
+    padding: 2rem 1rem 0 1rem;
+    white-space: normal;
+    align-items: center;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(16px, 4.5vw, 32px);
+    letter-spacing: -0.5px;
+    white-space: normal;
+    word-wrap: break-word;
+    padding: 0 1rem;
+  }
+
+  #headline-text {
+    font-size: clamp(14px, 4vw, 22px);
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
   }
 
   /* Responsive mobile styles for title lines */
