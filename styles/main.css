@@ -993,6 +993,10 @@ body {
 }
 
 @media (max-width: 768px) {
+  body {
+    padding-top: 0;
+  }
+
   h2 {
     margin-top: 3rem;
     margin-bottom: 2rem;
