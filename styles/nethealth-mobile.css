@@ -158,11 +158,19 @@
     background-image: url('/assets/images/Grainy Gradient Background 6.jpg');
     background-size: cover;
     background-position: center;
+    padding: 1rem;
   }
 
   .gradient-carousel-nav {
     width: 40px;
     height: 40px;
+    top: auto;
+    bottom: 3.5rem;
+    transform: none;
+  }
+
+  .gradient-carousel-nav:hover {
+    transform: scale(1.1);
   }
 
   .gradient-carousel-prev {
