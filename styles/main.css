@@ -1066,7 +1066,7 @@ body {
     display: flex;
     flex-direction: column;
     height: auto;
-    padding: 1rem;
+    padding: 0;
   }
 
   .item {
