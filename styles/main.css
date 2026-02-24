@@ -1692,17 +1692,20 @@ body {
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   #smooth-wrapper {
     position: static !important;
     overflow: visible !important;
     height: auto !important;
+    z-index: auto !important;
   }
 
   #smooth-content {
     transform: none !important;
   }
+}
 
+@media (max-width: 768px) {
   body::after {
     display: none;
   }
