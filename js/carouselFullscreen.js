@@ -145,9 +145,9 @@
     currentIndex = getCarouselCurrentIndex();
     goToSlide(currentIndex, false);
     overlay.classList.add('active');
-    updateOrientation();
     document.body.style.overflow = 'hidden';
     isOpen = true;
+    updateOrientation();
 
     if (window._carouselStopAutoplay) {
       window._carouselStopAutoplay();
