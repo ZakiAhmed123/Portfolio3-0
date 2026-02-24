@@ -281,8 +281,8 @@
 
   .nh-square img,
   .nh-square svg {
-    width: 52px !important;
-    height: 52px !important;
+    width: 55% !important;
+    height: 55% !important;
   }
 
   .nh-square dotlottie-player {
