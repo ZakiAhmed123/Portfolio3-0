@@ -1481,28 +1481,10 @@ body {
   font-weight: 400;
   margin: 0;
   line-height: 1.5;
-  max-width: 280px;
-}
-
-.footer-center {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.footer-cta {
-  color: var(--peach);
-  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  margin: 0;
-  text-align: center;
-  line-height: 1.5;
+  max-width: 350px;
 }
 
 .footer-right {
-  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -1576,17 +1558,8 @@ body {
   }
 
   .footer-left,
-  .footer-center,
   .footer-right {
     width: 100%;
-  }
-
-  .footer-center {
-    justify-content: flex-start;
-  }
-
-  .footer-cta {
-    text-align: left;
   }
 
   .footer-right {
@@ -1604,10 +1577,6 @@ body {
   .footer-role {
     font-size: 14px;
     max-width: 100%;
-  }
-
-  .footer-cta {
-    font-size: 15px;
   }
 
   .footer-link {
