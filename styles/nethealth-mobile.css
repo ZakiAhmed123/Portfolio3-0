@@ -68,7 +68,9 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 64px 0 16px 0;
+  padding: 64px 0 100px 0;
+  cursor: default;
+  touch-action: none;
 }
 
 #nh-lightbox-img {
@@ -79,6 +81,8 @@
   transition: transform 0.2s ease;
   user-select: none;
   -webkit-user-drag: none;
+  pointer-events: none;
+  will-change: transform;
 }
 
 #nh-lightbox-zoom-controls {
