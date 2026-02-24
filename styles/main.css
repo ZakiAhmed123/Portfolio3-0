@@ -1339,16 +1339,17 @@ body {
 
 .logo-grid {
   display: grid;
-  grid-template-columns: repeat(4, 203px);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   align-items: center;
   justify-items: center;
+  width: 100%;
 }
 
 .logo-wrapper {
-  width: 203px;
-  height: 100px;
-  padding: 16px;
+  width: 100%;
+  height: 80px;
+  padding: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1373,8 +1374,8 @@ body {
   }
 
   .logo-grid {
-    grid-template-columns: repeat(4, 203px);
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
   }
 
   /* Tablet styles for title lines */
@@ -1403,7 +1404,7 @@ body {
 
 @media (max-width: 768px) {
   .logo-grid-container {
-    padding: 0 2rem 3rem 2rem;
+    padding: 0 1.5rem 3rem 1.5rem;
   }
 
   .logo-grid-subtitle {
@@ -1412,14 +1413,19 @@ body {
   }
 
   .logo-grid {
-    grid-template-columns: repeat(3, 203px);
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .logo-wrapper {
+    height: 70px;
+    padding: 10px;
   }
 }
 
 @media (max-width: 480px) {
   .logo-grid-container {
-    padding: 0 1rem 3rem 1rem;
+    padding: 0 1.25rem 3rem 1.25rem;
   }
 
   .logo-grid-subtitle {
@@ -1428,8 +1434,13 @@ body {
   }
 
   .logo-grid {
-    grid-template-columns: repeat(2, 203px);
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .logo-wrapper {
+    height: 64px;
+    padding: 8px;
   }
 
   /* Extra small mobile styles for title lines */
