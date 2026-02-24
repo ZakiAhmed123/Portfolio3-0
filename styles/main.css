@@ -596,6 +596,20 @@ body {
   line-height: 1;
 }
 
+@media (max-width: 991px) {
+  .title-line {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: clamp(72px, 22vw, 180px);
+    line-height: 0.92;
+  }
+
+  .title-word {
+    display: block;
+  }
+}
+
 .hero-subtitle {
   color: var(--Primary);
   font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
