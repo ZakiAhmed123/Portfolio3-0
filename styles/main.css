@@ -1076,7 +1076,7 @@ body {
   }
 
   .item {
-    position: static;
+    position: relative;
     height: auto;
     width: 100%;
     flex-direction: column;
@@ -1157,6 +1157,12 @@ body {
     width: auto;
     justify-content: flex-start;
     letter-spacing: 0;
+  }
+
+  .item a.button2::after {
+    content: '';
+    position: absolute;
+    inset: 0;
   }
 
   .item .button2::before {
