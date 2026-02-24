@@ -146,8 +146,18 @@
 
 @media (max-width: 768px) {
   .nh-hero-carousel {
-    height: 350px !important;
+    height: 420px !important;
     margin: 40px 0 0 0 !important;
+  }
+
+  .mesh-gradient-container {
+    display: none !important;
+  }
+
+  .gradient-carousel-container {
+    background-image: url('/assets/images/Grainy Gradient Background 5.jpg');
+    background-size: cover;
+    background-position: center;
   }
 
   .gradient-carousel-nav {
@@ -165,6 +175,7 @@
 
   .gradient-carousel-title {
     font-size: 18px;
+    margin-bottom: 2.5rem;
   }
 
   .gradient-carousel-image-container {
