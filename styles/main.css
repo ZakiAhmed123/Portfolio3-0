@@ -1017,6 +1017,15 @@ body {
     text-align: center;
     white-space: normal;
     word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  #headline-text .headline-underline {
+    display: block;
+    margin-right: 0;
   }
 
   /* Responsive mobile styles for title lines */
