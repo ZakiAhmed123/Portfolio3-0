@@ -3,10 +3,11 @@
   var closeBtn = document.getElementById('carousel-fs-close');
   var viewport = document.getElementById('carousel-fs-viewport');
   var track = document.getElementById('carousel-fs-track');
-  var indicators = document.getElementById('carousel-fs-indicators');
   var prevBtn = document.getElementById('carousel-fs-prev');
   var nextBtn = document.getElementById('carousel-fs-next');
   var counter = document.getElementById('carousel-fs-counter');
+  var zoomInBtn = document.getElementById('carousel-fs-zoom-in');
+  var zoomOutBtn = document.getElementById('carousel-fs-zoom-out');
   var expandBtn = document.getElementById('carousel-expand-btn');
 
   if (!overlay || !expandBtn) return;
@@ -21,6 +22,7 @@
   var panY = 0;
   var MIN_SCALE = 1;
   var MAX_SCALE = 5;
+  var ZOOM_STEP = 0.5;
 
   var pinchStartDist = 0;
   var pinchStartScale = 1;
@@ -43,7 +45,6 @@
   function mapTouch(touch) {
     if (!isRotated()) return { x: touch.clientX, y: touch.clientY };
     var vw = window.innerWidth;
-    var vh = window.innerHeight;
     return {
       x: touch.clientY,
       y: vw - touch.clientX
@@ -73,7 +74,6 @@
   function buildSlides() {
     var imgs = document.querySelectorAll('.gradient-carousel-image-container img');
     track.innerHTML = '';
-    indicators.innerHTML = '';
     slides = [];
     totalSlides = imgs.length;
 
@@ -89,11 +89,6 @@
       wrapper.appendChild(imgEl);
       track.appendChild(wrapper);
       slides.push({ wrapper: wrapper, img: imgEl });
-
-      var dot = document.createElement('span');
-      dot.className = 'carousel-fs-dot';
-      dot.setAttribute('data-index', i);
-      indicators.appendChild(dot);
     }
   }
 
@@ -134,10 +129,13 @@
     track.style.transition = animated !== false ? 'transform 0.35s cubic-bezier(0.4,0,0.2,1)' : 'none';
     track.style.transform = 'translateX(' + offset + '%)';
     counter.textContent = (index + 1) + ' / ' + totalSlides;
-    var dots = indicators.querySelectorAll('.carousel-fs-dot');
-    for (var i = 0; i < dots.length; i++) {
-      dots[i].classList.toggle('active', i === index);
-    }
+  }
+
+  function zoomTo(newScale) {
+    scale = Math.min(Math.max(newScale, MIN_SCALE), MAX_SCALE);
+    if (scale <= 1) { panX = 0; panY = 0; }
+    clampPan();
+    applyZoom(true);
   }
 
   function openFullscreen() {
@@ -190,6 +188,14 @@
   nextBtn.addEventListener('click', function () {
     if (scale > 1) return;
     goToSlide((currentIndex + 1) % totalSlides);
+  });
+
+  zoomInBtn.addEventListener('click', function () {
+    zoomTo(scale + ZOOM_STEP);
+  });
+
+  zoomOutBtn.addEventListener('click', function () {
+    zoomTo(scale - ZOOM_STEP);
   });
 
   overlay.addEventListener('click', function (e) {

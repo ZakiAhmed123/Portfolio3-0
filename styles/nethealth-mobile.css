@@ -55,13 +55,13 @@
 
 #carousel-fs-close {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 48px;
-  height: 48px;
+  top: 12px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: none;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   color: #fff;
@@ -74,7 +74,7 @@
 }
 
 #carousel-fs-close:active {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.7);
 }
 
 #carousel-fs-viewport {
@@ -101,7 +101,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 16px;
+  padding: 8px;
 }
 
 .carousel-fs-slide img {
@@ -113,62 +113,93 @@
   -webkit-user-drag: none;
   pointer-events: none;
   will-change: transform;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
-#carousel-fs-indicators {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px 0 4px 0;
-}
-
-.carousel-fs-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  transition: background 0.2s ease;
-}
-
-.carousel-fs-dot.active {
-  background: #fff;
-}
-
-#carousel-fs-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  padding: 8px 0 max(20px, env(safe-area-inset-bottom));
-}
-
-#carousel-fs-nav button {
-  width: 48px;
-  height: 48px;
+#carousel-fs-prev,
+#carousel-fs-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: none;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   color: #fff;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 100001;
   transition: background 0.15s ease;
 }
 
-#carousel-fs-nav button:active {
-  background: rgba(255, 255, 255, 0.25);
+#carousel-fs-prev {
+  left: 8px;
+}
+
+#carousel-fs-next {
+  right: 8px;
+}
+
+#carousel-fs-prev:active,
+#carousel-fs-next:active {
+  background: rgba(0, 0, 0, 0.7);
 }
 
 #carousel-fs-counter {
-  color: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 4px;
+  padding: 4px 10px;
+  color: rgba(255, 255, 255, 0.85);
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
-  min-width: 40px;
-  text-align: center;
+  z-index: 100001;
   user-select: none;
+  pointer-events: none;
+}
+
+#carousel-fs-zoom {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 28px;
+  padding: 3px;
+  z-index: 100001;
+}
+
+#carousel-fs-zoom button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.15s ease;
+}
+
+#carousel-fs-zoom button:active {
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .nh-expand-btn:active {
@@ -319,10 +350,6 @@
   .carousel-expand-btn:active {
     transform: scale(0.92);
     background: rgba(0, 0, 0, 0.75);
-  }
-
-  #carousel-fullscreen.active {
-    display: flex;
   }
 }
 
