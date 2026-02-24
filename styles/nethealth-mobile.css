@@ -81,6 +81,59 @@
   -webkit-user-drag: none;
 }
 
+#nh-lightbox-zoom-controls {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 4px;
+  z-index: 100001;
+}
+
+#nh-lightbox-zoom-controls button {
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 36px;
+  transition: background 0.15s ease, opacity 0.15s ease;
+  flex-shrink: 0;
+}
+
+#nh-lightbox-zoom-controls button:active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#nh-lightbox-zoom-controls button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+#nh-zoom-label {
+  color: #fff;
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  min-width: 44px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+  user-select: none;
+}
+
 @media (max-width: 768px) {
   .nh-expand-btn {
     display: flex;
