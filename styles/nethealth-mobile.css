@@ -162,23 +162,23 @@
   }
 
   .gradient-carousel-nav {
-    width: 40px;
-    height: 40px;
-    top: auto;
-    bottom: 3.5rem;
-    transform: none;
+    width: 40px !important;
+    height: 40px !important;
+    top: auto !important;
+    bottom: 3.5rem !important;
+    transform: none !important;
   }
 
   .gradient-carousel-nav:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) !important;
   }
 
   .gradient-carousel-prev {
-    left: 0.75rem;
+    left: 0.75rem !important;
   }
 
   .gradient-carousel-next {
-    right: 0.75rem;
+    right: 0.75rem !important;
   }
 
   .gradient-carousel-title {
