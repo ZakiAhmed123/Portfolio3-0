@@ -28,15 +28,33 @@
   inset: 0;
   z-index: 99999;
   background: rgba(0, 0, 0, 0.96);
-  flex-direction: column;
 }
 
 #carousel-fullscreen.active {
+  display: block;
+}
+
+#carousel-fs-inner {
+  position: absolute;
+  inset: 0;
   display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+#carousel-fullscreen.rotated #carousel-fs-inner {
+  transform: rotate(90deg);
+  transform-origin: center center;
+  width: 100vh;
+  height: 100vw;
+  top: 50%;
+  left: 50%;
+  margin-top: calc(-50vw);
+  margin-left: calc(-50vh);
 }
 
 #carousel-fs-close {
-  position: fixed;
+  position: absolute;
   top: 16px;
   right: 16px;
   width: 48px;
