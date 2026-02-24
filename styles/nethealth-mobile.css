@@ -1,0 +1,400 @@
+@media (max-width: 768px) {
+  .nh-hero-carousel {
+    height: 350px !important;
+    margin: 40px 0 0 0 !important;
+  }
+
+  .gradient-carousel-nav {
+    width: 40px;
+    height: 40px;
+  }
+
+  .gradient-carousel-prev {
+    left: 0.75rem;
+  }
+
+  .gradient-carousel-next {
+    right: 0.75rem;
+  }
+
+  .gradient-carousel-title {
+    font-size: 18px;
+  }
+
+  .gradient-carousel-image-container {
+    max-width: 90%;
+    max-height: 75%;
+  }
+
+  .gradient-carousel-indicators {
+    bottom: 1rem;
+  }
+
+  .nh-section-heading {
+    font-size: 48px !important;
+    margin: 40px auto 2rem auto !important;
+    padding: 0 1rem !important;
+  }
+
+  .nh-overview-text-lg {
+    font-size: 28px !important;
+  }
+
+  .nh-overview-text {
+    font-size: 22px !important;
+  }
+
+  #scrolling-section {
+    min-height: auto !important;
+    padding: 4rem 0 !important;
+  }
+
+  .nh-scroll-inner {
+    flex-direction: column !important;
+    padding: 0 1rem !important;
+  }
+
+  .nh-left-col {
+    width: 100% !important;
+    padding-right: 0 !important;
+  }
+
+  #text-container {
+    gap: 3rem !important;
+    padding-top: 0 !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .scroll-text-item {
+    opacity: 1 !important;
+    filter: none !important;
+  }
+
+  .nh-scroll-text {
+    font-size: 24px !important;
+  }
+
+  #fixed-card {
+    position: relative !important;
+    right: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .nh-summary-section {
+    margin-top: 48px !important;
+    padding: 2rem 1rem 4rem 1rem !important;
+  }
+
+  .nh-summary-section .nh-section-heading {
+    font-size: 48px !important;
+  }
+
+  .nh-summary-section .nh-problem-text {
+    font-size: 24px !important;
+  }
+
+  .nh-card-row {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: 1rem !important;
+    padding-bottom: 1rem;
+    margin: 0 -1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .nh-card {
+    flex: 0 0 260px !important;
+    scroll-snap-align: start;
+  }
+
+  .nh-square {
+    width: 260px !important;
+    height: 260px !important;
+  }
+
+  .nh-square img,
+  .nh-square svg {
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  .nh-square dotlottie-player {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  .nh-card-title {
+    font-size: 20px !important;
+  }
+
+  .nh-card-desc {
+    font-size: 14px !important;
+  }
+
+  .nh-card-text {
+    max-width: 260px !important;
+  }
+
+  .nh-divider {
+    margin: 40px auto !important;
+  }
+
+  .nh-full-width-section {
+    padding: 0 1rem !important;
+    margin-top: 40px !important;
+  }
+
+  .nh-subsection-heading {
+    font-size: 24px !important;
+  }
+
+  .nh-body-text {
+    font-size: 16px !important;
+  }
+
+  .hypothesis-square {
+    width: 100% !important;
+    max-width: 360px !important;
+    height: 480px !important;
+    margin-top: 40px !important;
+  }
+
+  .hypothesis-circles-header {
+    gap: 16px !important;
+    padding-top: 24px !important;
+    padding-bottom: 20px !important;
+  }
+
+  .hypothesis-circles-header div {
+    width: 52px !important;
+    font-size: 24px !important;
+  }
+
+  .hypothesis-item .typo-title,
+  .hypothesis-item > div:first-child {
+    font-size: 22px !important;
+    margin-top: 40px !important;
+  }
+
+  .hypothesis-item > div:nth-child(2) {
+    font-size: 16px !important;
+    max-width: 300px !important;
+  }
+
+  .hypothesis-item dotlottie-player {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  .typo-h1 { font-size: 40px !important; }
+  .typo-h2 { font-size: 32px !important; }
+  .typo-h3 { font-size: 26px !important; }
+  .typo-h4 { font-size: 22px !important; }
+  .typo-body { font-size: 16px !important; }
+
+  .rolodex-container {
+    height: 100% !important;
+  }
+
+  .rolodex-item {
+    width: 280px !important;
+    height: 110px !important;
+    padding: 12px 16px !important;
+    gap: 16px !important;
+  }
+
+  .rolodex-item-icon {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  .rolodex-item-title {
+    font-size: 18px !important;
+  }
+
+  .rolodex-item-desc {
+    font-size: 13px !important;
+  }
+
+  .nh-design-ideologies-title {
+    font-size: 28px !important;
+  }
+
+  .nh-design-ideologies-desc {
+    font-size: 16px !important;
+  }
+
+  .nh-design-evolution {
+    padding: 0 1rem !important;
+    margin-bottom: 40px !important;
+  }
+
+  .nh-design-evolution .nh-section-heading {
+    font-size: 48px !important;
+    margin-bottom: 30px !important;
+  }
+
+  .nh-design-sub-section {
+    margin-bottom: 40px !important;
+  }
+
+  .nh-design-sub-section h3 {
+    font-size: 24px !important;
+  }
+
+  .nh-design-sub-section p {
+    font-size: 16px !important;
+  }
+
+  .nh-personal-anecdote {
+    padding-top: 0 !important;
+    margin-bottom: 60px !important;
+  }
+
+  .nh-personal-anecdote .nh-section-heading {
+    font-size: 48px !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .nh-blockquote {
+    padding: 1.5rem !important;
+    max-width: 100% !important;
+  }
+
+  .nh-blockquote p {
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+  }
+
+  .nh-impact-section,
+  .nh-lessons-section,
+  .nh-opportunities-section {
+    padding-top: 0 !important;
+    margin-bottom: 40px !important;
+  }
+
+  .nh-impact-section h3,
+  .nh-lessons-section h3,
+  .nh-opportunities-section h3 {
+    font-size: 24px !important;
+  }
+
+  .nh-impact-section p,
+  .nh-lessons-section p,
+  .nh-opportunities-section p {
+    font-size: 16px !important;
+  }
+
+  .scroll-to-top-btn {
+    bottom: 1rem;
+    right: 1rem;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+  }
+
+  .scroll-to-top-text {
+    display: none;
+  }
+
+  .legacy-modal {
+    top: 0;
+    height: 100%;
+  }
+
+  .legacy-modal-content {
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+
+  .modal-image-container {
+    height: 40vh;
+  }
+
+  .modal-info {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .modal-text h3 {
+    font-size: 22px;
+  }
+
+  .modal-text p {
+    font-size: 14px;
+  }
+
+  .modal-close-btn {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+
+  h1 {
+    font-size: 28px !important;
+    margin-top: 24px !important;
+  }
+
+  .nh-chips-row {
+    margin-top: -1rem !important;
+  }
+
+  .chip {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nh-section-heading {
+    font-size: 36px !important;
+  }
+
+  .nh-overview-text-lg {
+    font-size: 22px !important;
+  }
+
+  .nh-overview-text {
+    font-size: 18px !important;
+  }
+
+  .nh-scroll-text {
+    font-size: 20px !important;
+  }
+
+  .nh-card {
+    flex: 0 0 220px !important;
+  }
+
+  .nh-square {
+    width: 220px !important;
+    height: 220px !important;
+  }
+
+  .hypothesis-square {
+    max-width: 300px !important;
+    height: 420px !important;
+  }
+
+  .nh-summary-section .nh-problem-text {
+    font-size: 20px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-text-item,
+  .fade-in-text,
+  .gradient-carousel-track,
+  .gradient-carousel-slide,
+  .rolodex-track,
+  .rolodex-item,
+  .hypothesis-item {
+    transition: none !important;
+    animation: none !important;
+  }
+}

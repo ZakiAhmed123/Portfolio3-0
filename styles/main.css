@@ -1692,3 +1692,23 @@ body {
 
 }
 
+@media (max-width: 768px) {
+  #smooth-wrapper {
+    position: static !important;
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  #smooth-content {
+    transform: none !important;
+  }
+
+  body::after {
+    display: none;
+  }
+
+  #follower {
+    display: none;
+  }
+}
+
