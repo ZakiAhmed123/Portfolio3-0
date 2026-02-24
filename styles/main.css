@@ -1740,6 +1740,10 @@ nav.mobile-bottom-nav {
   align-items: stretch !important;
   justify-content: space-around !important;
   gap: 0 !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  clip-path: none !important;
 }
 
 .mobile-bottom-nav__item {
