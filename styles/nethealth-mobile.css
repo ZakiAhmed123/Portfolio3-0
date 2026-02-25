@@ -325,6 +325,7 @@
 @media (max-width: 768px) {
   .nh-section-heading {
     font-family: 'Archivo Black', sans-serif !important;
+    font-size: 40px !important;
   }
 
   .nh-expand-btn {
@@ -746,7 +747,7 @@
 
 @media (max-width: 480px) {
   .nh-section-heading {
-    font-size: 36px !important;
+    font-size: 40px !important;
   }
 
   .nh-overview-text-lg {
