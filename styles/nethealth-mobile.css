@@ -323,6 +323,10 @@
 }
 
 @media (max-width: 768px) {
+  .nh-section-heading {
+    font-family: 'Archivo Black', sans-serif !important;
+  }
+
   .nh-expand-btn {
     display: flex;
   }
