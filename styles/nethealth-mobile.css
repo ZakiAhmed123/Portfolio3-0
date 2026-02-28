@@ -574,37 +574,55 @@
   }
 
   .hypothesis-circles-header {
-    gap: 16px !important;
-    padding-top: 24px !important;
+    gap: 20px !important;
+    padding-top: 28px !important;
     padding-bottom: 20px !important;
   }
 
   .hypothesis-circles-header div {
-    width: 52px !important;
-    font-size: 24px !important;
+    width: 64px !important;
+    font-size: 28px !important;
   }
 
-  .hypothesis-item .typo-title,
+  .hypothesis-content-area {
+    overflow: hidden !important;
+  }
+
+  .hypothesis-item {
+    padding: 0 20px !important;
+    gap: 14px !important;
+    box-sizing: border-box !important;
+  }
+
   .hypothesis-item > div:first-child {
-    font-size: 22px !important;
-    margin-top: 40px !important;
+    font-size: 26px !important;
+    margin-top: 24px !important;
+    text-align: center !important;
+  }
+
+  .hypothesis-item .typo-title {
+    font-size: 26px !important;
+    margin-top: 24px !important;
+    text-align: center !important;
   }
 
   .hypothesis-item > div:nth-child(2) {
-    font-size: 16px !important;
-    max-width: 300px !important;
+    font-size: 17px !important;
+    max-width: 100% !important;
+    line-height: 1.55 !important;
   }
 
   .hypothesis-item dotlottie-player {
-    width: 200px !important;
-    height: 200px !important;
+    width: 220px !important;
+    height: 220px !important;
+    margin-top: 0 !important;
   }
 
-  .typo-h1 { font-size: 40px !important; }
-  .typo-h2 { font-size: 32px !important; }
-  .typo-h3 { font-size: 26px !important; }
+  .typo-h1 { font-size: 44px !important; }
+  .typo-h2 { font-size: 34px !important; }
+  .typo-h3 { font-size: 28px !important; }
   .typo-h4 { font-size: 22px !important; }
-  .typo-body { font-size: 16px !important; }
+  .typo-body { font-size: 17px !important; }
 
   .rolodex-container {
     height: 100% !important;
