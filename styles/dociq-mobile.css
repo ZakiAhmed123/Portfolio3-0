@@ -1,0 +1,207 @@
+@media (max-width: 768px) {
+  .dq-section-heading {
+    font-family: 'Archivo Black', sans-serif !important;
+    font-size: 40px !important;
+    margin: 40px auto 2rem auto !important;
+    padding: 0 1rem !important;
+  }
+
+  .dq-expand-btn {
+    display: flex;
+  }
+
+  .dq-hero {
+    margin: 40px auto 0 auto !important;
+    padding: 0 1rem !important;
+  }
+
+  .dq-hero .mesh-gradient-container {
+    height: 300px !important;
+  }
+
+  .dq-hero > div:last-child {
+    padding: 1rem !important;
+  }
+
+  .dq-overview-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    padding: 0 1rem !important;
+  }
+
+  .dq-chips-row {
+    margin-top: -1rem !important;
+  }
+
+  .chip {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 28px !important;
+    margin-top: 24px !important;
+  }
+
+  .dq-problem-cards {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dq-problem-statement {
+    margin-top: 48px !important;
+    padding: 2rem 1rem 4rem 1rem !important;
+    gap: 1rem !important;
+  }
+
+  .dq-problem-statement .dq-section-heading {
+    font-size: 40px !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .dq-problem-statement .fade-in-text:nth-child(2) {
+    font-size: 24px !important;
+  }
+
+  .dq-problem-statement .fade-in-text:nth-child(3) {
+    font-size: 16px !important;
+  }
+
+  .dq-full-width-section {
+    padding: 0 1rem !important;
+    margin-top: 40px !important;
+  }
+
+  .dq-feature-title {
+    font-size: 24px !important;
+  }
+
+  .dq-divider {
+    margin: 40px auto !important;
+  }
+
+  .dq-trust-section {
+    padding: 2rem 1rem 4rem 1rem !important;
+  }
+
+  .dq-trust-section > .fade-in-text:nth-child(2) {
+    font-size: 24px !important;
+  }
+
+  .dq-card-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    flex-wrap: unset !important;
+    overflow-x: unset !important;
+    gap: 0.75rem !important;
+    padding-bottom: 0;
+    margin: 0 !important;
+    justify-items: center;
+    width: 100% !important;
+  }
+
+  .dq-card {
+    flex: unset !important;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem !important;
+  }
+
+  .dq-square {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1;
+    box-sizing: border-box;
+  }
+
+  .dq-square svg {
+    width: 55% !important;
+    height: 55% !important;
+  }
+
+  .dq-card-title {
+    font-size: 13px !important;
+  }
+
+  .dq-card-desc {
+    display: none !important;
+  }
+
+  .dq-card-text {
+    max-width: 100% !important;
+    width: 100%;
+  }
+
+  .dq-lessons-section,
+  .dq-impact-section {
+    padding-top: 0 !important;
+    margin-bottom: 40px !important;
+  }
+
+  .dq-lessons-section h3,
+  .dq-impact-section h3 {
+    font-size: 24px !important;
+  }
+
+  .dq-lessons-section p,
+  .dq-impact-section p {
+    font-size: 16px !important;
+  }
+
+  .dq-personal-reflection {
+    padding-top: 0 !important;
+    margin-bottom: 60px !important;
+  }
+
+  .dq-personal-reflection .dq-section-heading {
+    font-size: 48px !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .dq-blockquote {
+    padding: 1.5rem !important;
+    max-width: 100% !important;
+  }
+
+  .dq-blockquote p {
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+  }
+
+  .scroll-to-top-btn {
+    bottom: 6rem !important;
+    right: 1rem !important;
+    min-width: 48px !important;
+    height: 48px !important;
+    padding: 0 16px !important;
+  }
+
+  .scroll-to-top-text {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .dq-section-heading {
+    font-size: 40px !important;
+  }
+
+  .dq-card {
+    flex: unset !important;
+    width: 100%;
+  }
+
+  .dq-square {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-text {
+    transition: none !important;
+    animation: none !important;
+  }
+}

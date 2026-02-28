@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <!-- JQUERY -->
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+  <!-- STYLE SHEET -->
+  <link rel="stylesheet" href="./styles/main.css?v=2">
+  <link rel="stylesheet" href="./styles/dociq-mobile.css">
+  <!-- JS -->
+  <script src="./js/follower.js"></script>
+  <!-- FAVICONS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Spline+Sans:wght@300..700&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+
+  <title>GenAI Document Intelligence - Zaki Ahmed</title>
+</head>
+<body>
+
+  <!-- FOLLOWER -->
+  <div id="follower"></div>
+
+<!-- NAV -->
+  <nav class="navbar navbar-expand-lg ">
+  <a class="navbar-brand" href="index.html" id="logo-scroll-top">
+    <span class="nav-logo-text">Zaki</span>
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html"> <img src="./assets/images/icons/heart.png"> Work</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html"> <img src="./assets/images/icons/brain.png"> Philosophies </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html"> <img src="./assets/images/icons/shapes.png"> Design Ops</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html#experience"> <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/resumeIcon_Y4Bvt_nED.png?updatedAt=1757959688570"> Experience</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- MOBILE BOTTOM NAV -->
+<nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+  <a class="mobile-bottom-nav__item" href="index.html">
+    <svg class="mobile-bottom-nav__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/>
+      <path d="M9 21V12h6v9"/>
+    </svg>
+    <span class="mobile-bottom-nav__label">Home</span>
+  </a>
+  <a class="mobile-bottom-nav__item" href="nethealth.html">
+    <svg class="mobile-bottom-nav__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+    </svg>
+    <span class="mobile-bottom-nav__label">Healthcare</span>
+  </a>
+  <a class="mobile-bottom-nav__item" href="#">
+    <svg class="mobile-bottom-nav__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="1" y="3" width="15" height="13" rx="2"/>
+      <path d="M16 8h4l3 5v3h-7V8z"/>
+      <circle cx="5.5" cy="18.5" r="2.5"/>
+      <circle cx="18.5" cy="18.5" r="2.5"/>
+    </svg>
+    <span class="mobile-bottom-nav__label">Logistics</span>
+  </a>
+  <a class="mobile-bottom-nav__item mobile-bottom-nav__item--active" href="dociq.html">
+    <svg class="mobile-bottom-nav__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+    </svg>
+    <span class="mobile-bottom-nav__label">AI tool</span>
+  </a>
+  <a class="mobile-bottom-nav__item" href="#">
+    <svg class="mobile-bottom-nav__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+      <circle cx="12" cy="7" r="4"/>
+    </svg>
+    <span class="mobile-bottom-nav__label">About me</span>
+  </a>
+</nav>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+
+<!-- CONTENT -->
+  <div class="content" style="gap: 1rem;">
+    <h1 style="text-align: left; width: 100%;">GenAI Document Intelligence Platform</h1>
+
+    <div class="dq-chips-row" style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-start; width: 100%; margin-top: 0;">
+      <div class="chip">Enterprise UX</div>
+      <div class="chip">Gen AI Product Design</div>
+      <div class="chip">Chat RAG</div>
+      <div class="chip">AI Trust & Transparency</div>
+      <div class="chip">Internal Tools</div>
+      <div class="chip">0 &rarr; 1 Product</div>
+    </div>
+  </div>
+
+  <!-- HERO IMAGE -->
+  <div class="dq-hero" style="width: 100%; max-width: 1512px; margin: 80px auto 0 auto; padding: 0 2rem; position: relative;">
+    <div class="mesh-gradient-container" style="width: 100%; height: 500px; border-radius: 16px; overflow: hidden;"></div>
+    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+      <div style="max-width: 85%; max-height: 85%; border-radius: 12px; overflow: hidden;">
+        <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/DocIQ/Main%20Chat_p2tNIf1xB.png" alt="GenAI Document Intelligence Platform main interface" style="width: 100%; height: auto; display: block;">
+      </div>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="content" id="overview-section">
+    <h2 class="dq-section-heading" style="color: #FEDEC5; font-family: 'KT Higer', sans-serif; font-size: 96px; font-weight: 600; margin: 80px auto 4rem auto; text-align: center; max-width: 1512px; padding: 0 2rem; text-transform: uppercase; letter-spacing: 2px;">Overview</h2>
+
+    <div class="dq-overview-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+      <div class="fade-in-text" style="opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease;">
+        <p style="color: rgba(255, 255, 255, 0.5); font-family: Inter; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 0.5rem 0;">Role</p>
+        <p style="color: #FFF; font-family: Inter; font-size: 20px; font-weight: 500; line-height: 1.5; margin: 0;">Lead Product Designer & Acting Product Manager</p>
+      </div>
+      <div class="fade-in-text" style="opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease 0.1s, transform 0.8s ease 0.1s;">
+        <p style="color: rgba(255, 255, 255, 0.5); font-family: Inter; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 0.5rem 0;">Platform</p>
+        <p style="color: #FFF; font-family: Inter; font-size: 20px; font-weight: 500; line-height: 1.5; margin: 0;">Power Apps Canvas, Azure OpenAI, Chat RAG Architecture</p>
+      </div>
+      <div class="fade-in-text" style="opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;">
+        <p style="color: rgba(255, 255, 255, 0.5); font-family: Inter; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 0.5rem 0;">Mission</p>
+        <p style="color: #FFF; font-family: Inter; font-size: 20px; font-weight: 500; line-height: 1.5; margin: 0;">Design and launch an internal GenAI chat RAG platform that allows professionals to analyze complex financial and legal documents instantly while maintaining trust, traceability, and accuracy.</p>
+      </div>
+      <div class="fade-in-text" style="opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s;">
+        <p style="color: rgba(255, 255, 255, 0.5); font-family: Inter; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 0.5rem 0;">Outcome</p>
+        <p style="color: #FFF; font-family: Inter; font-size: 20px; font-weight: 500; line-height: 1.5; margin: 0;">Reduced manual document review time by hundreds of hours and enabled faster, more confident decision-making through transparent AI-powered document analysis.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="dq-divider" style="width: 100%; max-width: 1440px; margin: 80px auto; padding: 0 2rem;">
+    <div style="width: 100%; height: 1px; background: rgba(255, 255, 255, 0.2);"></div>
+  </div>
+
+  <!-- THE PROBLEM -->
+  <div class="content" style="padding-top: 0;">
+    <h2 class="dq-section-heading" style="color: #FEDEC5; font-family: 'KT Higer', sans-serif; font-size: 96px; font-weight: 600; margin: 0 auto 4rem auto; text-align: center; max-width: 1512px; padding: 0 2rem; text-transform: uppercase; letter-spacing: 2px;">The Problem</h2>
+
+    <div style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem;">
+      <p class="fade-in-text" style="color: #FFF; text-align: center; font-family: Inter; font-size: 36px; font-weight: 600; line-height: 1.4; letter-spacing: -1px; margin: 0; opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease;">Investment professionals needed to extract critical information from documents hundreds of pages long.</p>
+
+      <div class="dq-problem-cards" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem;">
+        <div class="fade-in-text dq-pain-card" style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 1.5rem; opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease 0.1s, transform 0.8s ease 0.1s;">
+          <p style="color: #FFF; font-family: Inter; font-size: 18px; font-weight: 500; margin: 0; line-height: 1.5;">Manual searching through investment agreements and prospectuses took hours</p>
+        </div>
+        <div class="fade-in-text dq-pain-card" style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 1.5rem; opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;">
+          <p style="color: #FFF; font-family: Inter; font-size: 18px; font-weight: 500; margin: 0; line-height: 1.5;">Critical insights buried in dense legal and financial language</p>
+        </div>
+        <div class="fade-in-text dq-pain-card" style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 1.5rem; opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s;">
+          <p style="color: #FFF; font-family: Inter; font-size: 18px; font-weight: 500; margin: 0; line-height: 1.5;">Existing AI tools not trusted due to hallucinations and lack of citations</p>
+        </div>
+        <div class="fade-in-text dq-pain-card" style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 1.5rem; opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;">
+          <p style="color: #FFF; font-family: Inter; font-size: 18px; font-weight: 500; margin: 0; line-height: 1.5;">Zero tolerance for incorrect information in regulated financial environments</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROBLEM STATEMENT -->
+  <div class="content dq-problem-statement" style="margin-top: 96px; padding-top: 4rem; padding-bottom: 8rem; background-color: #2D6A4F;">
+    <h2 class="fade-in-text dq-section-heading" style="margin: 0; font-size: 96px; font-family: 'KT Higer', sans-serif; text-transform: uppercase; letter-spacing: 2px; color: #FEDEC5;">Design Challenge</h2>
+    <p class="fade-in-text" style="color: #FFF; text-align: center; font-family: Inter; font-size: 48px; font-weight: 600; line-height: normal; letter-spacing: -1px; margin: 0; opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;">Design a GenAI system that delivers speed without sacrificing trust, traceability, or accuracy.</p>
+    <p class="fade-in-text" style="color: rgba(255, 255, 255, 0.85); text-align: center; font-family: Inter; font-size: 24px; font-weight: 400; line-height: 1.6; letter-spacing: -0.5px; margin: 2rem 0 0 0; max-width: 800px; opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;">This became a trust and explainability design problem, not just an AI interface. Designing for regulated environments required balancing speed, transparency, accuracy, and usability in every interaction.</p>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="dq-divider" style="width: 100%; max-width: 1440px; margin: 80px auto; padding: 0 2rem;">
+    <div style="width: 100%; height: 1px; background: rgba(255, 255, 255, 0.2);"></div>
+  </div>
+
+  <!-- KEY FEATURES -->
+  <div class="content" style="padding-top: 0;">
+    <h2 class="dq-section-heading" style="color: #FEDEC5; font-family: 'KT Higer', sans-serif; font-size: 96px; font-weight: 600; margin: 0 auto 4rem auto; text-align: center; max-width: 1512px; padding: 0 2rem; text-transform: uppercase; letter-spacing: 2px;">Key Features</h2>
+  </div>
+
+  <!-- FEATURE 1 -->
+  <div class="dq-full-width-section" style="width: 100%; max-width: 1440px; margin: 0 auto; padding: 0 2rem;">
+    <div class="fade-in-text" style="opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease;">
+      <h3 class="dq-feature-title" style="color: #FFF; font-family: Inter; font-size: 36px; font-weight: 600; margin: 0 0 1rem 0; text-align: left;">Chat-Based Document Intelligence</h3>
+      <p style="color: rgba(255, 255, 255, 0.8); font-family: Inter; font-size: 18px; font-weight: 400; margin: 0 0 0.75rem 0; text-align: left; line-height: 1.5;">Users ask natural language questions across one or multiple documents and receive grounded answers with references. Transforms document review from manual searching to conversational analysis.</p>
+      <p style="color: #FEDEC5; font-family: Inter; font-size: 16px; font-weight: 500; margin: 0 0 2rem 0; text-align: left;">Eliminated hours of manual document searching per review cycle.</p>
+    </div>
+    <div class="dq-expandable-img-wrap" style="width: 100%; border-radius: 16px; overflow: hidden; position: relative;">
+      <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/DocIQ/Main%20Chat_p2tNIf1xB.png" alt="Chat-based document intelligence interface" style="width: 100%; height: auto; display: block;">
+      <button class="dq-expand-btn" aria-label="Expand image" onclick="openDqLightbox(this)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="dq-divider" style="width: 100%; max-width: 1440px; margin: 80px auto; padding: 0 2rem;">
+    <div style="width: 100%; height: 1px; background: rgba(255, 255, 255, 0.2);"></div>
+  </div>
+
+  <!-- FEATURE 2 -->
+  <div class="dq-full-width-section" style="width: 100%; max-width: 1440px; margin: 0 auto; padding: 0 2rem;">
+    <div class="fade-in-text" style="opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease;">
+      <h3 class="dq-feature-title" style="color: #FFF; font-family: Inter; font-size: 36px; font-weight: 600; margin: 0 0 1rem 0; text-align: left;">Traceable AI Responses & PDF Source Linking</h3>
+      <p style="color: rgba(255, 255, 255, 0.8); font-family: Inter; font-size: 18px; font-weight: 400; margin: 0 0 0.75rem 0; text-align: left; line-height: 1.5;">Every AI response includes reference chunks and links directly to the source document. Users can jump from an answer to highlighted text inside the original PDF.</p>
+      <p style="color: #FEDEC5; font-family: Inter; font-size: 16px; font-weight: 500; margin: 0 0 2rem 0; text-align: left;">Builds trust and reduces hallucination risk through verifiable citations.</p>
+    </div>
+    <div class="dq-expandable-img-wrap" style="width: 100%; border-radius: 16px; overflow: hidden; position: relative;">
+      <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/DocIQ/PDF%20Viewer_nj-d36apD.png" alt="PDF source linking with highlighted references" style="width: 100%; height: auto; display: block;">
+      <button class="dq-expand-btn" aria-label="Expand image" onclick="openDqLightbox(this)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="dq-divider" style="width: 100%; max-width: 1440px; margin: 80px auto; padding: 0 2rem;">
+    <div style="width: 100%; height: 1px; background: rgba(255, 255, 255, 0.2);"></div>
+  </div>
+
+  <!-- FEATURE 3 -->
+  <div class="dq-full-width-section" style="width: 100%; max-width: 1440px; margin: 0 auto; padding: 0 2rem;">
+    <div class="fade-in-text" style="opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease;">
+      <h3 class="dq-feature-title" style="color: #FFF; font-family: Inter; font-size: 36px; font-weight: 600; margin: 0 0 1rem 0; text-align: left;">Guided Prompting with Standard & Favorite Questions</h3>
+      <p style="color: rgba(255, 255, 255, 0.8); font-family: Inter; font-size: 18px; font-weight: 400; margin: 0 0 0.75rem 0; text-align: left; line-height: 1.5;">Users can select recommended questions or save frequently used prompts to speed up workflows. Reduces prompt friction and helps users get value immediately.</p>
+      <p style="color: #FEDEC5; font-family: Inter; font-size: 16px; font-weight: 500; margin: 0 0 2rem 0; text-align: left;">Lowered the barrier to entry for users unfamiliar with AI prompting.</p>
+    </div>
+    <div class="dq-expandable-img-wrap" style="width: 100%; border-radius: 16px; overflow: hidden; position: relative;">
+      <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/DocIQ/Standard%20and%20Favorite%20questions_GN963Sye7.png" alt="Standard and favorite questions interface" style="width: 100%; height: auto; display: block;">
+      <button class="dq-expand-btn" aria-label="Expand image" onclick="openDqLightbox(this)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="dq-divider" style="width: 100%; max-width: 1440px; margin: 80px auto; padding: 0 2rem;">
+    <div style="width: 100%; height: 1px; background: rgba(255, 255, 255, 0.2);"></div>
+  </div>
+
+  <!-- FEATURE 4 -->
+  <div class="dq-full-width-section" style="width: 100%; max-width: 1440px; margin: 0 auto; padding: 0 2rem;">
+    <div class="fade-in-text" style="opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease;">
+      <h3 class="dq-feature-title" style="color: #FFF; font-family: Inter; font-size: 36px; font-weight: 600; margin: 0 0 1rem 0; text-align: left;">Multi-Source Document Ingestion</h3>
+      <p style="color: rgba(255, 255, 255, 0.8); font-family: Inter; font-size: 18px; font-weight: 400; margin: 0 0 0.75rem 0; text-align: left; line-height: 1.5;">Admins can ingest documents from enterprise sources into the AI knowledge base. Supports scalable document analysis across teams and departments.</p>
+      <p style="color: #FEDEC5; font-family: Inter; font-size: 16px; font-weight: 500; margin: 0 0 2rem 0; text-align: left;">Enabled organization-wide adoption without manual document uploads.</p>
+    </div>
+    <div class="dq-expandable-img-wrap" style="width: 100%; border-radius: 16px; overflow: hidden; position: relative;">
+      <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/DocIQ/Documentum%20Ingestor%20Step%204_MIl7q6jRr.png" alt="Multi-source document ingestion interface" style="width: 100%; height: auto; display: block;">
+      <button class="dq-expand-btn" aria-label="Expand image" onclick="openDqLightbox(this)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="dq-divider" style="width: 100%; max-width: 1440px; margin: 80px auto; padding: 0 2rem;">
+    <div style="width: 100%; height: 1px; background: rgba(255, 255, 255, 0.2);"></div>
+  </div>
+
+  <!-- DESIGNING FOR AI TRUST -->
+  <div class="content dq-trust-section" style="margin-top: 0; padding-top: 4rem; padding-bottom: 8rem; background-color: #1B4332;">
+    <h2 class="fade-in-text dq-section-heading" style="margin: 0; font-size: 96px; font-family: 'KT Higer', sans-serif; text-transform: uppercase; letter-spacing: 2px; color: #FEDEC5;">Designing for AI Trust</h2>
+    <p class="fade-in-text" style="color: #FFF; text-align: center; font-family: Inter; font-size: 36px; font-weight: 600; line-height: 1.4; letter-spacing: -1px; margin: 0; opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;">Users expect 100% accuracy from AI. LLMs can hallucinate. Trust must be designed intentionally.</p>
+
+    <div class="dq-card-row" style="display: flex; gap: 2rem; justify-content: center; align-items: flex-start; flex-wrap: nowrap; width: 100%; margin: 3rem auto 0 auto;">
+      <div class="dq-card fade-in-text" style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem; opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease 0.1s, transform 0.8s ease 0.1s;">
+        <div class="dq-square" style="border-radius: 16px; border: 4px solid #52B788; background: #2D6A4F; width: 300px; height: 300px; box-shadow: 0 15px 60px -30px rgba(255, 255, 255, 0.15), 0 50px 100px -20px rgba(255, 255, 255, 0.15), 0 1px 1px 0 rgba(255, 255, 255, 0.10) inset; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <svg width="135" height="135" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        </div>
+        <div style="text-align: center; max-width: 300px;">
+          <h3 class="dq-card-title" style="color: #FFF; font-family: Inter; font-size: 24px; font-weight: 600; margin: 0 0 0.5rem 0;">Reference Chunking</h3>
+          <p class="dq-card-desc" style="color: rgba(255, 255, 255, 0.8); font-family: Inter; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;">Every response is grounded in specific document passages, making answers verifiable.</p>
+        </div>
+      </div>
+
+      <div class="dq-card fade-in-text" style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem; opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;">
+        <div class="dq-square" style="border-radius: 16px; border: 4px solid #74C69D; background: #40916C; width: 300px; height: 300px; box-shadow: 0 15px 60px -30px rgba(255, 255, 255, 0.15), 0 50px 100px -20px rgba(255, 255, 255, 0.15), 0 1px 1px 0 rgba(255, 255, 255, 0.10) inset; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <svg width="135" height="135" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+        </div>
+        <div style="text-align: center; max-width: 300px;">
+          <h3 class="dq-card-title" style="color: #FFF; font-family: Inter; font-size: 24px; font-weight: 600; margin: 0 0 0.5rem 0;">Source Linking</h3>
+          <p class="dq-card-desc" style="color: rgba(255, 255, 255, 0.8); font-family: Inter; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;">Direct links from AI answers to exact locations in source PDFs for instant verification.</p>
+        </div>
+      </div>
+
+      <div class="dq-card fade-in-text" style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem; opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s;">
+        <div class="dq-square" style="border-radius: 16px; border: 4px solid #95D5B2; background: #52B788; width: 300px; height: 300px; box-shadow: 0 15px 60px -30px rgba(255, 255, 255, 0.15), 0 50px 100px -20px rgba(255, 255, 255, 0.15), 0 1px 1px 0 rgba(255, 255, 255, 0.10) inset; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <svg width="135" height="135" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+        </div>
+        <div style="text-align: center; max-width: 300px;">
+          <h3 class="dq-card-title" style="color: #FFF; font-family: Inter; font-size: 24px; font-weight: 600; margin: 0 0 0.5rem 0;">Transparent Behavior</h3>
+          <p class="dq-card-desc" style="color: rgba(255, 255, 255, 0.8); font-family: Inter; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;">The AI communicates what it knows, what it doesn't, and where its answers come from.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="dq-divider" style="width: 100%; max-width: 1440px; margin: 80px auto; padding: 0 2rem;">
+    <div style="width: 100%; height: 1px; background: rgba(255, 255, 255, 0.2);"></div>
+  </div>
+
+  <!-- LESSONS LEARNED -->
+  <div class="content" style="padding-top: 0;">
+    <h2 class="dq-section-heading" style="color: #FEDEC5; font-family: 'KT Higer', sans-serif; font-size: 96px; font-weight: 600; margin: 0 auto 4rem auto; text-align: center; max-width: 1512px; padding: 0 2rem; text-transform: uppercase; letter-spacing: 2px;">Lessons Learned</h2>
+  </div>
+
+  <!-- AI & Technical -->
+  <div class="content dq-lessons-section" style="margin-top: 0; margin-bottom: 80px; gap: 0; align-items: flex-start; padding-top: 0;">
+    <h3 style="color: #FFF; font-family: Inter; font-size: 32px; font-weight: 600; margin: 0 0 1rem 0; text-align: left;">AI & Technical</h3>
+    <p style="color: rgba(255, 255, 255, 0.8); font-family: Inter; font-size: 18px; font-weight: 400; margin: 0 0 2rem 0; line-height: 1.5; text-align: left;">What building with LLMs taught us about designing AI products.</p>
+    <div class="dq-card-row" style="display: flex; gap: 2rem; justify-content: flex-start; align-items: flex-start; flex-wrap: nowrap; width: 100%; margin: 0 auto;">
+      <div class="dq-card" style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+        <div class="dq-square" style="border-radius: 16px; border: 4px solid #52B788; background: #2D6A4F; width: 300px; height: 300px; box-shadow: 0 15px 60px -30px rgba(255, 255, 255, 0.15), 0 50px 100px -20px rgba(255, 255, 255, 0.15), 0 1px 1px 0 rgba(255, 255, 255, 0.10) inset; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <svg width="135" height="135" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline><line x1="14" y1="4" x2="10" y2="20"></line></svg>
+        </div>
+        <div class="dq-card-text" style="text-align: center; max-width: 300px;">
+          <h3 class="dq-card-title" style="color: #FFF; font-family: Inter; font-size: 24px; font-weight: 600; margin: 0 0 0.5rem 0;">Tokens & Embeddings</h3>
+          <p class="dq-card-desc" style="color: rgba(255, 255, 255, 0.8); font-family: Inter; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;">Understanding how LLMs process text was essential to designing effective prompting flows and managing user expectations.</p>
+        </div>
+      </div>
+
+      <div class="dq-card" style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+        <div class="dq-square" style="border-radius: 16px; border: 4px solid #74C69D; background: #40916C; width: 300px; height: 300px; box-shadow: 0 15px 60px -30px rgba(255, 255, 255, 0.15), 0 50px 100px -20px rgba(255, 255, 255, 0.15), 0 1px 1px 0 rgba(255, 255, 255, 0.10) inset; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <svg width="135" height="135" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        </div>
+        <div class="dq-card-text" style="text-align: center; max-width: 300px;">
+          <h3 class="dq-card-title" style="color: #FFF; font-family: Inter; font-size: 24px; font-weight: 600; margin: 0 0 0.5rem 0;">Hallucination Behavior</h3>
+          <p class="dq-card-desc" style="color: rgba(255, 255, 255, 0.8); font-family: Inter; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;">Learning when and why LLMs fabricate information shaped every design decision around trust and transparency.</p>
+        </div>
+      </div>
+
+      <div class="dq-card" style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+        <div class="dq-square" style="border-radius: 16px; border: 4px solid #95D5B2; background: #52B788; width: 300px; height: 300px; box-shadow: 0 15px 60px -30px rgba(255, 255, 255, 0.15), 0 50px 100px -20px rgba(255, 255, 255, 0.15), 0 1px 1px 0 rgba(255, 255, 255, 0.10) inset; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <svg width="135" height="135" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        </div>
+        <div class="dq-card-text" style="text-align: center; max-width: 300px;">
+          <h3 class="dq-card-title" style="color: #FFF; font-family: Inter; font-size: 24px; font-weight: 600; margin: 0 0 0.5rem 0;">System Message Design</h3>
+          <p class="dq-card-desc" style="color: rgba(255, 255, 255, 0.8); font-family: Inter; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;">Prompt engineering and system message architecture became a core UX design skill for controlling AI behavior.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product & UX -->
+  <div class="content dq-lessons-section" style="margin-top: 0; margin-bottom: 80px; gap: 0; align-items: flex-start; padding-top: 0;">
+    <h3 style="color: #FFF; font-family: Inter; font-size: 32px; font-weight: 600; margin: 0 0 1rem 0; text-align: left;">Product & UX</h3>
+    <p style="color: rgba(255, 255, 255, 0.8); font-family: Inter; font-size: 18px; font-weight: 400; margin: 0 0 2rem 0; line-height: 1.5; text-align: left;">Key insights from shipping an AI product in a regulated environment.</p>
+    <div class="dq-card-row" style="display: flex; gap: 2rem; justify-content: flex-start; align-items: flex-start; flex-wrap: nowrap; width: 100%; margin: 0 auto;">
+      <div class="dq-card" style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+        <div class="dq-square" style="border-radius: 16px; border: 4px solid #52B788; background: #2D6A4F; width: 300px; height: 300px; box-shadow: 0 15px 60px -30px rgba(255, 255, 255, 0.15), 0 50px 100px -20px rgba(255, 255, 255, 0.15), 0 1px 1px 0 rgba(255, 255, 255, 0.10) inset; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <svg width="135" height="135" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <div class="dq-card-text" style="text-align: center; max-width: 300px;">
+          <h3 class="dq-card-title" style="color: #FFF; font-family: Inter; font-size: 24px; font-weight: 600; margin: 0 0 0.5rem 0;">Users Expect Certainty</h3>
+          <p class="dq-card-desc" style="color: rgba(255, 255, 255, 0.8); font-family: Inter; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;">Users treat AI like a search engine. When it's wrong, trust breaks instantly. Design must account for this expectation.</p>
+        </div>
+      </div>
+
+      <div class="dq-card" style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+        <div class="dq-square" style="border-radius: 16px; border: 4px solid #74C69D; background: #40916C; width: 300px; height: 300px; box-shadow: 0 15px 60px -30px rgba(255, 255, 255, 0.15), 0 50px 100px -20px rgba(255, 255, 255, 0.15), 0 1px 1px 0 rgba(255, 255, 255, 0.10) inset; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <svg width="135" height="135" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+        </div>
+        <div class="dq-card-text" style="text-align: center; max-width: 300px;">
+          <h3 class="dq-card-title" style="color: #FFF; font-family: Inter; font-size: 24px; font-weight: 600; margin: 0 0 0.5rem 0;">Transparency Drives Adoption</h3>
+          <p class="dq-card-desc" style="color: rgba(255, 255, 255, 0.8); font-family: Inter; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;">Showing sources and confidence levels increased user willingness to rely on AI outputs in their workflows.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Platform Constraints -->
+  <div class="content dq-lessons-section" style="margin-top: 0; margin-bottom: 80px; gap: 0; align-items: flex-start; padding-top: 0;">
+    <h3 style="color: #FFF; font-family: Inter; font-size: 32px; font-weight: 600; margin: 0 0 1rem 0; text-align: left;">Platform Constraints</h3>
+    <p style="color: rgba(255, 255, 255, 0.8); font-family: Inter; font-size: 18px; font-weight: 400; margin: 0 0 2rem 0; line-height: 1.5; text-align: left;">Working within the boundaries of enterprise tooling.</p>
+    <div class="dq-card-row" style="display: flex; gap: 2rem; justify-content: flex-start; align-items: flex-start; flex-wrap: nowrap; width: 100%; margin: 0 auto;">
+      <div class="dq-card" style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+        <div class="dq-square" style="border-radius: 16px; border: 4px solid #95D5B2; background: #52B788; width: 300px; height: 300px; box-shadow: 0 15px 60px -30px rgba(255, 255, 255, 0.15), 0 50px 100px -20px rgba(255, 255, 255, 0.15), 0 1px 1px 0 rgba(255, 255, 255, 0.10) inset; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <svg width="135" height="135" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+        </div>
+        <div class="dq-card-text" style="text-align: center; max-width: 300px;">
+          <h3 class="dq-card-title" style="color: #FFF; font-family: Inter; font-size: 24px; font-weight: 600; margin: 0 0 0.5rem 0;">Power Apps at Its Limits</h3>
+          <p class="dq-card-desc" style="color: rgba(255, 255, 255, 0.8); font-family: Inter; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;">Power Apps enabled rapid deployment but introduced scaling and performance constraints we had to design around.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="dq-divider" style="width: 100%; max-width: 1440px; margin: 80px auto; padding: 0 2rem;">
+    <div style="width: 100%; height: 1px; background: rgba(255, 255, 255, 0.2);"></div>
+  </div>
+
+  <!-- IMPACT -->
+  <div class="content" style="padding-top: 0;">
+    <h2 class="dq-section-heading" style="color: #FEDEC5; font-family: 'KT Higer', sans-serif; font-size: 96px; font-weight: 600; margin: 0 auto 4rem auto; text-align: center; max-width: 1512px; padding: 0 2rem; text-transform: uppercase; letter-spacing: 2px;">Impact</h2>
+  </div>
+
+  <div class="content dq-impact-section" style="margin-top: 0; margin-bottom: 80px; gap: 0; align-items: flex-start; padding-top: 0;">
+    <div class="dq-card-row" style="display: flex; gap: 2rem; justify-content: flex-start; align-items: flex-start; flex-wrap: nowrap; width: 100%; margin: 0 auto;">
+      <div class="dq-card" style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+        <div class="dq-square" style="border-radius: 16px; border: 4px solid #52B788; background: #2D6A4F; width: 300px; height: 300px; box-shadow: 0 15px 60px -30px rgba(255, 255, 255, 0.15), 0 50px 100px -20px rgba(255, 255, 255, 0.15), 0 1px 1px 0 rgba(255, 255, 255, 0.10) inset; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <svg width="135" height="135" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </div>
+        <div class="dq-card-text" style="text-align: center; max-width: 300px;">
+          <h3 class="dq-card-title" style="color: #FFF; font-family: Inter; font-size: 24px; font-weight: 600; margin: 0 0 0.5rem 0;">Hundreds of Hours Saved</h3>
+          <p class="dq-card-desc" style="color: rgba(255, 255, 255, 0.8); font-family: Inter; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;">Dramatically reduced manual document review time across investment teams.</p>
+        </div>
+      </div>
+
+      <div class="dq-card" style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+        <div class="dq-square" style="border-radius: 16px; border: 4px solid #74C69D; background: #40916C; width: 300px; height: 300px; box-shadow: 0 15px 60px -30px rgba(255, 255, 255, 0.15), 0 50px 100px -20px rgba(255, 255, 255, 0.15), 0 1px 1px 0 rgba(255, 255, 255, 0.10) inset; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <svg width="135" height="135" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+        </div>
+        <div class="dq-card-text" style="text-align: center; max-width: 300px;">
+          <h3 class="dq-card-title" style="color: #FFF; font-family: Inter; font-size: 24px; font-weight: 600; margin: 0 0 0.5rem 0;">Faster Analysis Speed</h3>
+          <p class="dq-card-desc" style="color: rgba(255, 255, 255, 0.8); font-family: Inter; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;">Professionals could extract key insights in minutes instead of hours of manual reading.</p>
+        </div>
+      </div>
+
+      <div class="dq-card" style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+        <div class="dq-square" style="border-radius: 16px; border: 4px solid #95D5B2; background: #52B788; width: 300px; height: 300px; box-shadow: 0 15px 60px -30px rgba(255, 255, 255, 0.15), 0 50px 100px -20px rgba(255, 255, 255, 0.15), 0 1px 1px 0 rgba(255, 255, 255, 0.10) inset; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <svg width="135" height="135" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </div>
+        <div class="dq-card-text" style="text-align: center; max-width: 300px;">
+          <h3 class="dq-card-title" style="color: #FFF; font-family: Inter; font-size: 24px; font-weight: 600; margin: 0 0 0.5rem 0;">Safe GenAI Adoption</h3>
+          <p class="dq-card-desc" style="color: rgba(255, 255, 255, 0.8); font-family: Inter; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;">Established a trusted, internal GenAI workflow that became the model for future AI initiatives.</p>
+        </div>
+      </div>
+
+      <div class="dq-card" style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+        <div class="dq-square" style="border-radius: 16px; border: 4px solid #B7E4C7; background: #74C69D; width: 300px; height: 300px; box-shadow: 0 15px 60px -30px rgba(255, 255, 255, 0.15), 0 50px 100px -20px rgba(255, 255, 255, 0.15), 0 1px 1px 0 rgba(255, 255, 255, 0.10) inset; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <svg width="135" height="135" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"></line><line x1="18" y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line><path d="M2 20h20"></path></svg>
+        </div>
+        <div class="dq-card-text" style="text-align: center; max-width: 300px;">
+          <h3 class="dq-card-title" style="color: #FFF; font-family: Inter; font-size: 24px; font-weight: 600; margin: 0 0 0.5rem 0;">New Workflow Created</h3>
+          <p class="dq-card-desc" style="color: rgba(255, 255, 255, 0.8); font-family: Inter; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;">Introduced a fundamentally new way for teams to interact with and extract value from their document library.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="dq-divider" style="width: 100%; max-width: 1440px; margin: 80px auto; padding: 0 2rem;">
+    <div style="width: 100%; height: 1px; background: rgba(255, 255, 255, 0.2);"></div>
+  </div>
+
+  <!-- PERSONAL REFLECTION -->
+  <div class="content dq-personal-reflection" style="padding-top: 0; margin-bottom: 120px; display: flex; flex-direction: column; align-items: flex-start; gap: 0;">
+    <h2 class="dq-section-heading" style="color: #FEDEC5; font-family: 'KT Higer', sans-serif; font-size: 96px; font-weight: 600; margin: 0 0 3rem 0; text-transform: uppercase; letter-spacing: 2px; text-align: center; width: 100%;">Personal Reflection</h2>
+    <blockquote class="dq-blockquote" style="margin: 0; padding: 2.5rem 3rem; border-left: 4px solid rgba(82, 183, 136, 0.4); background: rgba(82, 183, 136, 0.05); border-radius: 0 16px 16px 0; max-width: 900px;">
+      <p style="color: rgba(255, 255, 255, 0.85); font-family: Inter; font-size: 20px; font-weight: 300; line-height: 1.8; margin: 0; font-style: italic;">"This project required me to wear two hats: product manager and product designer. I learned how LLMs work from a backend perspective, from tokenization and embeddings to retrieval-augmented generation. Understanding the limitations of AI and when hallucinations occur wasn't just technical knowledge; it became the foundation for every design decision. I designed transparency mechanisms to build trust, pushed Power Apps to its absolute limits, and delivered real value despite significant platform constraints. This experience fundamentally changed how I approach AI product design: start with trust, design for uncertainty, and never let the technology lead the user experience."</p>
+    </blockquote>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="portfolio-footer">
+    <div class="portfolio-footer-content">
+      <div class="footer-left">
+        <h3 class="footer-name">Zaki Ahmed</h3>
+        <p class="footer-role">Product Designer focused on complex enterprise and AI products</p>
+      </div>
+      <div class="footer-right">
+        <div class="footer-contact-links">
+          <a href="mailto:zaki@zakiahmed.org" class="footer-link">zaki@zakiahmed.org</a>
+          <a href="https://www.linkedin.com/in/zakiahmed14/" target="_blank" class="footer-link">LinkedIn</a>
+          <a href="#" class="footer-link">Resume</a>
+        </div>
+        <p class="footer-location">Houston, TX</p>
+      </div>
+    </div>
+  </footer>
+
+    </div>
+  </div>
+
+  <!-- SCROLL TO TOP BUTTON -->
+  <button id="scroll-to-top" class="scroll-to-top-btn" aria-label="Scroll to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+    <span class="scroll-to-top-text">Scroll to top</span>
+  </button>
+
+  <!-- IMAGE LIGHTBOX OVERLAY (mobile) -->
+  <div id="dq-lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div id="dq-lightbox-inner">
+      <button id="dq-lightbox-close" aria-label="Close image viewer">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div id="dq-lightbox-viewport">
+        <div id="dq-lightbox-track"></div>
+      </div>
+      <span id="dq-lightbox-counter">1 / 4</span>
+      <button id="dq-lightbox-prev" aria-label="Previous image">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <button id="dq-lightbox-next" aria-label="Next image">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+      <div id="dq-lightbox-zoom">
+        <button id="dq-zoom-out" aria-label="Zoom out">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <button id="dq-zoom-in" aria-label="Zoom in">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .dq-hero .mesh-gradient-container {
+      background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 40%, #40916C 70%, #52B788 100%);
+    }
+
+    .scroll-to-top-btn {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      min-width: 56px;
+      height: 56px;
+      border-radius: 28px;
+      border: 2px solid #FFFFFF;
+      background: #2D6A4F;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 20px;
+      box-shadow: 0 4px 16px rgba(255, 255, 255, 0.15), 0 2px 8px rgba(255, 255, 255, 0.1);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+    }
+
+    .scroll-to-top-text {
+      color: #FFFFFF;
+      font-family: Inter, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .scroll-to-top-btn.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .scroll-to-top-btn:hover {
+      background: #1B4332;
+      box-shadow: 0 6px 24px rgba(255, 255, 255, 0.2), 0 4px 12px rgba(255, 255, 255, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .scroll-to-top-btn:active {
+      transform: translateY(-2px);
+    }
+
+    .dq-expand-btn {
+      display: none;
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #fff;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease, transform 0.15s ease;
+      z-index: 10;
+    }
+
+    .dq-expand-btn:active {
+      transform: scale(0.92);
+      background: rgba(0, 0, 0, 0.75);
+    }
+
+    #dq-lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: rgba(0, 0, 0, 0.96);
+    }
+
+    #dq-lightbox.active {
+      display: block;
+    }
+
+    #dq-lightbox-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+    }
+
+    #dq-lightbox.rotated #dq-lightbox-inner {
+      transform: rotate(90deg);
+      transform-origin: center center;
+      width: 100vh;
+      height: 100vw;
+      top: 50%;
+      left: 50%;
+      margin-top: calc(-50vw);
+      margin-left: calc(-50vh);
+    }
+
+    #dq-lightbox-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100001;
+      transition: background 0.2s ease;
+    }
+
+    #dq-lightbox-close:active {
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    #dq-lightbox-viewport {
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+      touch-action: none;
+      display: flex;
+      align-items: center;
+    }
+
+    #dq-lightbox-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      will-change: transform;
+    }
+
+    .dq-lightbox-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 8px;
+    }
+
+    .dq-lightbox-slide img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transform-origin: center center;
+      user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: none;
+      will-change: transform;
+      border-radius: 6px;
+    }
+
+    #dq-lightbox-prev,
+    #dq-lightbox-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100001;
+      transition: background 0.15s ease;
+    }
+
+    #dq-lightbox-prev { left: 8px; }
+    #dq-lightbox-next { right: 8px; }
+
+    #dq-lightbox-prev:active,
+    #dq-lightbox-next:active {
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    #dq-lightbox-counter {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: 4px;
+      padding: 4px 10px;
+      color: rgba(255, 255, 255, 0.85);
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      z-index: 100001;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    #dq-lightbox-zoom {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 28px;
+      padding: 3px;
+      z-index: 100001;
+    }
+
+    #dq-lightbox-zoom button {
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: background 0.15s ease;
+    }
+
+    #dq-lightbox-zoom button:active {
+      background: rgba(255, 255, 255, 0.15);
+    }
+  </style>
+
+  <script type="module" src="./js/smoothScroll.js"></script>
+  <script type="text/javascript" src="./js/logoScroll.js"></script>
+  <script type="text/javascript" src="./js/fadeInScroll.js"></script>
+  <script src="./js/components/mesh-gradient-cards.umd.js"></script>
+  <script>
+    if (window.initMeshGradients) {
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          window.initMeshGradients();
+        }, 500);
+      });
+    }
+  </script>
+  <script>
+    (function() {
+      var scrollToTopBtn = document.getElementById('scroll-to-top');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 500) {
+          scrollToTopBtn.classList.add('visible');
+        } else {
+          scrollToTopBtn.classList.remove('visible');
+        }
+      });
+      scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+  <script>
+    (function() {
+      var lightbox = document.getElementById('dq-lightbox');
+      var track = document.getElementById('dq-lightbox-track');
+      var closeBtn = document.getElementById('dq-lightbox-close');
+      var prevBtn = document.getElementById('dq-lightbox-prev');
+      var nextBtn = document.getElementById('dq-lightbox-next');
+      var counter = document.getElementById('dq-lightbox-counter');
+      var zoomInBtn = document.getElementById('dq-zoom-in');
+      var zoomOutBtn = document.getElementById('dq-zoom-out');
+
+      var slides = [];
+      var currentIndex = 0;
+      var totalSlides = 0;
+      var isOpen = false;
+      var scale = 1;
+      var panX = 0;
+      var panY = 0;
+
+      function getExpandableImages() {
+        return document.querySelectorAll('.dq-expandable-img-wrap img');
+      }
+
+      function getClickedIndex(btn) {
+        var clickedImg = btn.closest('.dq-expandable-img-wrap').querySelector('img');
+        var allImgs = getExpandableImages();
+        for (var i = 0; i < allImgs.length; i++) {
+          if (allImgs[i] === clickedImg) return i;
+        }
+        return 0;
+      }
+
+      function buildSlides() {
+        var imgs = getExpandableImages();
+        track.innerHTML = '';
+        slides = [];
+        totalSlides = imgs.length;
+        for (var i = 0; i < imgs.length; i++) {
+          var wrapper = document.createElement('div');
+          wrapper.className = 'dq-lightbox-slide';
+          var imgEl = document.createElement('img');
+          imgEl.src = imgs[i].src;
+          imgEl.alt = imgs[i].alt;
+          imgEl.draggable = false;
+          wrapper.appendChild(imgEl);
+          track.appendChild(wrapper);
+          slides.push({ wrapper: wrapper, img: imgEl });
+        }
+      }
+
+      function resetZoom() {
+        scale = 1; panX = 0; panY = 0;
+        for (var i = 0; i < slides.length; i++) {
+          slides[i].img.style.transform = '';
+          slides[i].img.style.transition = '';
+        }
+      }
+
+      function applyZoom(animated) {
+        var img = slides[currentIndex].img;
+        img.style.transition = animated ? 'transform 0.2s ease' : 'none';
+        img.style.transform = 'translate(' + panX + 'px,' + panY + 'px) scale(' + scale + ')';
+      }
+
+      function goToSlide(index, animated) {
+        if (index < 0 || index >= totalSlides) return;
+        resetZoom();
+        currentIndex = index;
+        track.style.transition = animated !== false ? 'transform 0.35s cubic-bezier(0.4,0,0.2,1)' : 'none';
+        track.style.transform = 'translateX(' + (-index * 100) + '%)';
+        counter.textContent = (index + 1) + ' / ' + totalSlides;
+      }
+
+      function updateOrientation() {
+        if (!isOpen) return;
+        if (window.innerWidth > 768) { lightbox.classList.remove('rotated'); return; }
+        if (window.innerWidth > window.innerHeight) { lightbox.classList.remove('rotated'); }
+        else { lightbox.classList.add('rotated'); }
+      }
+
+      window.openDqLightbox = function(btn) {
+        var index = getClickedIndex(btn);
+        buildSlides();
+        goToSlide(index, false);
+        lightbox.classList.add('active');
+        isOpen = true;
+        document.body.style.overflow = 'hidden';
+        updateOrientation();
+      };
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        lightbox.classList.remove('rotated');
+        isOpen = false;
+        document.body.style.overflow = '';
+      }
+
+      closeBtn.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', function(e) { if (e.target === lightbox) closeLightbox(); });
+      prevBtn.addEventListener('click', function() { goToSlide(currentIndex - 1); });
+      nextBtn.addEventListener('click', function() { goToSlide(currentIndex + 1); });
+
+      zoomInBtn.addEventListener('click', function() {
+        if (scale < 5) { scale = Math.min(5, scale + 0.5); applyZoom(true); }
+      });
+      zoomOutBtn.addEventListener('click', function() {
+        if (scale > 1) { scale = Math.max(1, scale - 0.5); panX = 0; panY = 0; applyZoom(true); }
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (!isOpen) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') goToSlide(currentIndex - 1);
+        if (e.key === 'ArrowRight') goToSlide(currentIndex + 1);
+      });
+
+      window.addEventListener('resize', updateOrientation);
+      window.addEventListener('orientationchange', updateOrientation);
+
+      var startX = 0;
+      var startTime = 0;
+      track.addEventListener('touchstart', function(e) {
+        if (scale > 1) return;
+        startX = e.touches[0].clientX;
+        startTime = Date.now();
+      }, { passive: true });
+      track.addEventListener('touchend', function(e) {
+        if (scale > 1) return;
+        var dx = e.changedTouches[0].clientX - startX;
+        var dt = Date.now() - startTime;
+        if (Math.abs(dx) > 50 && dt < 400) {
+          if (dx < 0) goToSlide(currentIndex + 1);
+          else goToSlide(currentIndex - 1);
+        }
+      }, { passive: true });
+    })();
+  </script>
+
+</body>
+</html>
