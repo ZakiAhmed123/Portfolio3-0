@@ -481,7 +481,7 @@
   }
 
   .nh-overview-stack {
-    gap: 2rem !important;
+    gap: 0 !important;
   }
 
   .nh-overview-text-lg {
@@ -863,7 +863,7 @@
   }
 
   .nh-overview-stack {
-    gap: 2rem !important;
+    gap: 0 !important;
   }
 
   .nh-overview-text-lg {
