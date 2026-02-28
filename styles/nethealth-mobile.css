@@ -555,6 +555,10 @@
     font-size: 16px !important;
   }
 
+  .nh-hypothesis-section {
+    padding-top: 0 !important;
+  }
+
   .hypothesis-square {
     width: 100% !important;
     max-width: 360px !important;
