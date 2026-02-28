@@ -625,7 +625,8 @@
   }
 
   .nh-design-ideologies-section {
-    margin-bottom: 32px !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
   }
 
   .nh-hypothesis-section {
