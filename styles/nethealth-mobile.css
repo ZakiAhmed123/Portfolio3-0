@@ -555,6 +555,10 @@
     font-size: 16px !important;
   }
 
+  .nh-rearchitecture-heading {
+    padding-top: 0 !important;
+  }
+
   .nh-hypothesis-section {
     padding-top: 0 !important;
     padding-left: 1rem !important;
