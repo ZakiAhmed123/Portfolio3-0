@@ -3,11 +3,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (logoLink) {
     logoLink.addEventListener('click', function(e) {
-      e.preventDefault();
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      const href = logoLink.getAttribute('href');
+      if (href === '#' || href === '' || href === window.location.pathname || href === window.location.pathname.split('/').pop()) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
     });
   }
 });
