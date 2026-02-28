@@ -559,7 +559,7 @@
     width: 100% !important;
     max-width: 360px !important;
     height: 480px !important;
-    margin-top: 40px !important;
+    margin-top: 0 !important;
   }
 
   .hypothesis-circles-header {
