@@ -557,13 +557,20 @@
 
   .nh-hypothesis-section {
     padding-top: 0 !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .nh-hypothesis-section > div {
+    width: 100% !important;
   }
 
   .hypothesis-square {
     width: 100% !important;
-    max-width: 360px !important;
-    height: 480px !important;
+    max-width: 100% !important;
+    height: 560px !important;
     margin-top: 0 !important;
+    box-sizing: border-box !important;
   }
 
   .hypothesis-circles-header {
@@ -780,8 +787,8 @@
   }
 
   .hypothesis-square {
-    max-width: 300px !important;
-    height: 420px !important;
+    max-width: 100% !important;
+    height: 560px !important;
   }
 
   .nh-summary-section .nh-problem-text {
