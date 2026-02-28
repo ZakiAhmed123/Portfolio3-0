@@ -448,7 +448,7 @@ nav {
 }
 
 .navbar-brand:hover .nav-logo-text {
-  color: #C4734F;
+  color: #C4734F !important;
 }
 
 .navbar-collapse {
