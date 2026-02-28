@@ -212,24 +212,41 @@
   position: fixed;
   inset: 0;
   z-index: 99999;
-  background: rgba(0, 0, 0, 0.95);
-  align-items: center;
-  justify-content: center;
+  background: rgba(0, 0, 0, 0.96);
 }
 
 #nh-lightbox.active {
+  display: block;
+}
+
+#nh-lightbox-inner {
+  position: absolute;
+  inset: 0;
   display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+#nh-lightbox.rotated #nh-lightbox-inner {
+  transform: rotate(90deg);
+  transform-origin: center center;
+  width: 100vh;
+  height: 100vw;
+  top: 50%;
+  left: 50%;
+  margin-top: calc(-50vw);
+  margin-left: calc(-50vh);
 }
 
 #nh-lightbox-close {
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  width: 48px;
-  height: 48px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: none;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   color: #fff;
@@ -237,58 +254,124 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100000;
+  z-index: 100001;
   transition: background 0.2s ease;
 }
 
 #nh-lightbox-close:active {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.7);
 }
 
-#nh-lightbox-inner {
+#nh-lightbox-viewport {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  touch-action: none;
+  display: flex;
+  align-items: center;
+}
+
+#nh-lightbox-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.nh-lightbox-slide {
+  flex: 0 0 100%;
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 64px 0 100px 0;
-  cursor: default;
-  touch-action: none;
+  padding: 8px;
 }
 
-#nh-lightbox-img {
+.nh-lightbox-slide img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
   transform-origin: center center;
-  transition: transform 0.2s ease;
   user-select: none;
   -webkit-user-drag: none;
   pointer-events: none;
   will-change: transform;
+  border-radius: 6px;
 }
 
-#nh-lightbox-zoom-controls {
-  position: fixed;
-  bottom: 32px;
+#nh-lightbox-prev,
+#nh-lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100001;
+  transition: background 0.15s ease;
+}
+
+#nh-lightbox-prev {
+  left: 8px;
+}
+
+#nh-lightbox-next {
+  right: 8px;
+}
+
+#nh-lightbox-prev:active,
+#nh-lightbox-next:active {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+#nh-lightbox-counter {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 4px;
+  padding: 4px 10px;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  z-index: 100001;
+  user-select: none;
+  pointer-events: none;
+}
+
+#nh-lightbox-zoom {
+  position: absolute;
+  bottom: 12px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-  gap: 0;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 4px;
+  gap: 2px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 28px;
+  padding: 3px;
   z-index: 100001;
 }
 
-#nh-lightbox-zoom-controls button {
-  width: 48px;
-  height: 48px;
+#nh-lightbox-zoom button {
+  width: 40px;
+  height: 40px;
   border: none;
   background: transparent;
   color: #fff;
@@ -296,30 +379,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 36px;
-  transition: background 0.15s ease, opacity 0.15s ease;
-  flex-shrink: 0;
+  border-radius: 50%;
+  transition: background 0.15s ease;
 }
 
-#nh-lightbox-zoom-controls button:active {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-#nh-lightbox-zoom-controls button:disabled {
-  opacity: 0.3;
-  cursor: default;
-}
-
-#nh-zoom-label {
-  color: #fff;
-  font-family: Inter, sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  min-width: 44px;
-  text-align: center;
-  letter-spacing: 0.02em;
-  pointer-events: none;
-  user-select: none;
+#nh-lightbox-zoom button:active {
+  background: rgba(255, 255, 255, 0.15);
 }
 
 @media (max-width: 768px) {
