@@ -480,6 +480,10 @@
     padding: 0 1rem !important;
   }
 
+  .nh-overview-stack {
+    gap: 2rem !important;
+  }
+
   .nh-overview-text-lg {
     font-size: 28px !important;
   }
@@ -856,6 +860,10 @@
 @media (max-width: 480px) {
   .nh-section-heading {
     font-size: 40px !important;
+  }
+
+  .nh-overview-stack {
+    gap: 2rem !important;
   }
 
   .nh-overview-text-lg {
