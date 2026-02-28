@@ -480,6 +480,18 @@
     padding: 0 1rem !important;
   }
 
+  #overview-section {
+    padding-bottom: 2.5rem !important;
+  }
+
+  .nh-overview-divider {
+    display: block;
+    width: 100%;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 0;
+  }
+
   .nh-overview-stack {
     gap: 0 !important;
   }
