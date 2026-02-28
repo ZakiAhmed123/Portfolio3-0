@@ -804,8 +804,10 @@
   }
 
   .legacy-modal {
-    top: 0;
-    height: 100vh;
+    top: 0 !important;
+    bottom: 0 !important;
+    height: 100vh !important;
+    height: 100dvh !important;
     z-index: 100000 !important;
   }
 
