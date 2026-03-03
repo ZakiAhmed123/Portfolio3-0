@@ -118,12 +118,77 @@
     </div>
   </div>
 
-  <!-- HERO IMAGE -->
-  <div class="dq-hero" style="width: 100%; max-width: 1512px; margin: 80px auto 0 auto; padding: 0 2rem; position: relative;">
-    <div class="mesh-gradient-container" style="width: 100%; height: 500px; border-radius: 16px; overflow: hidden;"></div>
-    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 2rem;">
-      <div style="max-width: 85%; max-height: 85%; border-radius: 12px; overflow: hidden;">
-        <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/DocIQ/Main%20Chat_p2tNIf1xB.png" alt="GenAI Document Intelligence Platform main interface" style="width: 100%; height: auto; display: block;">
+  <!-- FULL WIDTH MESH GRADIENT + CAROUSEL -->
+  <div class="dq-hero-carousel" style="width: 100%; height: 600px; overflow: hidden; position: relative; margin: 80px 0 0 0;">
+    <div class="mesh-gradient-container" style="width: 100%; max-width: 1512px; height: 100%; margin: 0 auto;"></div>
+
+    <!-- CAROUSEL ON TOP OF MESH GRADIENT -->
+    <div class="dq-gradient-carousel-container">
+      <div class="dq-gradient-carousel-wrapper">
+        <div class="dq-gradient-carousel-track">
+          <div class="dq-gradient-carousel-slide active">
+            <div class="dq-gradient-carousel-content">
+              <div class="dq-gradient-carousel-image-container">
+                <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/DocIQ/Main%20Chat_p2tNIf1xB.png" alt="Chat-based document intelligence">
+              </div>
+              <h3 class="dq-gradient-carousel-title">Chat-based document intelligence</h3>
+            </div>
+          </div>
+          <div class="dq-gradient-carousel-slide">
+            <div class="dq-gradient-carousel-content">
+              <div class="dq-gradient-carousel-image-container">
+                <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/DocIQ/PDF%20Viewer_nj-d36apD.png" alt="Traceable AI responses with PDF source linking">
+              </div>
+              <h3 class="dq-gradient-carousel-title">Traceable AI responses with PDF source linking</h3>
+            </div>
+          </div>
+          <div class="dq-gradient-carousel-slide">
+            <div class="dq-gradient-carousel-content">
+              <div class="dq-gradient-carousel-image-container">
+                <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/DocIQ/Standard%20and%20Favorite%20questions_GN963Sye7.png" alt="Guided prompting with standard and favorite questions">
+              </div>
+              <h3 class="dq-gradient-carousel-title">Guided prompting with standard and favorite questions</h3>
+            </div>
+          </div>
+          <div class="dq-gradient-carousel-slide">
+            <div class="dq-gradient-carousel-content">
+              <div class="dq-gradient-carousel-image-container">
+                <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/DocIQ/Documentum%20Ingestor%20Step%204_MIl7q6jRr.png" alt="Multi-source document ingestion">
+              </div>
+              <h3 class="dq-gradient-carousel-title">Multi-source document ingestion</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Navigation -->
+      <button class="dq-gradient-carousel-nav dq-gradient-carousel-prev">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <button class="dq-gradient-carousel-nav dq-gradient-carousel-next">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+
+      <!-- Expand Button (mobile only) -->
+      <button class="dq-carousel-expand-btn" aria-label="Expand carousel" id="dq-carousel-expand-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <polyline points="9 21 3 21 3 15"></polyline>
+          <line x1="21" y1="3" x2="14" y2="10"></line>
+          <line x1="3" y1="21" x2="10" y2="14"></line>
+        </svg>
+      </button>
+
+      <!-- Carousel Indicators -->
+      <div class="dq-gradient-carousel-indicators">
+        <span class="dq-gradient-carousel-indicator active" data-slide="0"></span>
+        <span class="dq-gradient-carousel-indicator" data-slide="1"></span>
+        <span class="dq-gradient-carousel-indicator" data-slide="2"></span>
+        <span class="dq-gradient-carousel-indicator" data-slide="3"></span>
       </div>
     </div>
   </div>
@@ -530,9 +595,373 @@
     </div>
   </div>
 
+  <!-- CAROUSEL FULLSCREEN OVERLAY (mobile) -->
+  <div id="dq-carousel-fullscreen" role="dialog" aria-modal="true" aria-label="Expanded carousel viewer">
+    <div id="dq-carousel-fs-inner">
+      <button id="dq-carousel-fs-close" aria-label="Close expanded view">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div id="dq-carousel-fs-viewport">
+        <div id="dq-carousel-fs-track"></div>
+      </div>
+      <span id="dq-carousel-fs-counter">1 / 4</span>
+      <button id="dq-carousel-fs-prev" aria-label="Previous slide">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <button id="dq-carousel-fs-next" aria-label="Next slide">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+      <div id="dq-carousel-fs-zoom">
+        <button id="dq-carousel-fs-zoom-out" aria-label="Zoom out">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <button id="dq-carousel-fs-zoom-in" aria-label="Zoom in">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <style>
-    .dq-hero .mesh-gradient-container {
+    .dq-hero-carousel .mesh-gradient-container {
       background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 40%, #40916C 70%, #52B788 100%);
+    }
+
+    .dq-gradient-carousel-container {
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .dq-gradient-carousel-wrapper {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .dq-gradient-carousel-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .dq-gradient-carousel-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .dq-gradient-carousel-slide.active {
+      opacity: 1;
+    }
+
+    .dq-gradient-carousel-content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .dq-gradient-carousel-title {
+      color: #FFFFFF;
+      font-family: 'Inter', sans-serif;
+      font-size: 28px;
+      font-weight: 600;
+      text-align: center;
+      margin: 0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .dq-gradient-carousel-image-container {
+      max-width: 95%;
+      max-height: 85%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .dq-gradient-carousel-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .dq-gradient-carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 56px;
+      height: 56px;
+      border: none;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 20;
+    }
+
+    .dq-gradient-carousel-nav:hover {
+      background: rgba(0, 0, 0, 0.7);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .dq-gradient-carousel-prev {
+      left: 2rem;
+    }
+
+    .dq-gradient-carousel-next {
+      right: 2rem;
+    }
+
+    .dq-gradient-carousel-indicators {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.75rem;
+      z-index: 20;
+    }
+
+    .dq-gradient-carousel-indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dq-gradient-carousel-indicator:hover {
+      background: rgba(255, 255, 255, 0.7);
+      transform: scale(1.2);
+    }
+
+    .dq-gradient-carousel-indicator.active {
+      background: #FEDEC5;
+      width: 32px;
+      border-radius: 5px;
+    }
+
+    .dq-carousel-expand-btn {
+      display: none;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #fff;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      z-index: 25;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .dq-carousel-expand-btn:active {
+      transform: scale(0.92);
+      background: rgba(0, 0, 0, 0.75);
+    }
+
+    #dq-carousel-fullscreen {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: rgba(0, 0, 0, 0.96);
+    }
+
+    #dq-carousel-fullscreen.active {
+      display: block;
+    }
+
+    #dq-carousel-fs-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+    }
+
+    #dq-carousel-fullscreen.rotated #dq-carousel-fs-inner {
+      transform: rotate(90deg);
+      transform-origin: center center;
+      width: 100vh;
+      height: 100vw;
+      top: 50%;
+      left: 50%;
+      margin-top: calc(-50vw);
+      margin-left: calc(-50vh);
+    }
+
+    #dq-carousel-fs-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100001;
+      transition: background 0.2s ease;
+    }
+
+    #dq-carousel-fs-close:active {
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    #dq-carousel-fs-viewport {
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+      touch-action: none;
+      display: flex;
+      align-items: center;
+    }
+
+    #dq-carousel-fs-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      will-change: transform;
+    }
+
+    .dq-carousel-fs-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 8px;
+    }
+
+    .dq-carousel-fs-slide img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transform-origin: center center;
+      user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: none;
+      will-change: transform;
+      border-radius: 6px;
+    }
+
+    #dq-carousel-fs-prev,
+    #dq-carousel-fs-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100001;
+      transition: background 0.15s ease;
+    }
+
+    #dq-carousel-fs-prev { left: 8px; }
+    #dq-carousel-fs-next { right: 8px; }
+
+    #dq-carousel-fs-prev:active,
+    #dq-carousel-fs-next:active {
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    #dq-carousel-fs-counter {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: 4px;
+      padding: 4px 10px;
+      color: rgba(255, 255, 255, 0.85);
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      z-index: 100001;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    #dq-carousel-fs-zoom {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 28px;
+      padding: 3px;
+      z-index: 100001;
+    }
+
+    #dq-carousel-fs-zoom button {
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: background 0.15s ease;
+    }
+
+    #dq-carousel-fs-zoom button:active {
+      background: rgba(255, 255, 255, 0.15);
     }
 
     .scroll-to-top-btn {
@@ -945,6 +1374,330 @@
           if (dx < 0) goToSlide(currentIndex + 1);
           else goToSlide(currentIndex - 1);
         }
+      }, { passive: true });
+    })();
+  </script>
+  <!-- HERO CAROUSEL JS -->
+  <script>
+    (function() {
+      var slides = document.querySelectorAll('.dq-gradient-carousel-slide');
+      var indicators = document.querySelectorAll('.dq-gradient-carousel-indicator');
+      var prevBtn = document.querySelector('.dq-gradient-carousel-prev');
+      var nextBtn = document.querySelector('.dq-gradient-carousel-next');
+      var track = document.querySelector('.dq-gradient-carousel-track');
+
+      var currentSlide = 0;
+      var totalSlides = slides.length;
+      var autoplayInterval;
+
+      function updateCarousel(index) {
+        slides.forEach(function(slide, i) {
+          slide.classList.toggle('active', i === index);
+        });
+        indicators.forEach(function(indicator, i) {
+          indicator.classList.toggle('active', i === index);
+        });
+        track.style.transform = 'translateX(-' + (index * 100) + '%)';
+        currentSlide = index;
+      }
+
+      function nextSlide() {
+        updateCarousel((currentSlide + 1) % totalSlides);
+      }
+
+      function prevSlide() {
+        updateCarousel((currentSlide - 1 + totalSlides) % totalSlides);
+      }
+
+      function startAutoplay() {
+        autoplayInterval = setInterval(nextSlide, 5000);
+      }
+
+      function stopAutoplay() {
+        clearInterval(autoplayInterval);
+      }
+
+      prevBtn.addEventListener('click', function() { stopAutoplay(); prevSlide(); startAutoplay(); });
+      nextBtn.addEventListener('click', function() { stopAutoplay(); nextSlide(); startAutoplay(); });
+
+      indicators.forEach(function(indicator, index) {
+        indicator.addEventListener('click', function() { stopAutoplay(); updateCarousel(index); startAutoplay(); });
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') { stopAutoplay(); prevSlide(); startAutoplay(); }
+        else if (e.key === 'ArrowRight') { stopAutoplay(); nextSlide(); startAutoplay(); }
+      });
+
+      window._dqCarouselStopAutoplay = stopAutoplay;
+      window._dqCarouselStartAutoplay = startAutoplay;
+      window._dqCarouselUpdateSlide = updateCarousel;
+
+      startAutoplay();
+    })();
+  </script>
+  <!-- CAROUSEL FULLSCREEN JS -->
+  <script>
+    (function() {
+      var overlay = document.getElementById('dq-carousel-fullscreen');
+      var closeBtn = document.getElementById('dq-carousel-fs-close');
+      var viewport = document.getElementById('dq-carousel-fs-viewport');
+      var track = document.getElementById('dq-carousel-fs-track');
+      var prevBtn = document.getElementById('dq-carousel-fs-prev');
+      var nextBtn = document.getElementById('dq-carousel-fs-next');
+      var counter = document.getElementById('dq-carousel-fs-counter');
+      var zoomInBtn = document.getElementById('dq-carousel-fs-zoom-in');
+      var zoomOutBtn = document.getElementById('dq-carousel-fs-zoom-out');
+      var expandBtn = document.getElementById('dq-carousel-expand-btn');
+
+      if (!overlay || !expandBtn) return;
+
+      var slides = [];
+      var currentIndex = 0;
+      var totalSlides = 0;
+      var isOpen = false;
+      var scale = 1;
+      var panX = 0;
+      var panY = 0;
+      var MIN_SCALE = 1;
+      var MAX_SCALE = 5;
+      var ZOOM_STEP = 0.5;
+
+      var pinchStartDist = 0;
+      var pinchStartScale = 1;
+      var isPanning = false;
+      var panStartX = 0;
+      var panStartY = 0;
+      var panStartOffsetX = 0;
+      var panStartOffsetY = 0;
+      var swipeStartX = 0;
+      var swipeStartY = 0;
+      var swipeStartTime = 0;
+      var isSwiping = false;
+      var swipeLocked = false;
+
+      function isRotated() { return overlay.classList.contains('rotated'); }
+
+      function mapTouch(touch) {
+        if (!isRotated()) return { x: touch.clientX, y: touch.clientY };
+        var vw = window.innerWidth;
+        return { x: touch.clientY, y: vw - touch.clientX };
+      }
+
+      function updateOrientation() {
+        if (!isOpen) return;
+        var isLandscape = window.innerWidth > window.innerHeight;
+        if (isLandscape) { overlay.classList.remove('rotated'); }
+        else { overlay.classList.add('rotated'); }
+      }
+
+      function getCarouselCurrentIndex() {
+        var activeSlide = document.querySelector('.dq-gradient-carousel-slide.active');
+        if (!activeSlide) return 0;
+        var allSlides = document.querySelectorAll('.dq-gradient-carousel-slide');
+        for (var i = 0; i < allSlides.length; i++) {
+          if (allSlides[i] === activeSlide) return i;
+        }
+        return 0;
+      }
+
+      function buildSlides() {
+        var imgs = document.querySelectorAll('.dq-gradient-carousel-image-container img');
+        track.innerHTML = '';
+        slides = [];
+        totalSlides = imgs.length;
+        for (var i = 0; i < imgs.length; i++) {
+          var wrapper = document.createElement('div');
+          wrapper.className = 'dq-carousel-fs-slide';
+          var imgEl = document.createElement('img');
+          imgEl.src = imgs[i].src;
+          imgEl.alt = imgs[i].alt;
+          imgEl.draggable = false;
+          wrapper.appendChild(imgEl);
+          track.appendChild(wrapper);
+          slides.push({ wrapper: wrapper, img: imgEl });
+        }
+      }
+
+      function resetZoom() {
+        scale = 1; panX = 0; panY = 0;
+        for (var i = 0; i < slides.length; i++) {
+          slides[i].img.style.transform = '';
+          slides[i].img.style.transition = '';
+        }
+      }
+
+      function applyZoom(animated) {
+        var img = slides[currentIndex].img;
+        img.style.transition = animated ? 'transform 0.2s ease' : 'none';
+        img.style.transform = 'translate(' + panX + 'px,' + panY + 'px) scale(' + scale + ')';
+      }
+
+      function clampPan() {
+        var img = slides[currentIndex].img;
+        var wrapper = slides[currentIndex].wrapper;
+        var cw = wrapper.offsetWidth;
+        var ch = wrapper.offsetHeight;
+        var displayedW = img.offsetWidth * scale;
+        var displayedH = img.offsetHeight * scale;
+        var maxX = Math.max(0, (displayedW - cw) / 2);
+        var maxY = Math.max(0, (displayedH - ch) / 2);
+        panX = Math.min(Math.max(panX, -maxX), maxX);
+        panY = Math.min(Math.max(panY, -maxY), maxY);
+      }
+
+      function goToSlide(index, animated) {
+        if (index < 0 || index >= totalSlides) return;
+        resetZoom();
+        currentIndex = index;
+        track.style.transition = animated !== false ? 'transform 0.35s cubic-bezier(0.4,0,0.2,1)' : 'none';
+        track.style.transform = 'translateX(' + (-index * 100) + '%)';
+        counter.textContent = (index + 1) + ' / ' + totalSlides;
+      }
+
+      function zoomTo(newScale) {
+        scale = Math.min(Math.max(newScale, MIN_SCALE), MAX_SCALE);
+        if (scale <= 1) { panX = 0; panY = 0; }
+        clampPan();
+        applyZoom(true);
+      }
+
+      function openFullscreen() {
+        buildSlides();
+        currentIndex = getCarouselCurrentIndex();
+        goToSlide(currentIndex, false);
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        isOpen = true;
+        updateOrientation();
+        if (window._dqCarouselStopAutoplay) window._dqCarouselStopAutoplay();
+      }
+
+      function closeFullscreen() {
+        overlay.classList.remove('active');
+        overlay.classList.remove('rotated');
+        document.body.style.overflow = '';
+        isOpen = false;
+        resetZoom();
+        if (window._dqCarouselUpdateSlide) window._dqCarouselUpdateSlide(currentIndex);
+        if (window._dqCarouselStartAutoplay) window._dqCarouselStartAutoplay();
+      }
+
+      window.addEventListener('resize', updateOrientation);
+      if (screen.orientation) {
+        screen.orientation.addEventListener('change', function() { setTimeout(updateOrientation, 100); });
+      }
+      window.addEventListener('orientationchange', function() { setTimeout(updateOrientation, 200); });
+
+      expandBtn.addEventListener('click', openFullscreen);
+      closeBtn.addEventListener('click', closeFullscreen);
+
+      prevBtn.addEventListener('click', function() {
+        if (scale > 1) return;
+        goToSlide((currentIndex - 1 + totalSlides) % totalSlides);
+      });
+      nextBtn.addEventListener('click', function() {
+        if (scale > 1) return;
+        goToSlide((currentIndex + 1) % totalSlides);
+      });
+
+      zoomInBtn.addEventListener('click', function() { zoomTo(scale + ZOOM_STEP); });
+      zoomOutBtn.addEventListener('click', function() { zoomTo(scale - ZOOM_STEP); });
+
+      overlay.addEventListener('click', function(e) { if (e.target === overlay) closeFullscreen(); });
+
+      document.addEventListener('keydown', function(e) {
+        if (!isOpen) return;
+        if (e.key === 'Escape') { closeFullscreen(); return; }
+        if (scale <= 1) {
+          if (e.key === 'ArrowLeft') goToSlide((currentIndex - 1 + totalSlides) % totalSlides);
+          if (e.key === 'ArrowRight') goToSlide((currentIndex + 1) % totalSlides);
+        }
+      });
+
+      viewport.addEventListener('touchstart', function(e) {
+        if (!isOpen) return;
+        if (e.touches.length === 2) {
+          isSwiping = false; isPanning = false; swipeLocked = true;
+          var t0 = mapTouch(e.touches[0]);
+          var t1 = mapTouch(e.touches[1]);
+          pinchStartDist = Math.hypot(t1.x - t0.x, t1.y - t0.y);
+          pinchStartScale = scale;
+          return;
+        }
+        if (e.touches.length === 1) {
+          var mapped = mapTouch(e.touches[0]);
+          swipeStartX = mapped.x; swipeStartY = mapped.y;
+          swipeStartTime = Date.now(); swipeLocked = false;
+          if (scale > 1) {
+            isPanning = true; isSwiping = false;
+            panStartX = mapped.x; panStartY = mapped.y;
+            panStartOffsetX = panX; panStartOffsetY = panY;
+          } else {
+            isSwiping = true; isPanning = false;
+          }
+        }
+      }, { passive: true });
+
+      viewport.addEventListener('touchmove', function(e) {
+        if (!isOpen) return;
+        if (e.touches.length === 2) {
+          e.preventDefault();
+          var t0 = mapTouch(e.touches[0]);
+          var t1 = mapTouch(e.touches[1]);
+          var dist = Math.hypot(t1.x - t0.x, t1.y - t0.y);
+          scale = Math.min(Math.max(pinchStartScale * (dist / pinchStartDist), MIN_SCALE), MAX_SCALE);
+          if (scale <= 1) { panX = 0; panY = 0; }
+          applyZoom(false);
+          return;
+        }
+        if (e.touches.length === 1) {
+          var mapped = mapTouch(e.touches[0]);
+          if (isPanning && scale > 1) {
+            e.preventDefault();
+            panX = panStartOffsetX + (mapped.x - panStartX);
+            panY = panStartOffsetY + (mapped.y - panStartY);
+            clampPan(); applyZoom(false);
+            return;
+          }
+          if (isSwiping && scale <= 1) {
+            var dx = mapped.x - swipeStartX;
+            var dy = mapped.y - swipeStartY;
+            if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) e.preventDefault();
+          }
+        }
+      }, { passive: false });
+
+      viewport.addEventListener('touchend', function(e) {
+        if (!isOpen) return;
+        if (swipeLocked) {
+          swipeLocked = false; isPanning = false; pinchStartScale = scale;
+          if (scale < MIN_SCALE) { scale = MIN_SCALE; panX = 0; panY = 0; applyZoom(true); }
+          return;
+        }
+        if (isPanning) { isPanning = false; clampPan(); applyZoom(true); return; }
+        if (isSwiping && scale <= 1) {
+          isSwiping = false;
+          var mapped = mapTouch(e.changedTouches[0]);
+          var dx = mapped.x - swipeStartX;
+          var elapsed = Date.now() - swipeStartTime;
+          var velocity = Math.abs(dx) / elapsed;
+          if (Math.abs(dx) > 50 || velocity > 0.3) {
+            if (dx < 0) goToSlide((currentIndex + 1) % totalSlides);
+            else goToSlide((currentIndex - 1 + totalSlides) % totalSlides);
+          }
+        }
+      }, { passive: true });
+
+      var lastTap = 0;
+      viewport.addEventListener('touchend', function(e) {
+        if (!isOpen || e.touches.length > 0) return;
+        var now = Date.now();
+        if (now - lastTap < 300) {
+          if (scale > 1) { scale = 1; panX = 0; panY = 0; applyZoom(true); }
+          else { scale = 2.5; applyZoom(true); }
+          lastTap = 0;
+        } else { lastTap = now; }
       }, { passive: true });
     })();
   </script>

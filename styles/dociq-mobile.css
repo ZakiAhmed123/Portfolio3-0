@@ -10,17 +10,58 @@
     display: flex;
   }
 
-  .dq-hero {
-    margin: 40px auto 0 auto !important;
-    padding: 0 1rem !important;
+  .dq-hero-carousel {
+    height: 420px !important;
+    margin: 40px 0 0 0 !important;
   }
 
-  .dq-hero .mesh-gradient-container {
-    height: 300px !important;
+  .dq-hero-carousel .mesh-gradient-container {
+    display: none !important;
   }
 
-  .dq-hero > div:last-child {
-    padding: 1rem !important;
+  .dq-gradient-carousel-container {
+    background-image: url('/assets/images/Grainy Gradient Background 6.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 1rem;
+  }
+
+  .dq-gradient-carousel-nav {
+    width: 40px !important;
+    height: 40px !important;
+    top: auto !important;
+    bottom: 3.5rem !important;
+    transform: none !important;
+  }
+
+  .dq-gradient-carousel-nav:hover {
+    transform: scale(1.1) !important;
+  }
+
+  .dq-gradient-carousel-prev {
+    left: 0.75rem !important;
+  }
+
+  .dq-gradient-carousel-next {
+    right: 0.75rem !important;
+  }
+
+  .dq-gradient-carousel-title {
+    font-size: 18px;
+    margin-bottom: 2.5rem;
+  }
+
+  .dq-gradient-carousel-image-container {
+    max-width: 90%;
+    max-height: 75%;
+  }
+
+  .dq-gradient-carousel-indicators {
+    bottom: 1rem;
+  }
+
+  .dq-carousel-expand-btn {
+    display: flex !important;
   }
 
   .dq-overview-grid {
