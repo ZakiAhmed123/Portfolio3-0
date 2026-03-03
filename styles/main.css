@@ -101,6 +101,12 @@ body {
   }
 }
 
+@media (min-width: 769px) and (max-width: 1080px) {
+  #cs1 h4, #cs2 h4, #cs3 h4, #cs4 h4 {
+    font-size: 24px !important;
+  }
+}
+
 @media (max-width: 768px) {
   .splash-title {
     font-size: clamp(60px, 44vw, 180px);
@@ -774,13 +780,13 @@ body {
 .item_content .cs-tag {
   display: inline-flex !important;
   align-items: center;
-  padding: 5px 13px;
+  padding: 7px 16px;
   border-radius: 999px !important;
   background: #0a0a0a !important;
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
   color: rgba(255, 255, 255, 0.65) !important;
   font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif !important;
-  font-size: 0.75rem !important;
+  font-size: 0.85rem !important;
   font-weight: 400 !important;
   letter-spacing: 0.02em;
   line-height: 1.4;
