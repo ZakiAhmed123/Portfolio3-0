@@ -29,7 +29,7 @@
 
   <title>Zaki Ahmed Product Design</title>
 </head>
-<body>
+<body class="has-scroll-to-top">
 
   <!-- SPLASH SCREEN -->
   <div id="splash-screen" class="splash-screen">
@@ -52,13 +52,15 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link" href="#"> <img src="./assets/images/icons/heart.png"> Work</a>
       </li>
-<li class="nav-item">
+      <li class="nav-item">
+        <a class="nav-link" href="#"> <img src="./assets/images/icons/brain.png"> Philosophies</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="#"> <img src="./assets/images/icons/shapes.png"> Design Ops</a>
       </li>
       <li class="nav-item">
@@ -333,6 +335,29 @@
     </script>
     <script type="text/javascript" src="./js/splashScreen.js"></script>
 
+  <!-- SCROLL TO TOP BUTTON -->
+  <button id="scroll-to-top" class="scroll-to-top-btn" aria-label="Scroll to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+    <span class="scroll-to-top-text">Scroll to top</span>
+  </button>
+
   <script type="text/javascript" src="./js/askZaki.js"></script>
+  <script>
+    (function() {
+      const scrollToTopBtn = document.getElementById('scroll-to-top');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+          scrollToTopBtn.classList.add('visible');
+        } else {
+          scrollToTopBtn.classList.remove('visible');
+        }
+      });
+      scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
   </body>
 </html>
