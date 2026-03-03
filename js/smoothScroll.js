@@ -22,7 +22,7 @@ setTimeout(() => {
 }, 200);
 
 ScrollTrigger.matchMedia({
-  "(min-width: 769px)": function () {
+  "(min-width: 992px)": function () {
     const scrollSection = document.querySelectorAll(".scroll-section");
 
     scrollSection.forEach((section) => {
@@ -68,7 +68,7 @@ ScrollTrigger.matchMedia({
     });
   },
 
-  "(max-width: 768px)": function () {
+  "(max-width: 991px)": function () {
   }
 });
 
