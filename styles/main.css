@@ -1612,31 +1612,22 @@ body {
 }
 
 .experience-item {
-  display: grid;
-  grid-template-columns: 180px 300px 1fr;
-  gap: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   padding: 3rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  align-items: start;
 }
 
 .experience-item:last-child {
   border-bottom: none;
 }
 
-.experience-date {
-  color: #999;
-  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
-  white-space: nowrap;
-}
-
-.experience-details {
+.experience-header {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
 }
 
 .experience-title {
@@ -1648,6 +1639,15 @@ body {
   margin: 0;
 }
 
+.experience-date {
+  color: #999;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 .experience-company {
   color: var(--peach);
   font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -1655,6 +1655,16 @@ body {
   font-weight: 400;
   line-height: 1.4;
   margin: 0;
+}
+
+.experience-tagline {
+  color: #777;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.5;
+  margin: 0.25rem 0 0.75rem;
 }
 
 .experience-description {
@@ -1669,30 +1679,26 @@ body {
   margin: 0;
 }
 
-@media (max-width: 1024px) {
-  .experience-item {
-    grid-template-columns: 150px 250px 1fr;
-    gap: 2rem;
-  }
-}
-
 @media (max-width: 768px) {
   .experience-section {
     padding: 0 1rem 6rem 1rem;
   }
 
   .experience-item {
-    grid-template-columns: 1fr;
-    gap: 1rem;
     padding: 2rem 0;
   }
 
-  .experience-date {
-    font-size: 14px;
+  .experience-header {
+    flex-direction: column;
+    gap: 0.25rem;
   }
 
   .experience-title {
     font-size: 20px;
+  }
+
+  .experience-date {
+    font-size: 13px;
   }
 
   .experience-company {
