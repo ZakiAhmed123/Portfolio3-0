@@ -1710,6 +1710,39 @@ body {
   }
 }
 
+/* Capabilities Section */
+.capabilities-section {
+  width: 100%;
+  padding: 0 6rem 96px 6rem;
+  position: relative;
+  z-index: 100;
+}
+
+.capabilities-list {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.capabilities-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 0.5rem;
+}
+
+.capabilities-chips .chip {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: default;
+}
+
+@media (max-width: 768px) {
+  .capabilities-section {
+    padding: 0 1rem 4rem 1rem;
+  }
+}
+
 /* Education Section */
 .education-section {
   width: 100%;
