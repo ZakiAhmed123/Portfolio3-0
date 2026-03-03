@@ -101,9 +101,9 @@ body {
   }
 }
 
-@media (min-width: 769px) and (max-width: 1080px) {
+@media (min-width: 769px) and (max-width: 1145px) {
   #cs1 h4, #cs2 h4, #cs3 h4, #cs4 h4 {
-    font-size: 24px !important;
+    font-size: 32px !important;
   }
 }
 
