@@ -2116,7 +2116,7 @@ body {
   letter-spacing: -2px;
   line-height: 1.1;
   margin: 0 0 1rem 0;
-  text-align: center;
+  text-align: left;
 }
 
 .experience-page-subtitle {
@@ -2125,9 +2125,15 @@ body {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.6;
-  margin: 0;
-  max-width: 100%;
-  text-align: center;
+  margin: 0 0 1.5rem 0;
+  max-width: 720px;
+  text-align: left;
+}
+
+.experience-hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 @media (max-width: 768px) {
@@ -2142,6 +2148,7 @@ body {
 
   .experience-page-subtitle {
     font-size: 1rem;
+    max-width: 100%;
   }
 }
 
