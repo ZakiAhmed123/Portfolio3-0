@@ -1593,7 +1593,7 @@ body {
 /* Experience Section Styles */
 .experience-section {
   width: 100%;
-  padding: 0 6rem 192px 6rem;
+  padding: 0 6rem 96px 6rem;
   position: relative;
   z-index: 100;
   scroll-margin-top: 120px;
@@ -1749,6 +1749,89 @@ body {
 @media (max-width: 768px) {
   .education-section {
     padding: 0 1rem 6rem 1rem;
+  }
+}
+
+/* Tools Section */
+.tools-section {
+  width: 100%;
+  padding: 0 6rem 192px 6rem;
+  position: relative;
+  z-index: 100;
+}
+
+.tools-list {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.tools-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding-top: 0.5rem;
+}
+
+.tools-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.tools-column-title {
+  color: var(--peach);
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem 0;
+}
+
+.tools-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tools-items li {
+  color: #CCCCCC;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.tools-items li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--peach);
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .tools-section {
+    padding: 0 1rem 6rem 1rem;
+  }
+
+  .tools-columns {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }
 
