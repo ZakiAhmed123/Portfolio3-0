@@ -1739,14 +1739,14 @@ body {
 
 @media (max-width: 768px) {
   .capabilities-section {
-    padding: 0 1rem 4rem 1rem;
+    padding: 0 1rem 6rem 1rem;
   }
 }
 
 /* Education Section */
 .education-section {
   width: 100%;
-  padding: 0 6rem 192px 6rem;
+  padding: 0 6rem 48px 6rem;
   position: relative;
   z-index: 100;
 }
