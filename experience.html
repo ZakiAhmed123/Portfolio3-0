@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <!-- JQUERY -->
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <!-- STYLE SHEET -->
+  <link rel="stylesheet" href="./styles/main.css?v=3">
+  <!-- JS -->
+  <script src="./js/follower.js"></script>
+  <!-- FAVICONS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+  <!-- SF PRO FONT -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/sf-pro-display@5.0.0/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/sf-pro-text@5.0.0/index.css">
+
+  <title>Experience — Zaki Ahmed</title>
+</head>
+<body>
+
+  <!-- FOLLOWER -->
+  <div id="follower"></div>
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="index.html" id="logo-scroll-top">
+      <span class="nav-logo-text">Zaki</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"> <img src="./assets/images/icons/heart.png"> Work</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"> <img src="./assets/images/icons/brain.png"> Philosophies </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"> <img src="./assets/images/icons/shapes.png"> Design Ops</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="experience.html"> <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/resumeIcon_Y4Bvt_nED.png?updatedAt=1757959688570"> Experience</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- MOBILE BOTTOM NAV -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+    <a class="mobile-bottom-nav__item" href="index.html">
+      <svg class="mobile-bottom-nav__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/>
+        <path d="M9 21V12h6v9"/>
+      </svg>
+      <span class="mobile-bottom-nav__label">Home</span>
+    </a>
+    <a class="mobile-bottom-nav__item" href="nethealth.html">
+      <svg class="mobile-bottom-nav__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+      </svg>
+      <span class="mobile-bottom-nav__label">Healthcare</span>
+    </a>
+    <a class="mobile-bottom-nav__item" href="#">
+      <svg class="mobile-bottom-nav__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="1" y="3" width="15" height="13" rx="2"/>
+        <path d="M16 8h4l3 5v3h-7V8z"/>
+        <circle cx="5.5" cy="18.5" r="2.5"/>
+        <circle cx="18.5" cy="18.5" r="2.5"/>
+      </svg>
+      <span class="mobile-bottom-nav__label">Logistics</span>
+    </a>
+    <a class="mobile-bottom-nav__item" href="dociq.html">
+      <svg class="mobile-bottom-nav__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+      </svg>
+      <span class="mobile-bottom-nav__label">AI tool</span>
+    </a>
+    <a class="mobile-bottom-nav__item mobile-bottom-nav__item--active" href="experience.html">
+      <svg class="mobile-bottom-nav__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="7" width="20" height="14" rx="2"/>
+        <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+      </svg>
+      <span class="mobile-bottom-nav__label">Experience</span>
+    </a>
+  </nav>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+
+      <div class="experience-page-hero">
+        <h1 class="experience-page-title">Experience</h1>
+        <p class="experience-page-subtitle">A decade of designing products that move people, scale teams, and solve hard problems.</p>
+      </div>
+
+      <!-- Experience Section -->
+      <section id="experience" class="experience-section">
+        <div class="experience-list">
+          <!-- Experience Item 1 -->
+          <div class="experience-item">
+            <div class="experience-date">Jan 2024 - Aug 2025</div>
+            <div class="experience-details">
+              <h3 class="experience-title">Principal Product Designer</h3>
+              <p class="experience-company">Neudesic, an IBM Company · Full-time</p>
+            </div>
+            <div class="experience-description">
+              <p>At Neudesic I lead UX initiatives for enterprise products and AI-driven solutions while managing and mentoring a team of designers. I guide their day-to-day work through regular design reviews, career planning sessions, and personalized training programs to help them grow their skills and approach complex UX and business challenges with confidence. I also led the redesign of a therapy management platform by unifying multiple schedulers and improving information architecture, creating a tablet-first experience that reduced time to task and improved transparency for clinicians. In addition, I drove the design of a Gen AI-powered document insight tool that helped investment professionals quickly extract critical data, significantly reducing research time and improving decision-making speed.</p>
+            </div>
+          </div>
+
+          <!-- Experience Item 2 -->
+          <div class="experience-item">
+            <div class="experience-date">Jul 2023 - Dec 2023</div>
+            <div class="experience-details">
+              <h3 class="experience-title">Senior UX Designer</h3>
+              <p class="experience-company">Medica · Contract</p>
+            </div>
+            <div class="experience-description">
+              <p>At Medica, I supported the digital experience team in designing and optimizing user interactions across public-facing and authenticated healthcare platforms. I contributed to multiple initiatives including member and broker portals, creating wireframes, prototypes, and user flows to simplify complex processes. I maintained and evolved the design system and Sketch asset library to ensure accessibility, consistency, and scalability across devices. Working closely with digital operations, content, product, and marketing teams, I helped enhance user journeys for shoppers, members, providers, employers, and brokers. I also designed App Store visual assets for the Dean Health Plan mobile app to improve its mobile presence and user engagement.</p>
+            </div>
+          </div>
+
+          <!-- Experience Item 3 -->
+          <div class="experience-item">
+            <div class="experience-date">Jul 2022 - Mar 2023</div>
+            <div class="experience-details">
+              <h3 class="experience-title">User Experience Manager</h3>
+              <p class="experience-company">Optym · Full-time</p>
+            </div>
+            <div class="experience-description">
+              <p>At Optym I directed UX for LoadOps, a complex B2B SaaS transportation management system, as well as its companion driver mobile app. I led a global team of six designers and implemented design systems, pod structures, and evaluation frameworks to improve team performance and product scalability. I collaborated closely with product and engineering teams to balance business value and feasibility, introduced UX best practices to the team, and oversaw discovery efforts that shaped workflows and AI-driven features like load optimization and dispatching.</p>
+            </div>
+          </div>
+
+          <!-- Experience Item 4 -->
+          <div class="experience-item">
+            <div class="experience-date">Oct 2017 - May 2022</div>
+            <div class="experience-details">
+              <h3 class="experience-title">Senior UX Designer</h3>
+              <p class="experience-company">Accenture / Avanade · Full-time</p>
+            </div>
+            <div class="experience-description">
+              <p>I led design and discovery for enterprise tools across industries including healthcare, retail, logistics, and consulting. I designed over 13 internal applications for MD Anderson Cancer Center, including tools with complex data visualizations that supported research teams. I also created a unified design system for those tools to streamline development and ensure consistency. I contributed interactive prototypes, facilitated workshops with clients like Home Depot, Bain & Company, Pepsi, and Volvo Trucks, and worked closely with engineering teams to deliver solutions that improved operational efficiency.</p>
+            </div>
+          </div>
+
+          <!-- Experience Item 5 -->
+          <div class="experience-item">
+            <div class="experience-date">Feb 2017 - Jul 2017</div>
+            <div class="experience-details">
+              <h3 class="experience-title">Full Stack Web Developer</h3>
+              <p class="experience-company">W Energy Software · Full-time</p>
+            </div>
+            <div class="experience-description">
+              <p>Developed, maintained, and upgraded accounting management software that was tailored specifically for the oil and gas industry. Working in an agile environment, I utilized a variety of technologies, including Ruby on Rails, Go Language, CoffeeScript, SQL, BackBone.js, HTML5, and CSS3 to create software solutions that met the specificity of accounting practices.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="portfolio-footer">
+        <div class="portfolio-footer-content">
+          <div class="footer-left">
+            <h3 class="footer-name">Zaki Ahmed</h3>
+            <p class="footer-role">Product Designer focused on complex enterprise and AI products</p>
+          </div>
+          <div class="footer-right">
+            <div class="footer-contact-links">
+              <a href="mailto:zaki@zakiahmed.org" class="footer-link">zaki@zakiahmed.org</a>
+              <a href="https://www.linkedin.com/in/zakiahmed14/" target="_blank" class="footer-link">LinkedIn</a>
+              <a href="#" class="footer-link">Resume</a>
+            </div>
+            <p class="footer-location">Houston, TX</p>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <script type="module" src="./js/smoothScroll.js"></script>
+</body>
+</html>
