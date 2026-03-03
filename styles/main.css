@@ -1710,6 +1710,48 @@ body {
   }
 }
 
+/* Education Section */
+.education-section {
+  width: 100%;
+  padding: 0 6rem 192px 6rem;
+  position: relative;
+  z-index: 100;
+}
+
+.education-list {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-label {
+  color: var(--white);
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin: 0 0 2rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.education-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.education-item:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .education-section {
+    padding: 0 1rem 6rem 1rem;
+  }
+}
+
 /* Portfolio Footer Styles */
 .portfolio-footer {
   position: relative;
