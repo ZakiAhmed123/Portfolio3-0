@@ -1593,7 +1593,7 @@ body {
 /* Experience Section Styles */
 .experience-section {
   width: 100%;
-  padding: 0 6rem 96px 6rem;
+  padding: 0 6rem 48px 6rem;
   position: relative;
   z-index: 100;
   scroll-margin-top: 120px;
@@ -1713,7 +1713,7 @@ body {
 /* Capabilities Section */
 .capabilities-section {
   width: 100%;
-  padding: 0 6rem 96px 6rem;
+  padding: 0 6rem 48px 6rem;
   position: relative;
   z-index: 100;
 }
