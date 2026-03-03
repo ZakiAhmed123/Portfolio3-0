@@ -240,6 +240,13 @@
     header.appendChild(headerTitle);
     header.appendChild(closeBtn);
 
+    var introBar = createEl('div', 'az-intro-bar');
+    var introBarAvatar = createEl('span', 'az-avatar');
+    introBarAvatar.textContent = 'Z';
+    var introBarText = createEl('span', 'az-intro-text');
+    introBar.appendChild(introBarAvatar);
+    introBar.appendChild(introBarText);
+
     var body = createEl('div', 'az-body');
     var msgArea = createEl('div', 'az-messages');
     var chipsArea = createEl('div', 'az-chips');
@@ -247,10 +254,30 @@
     body.appendChild(msgArea);
     body.appendChild(chipsArea);
 
+    var EMAIL = 'zaki@zakiahmed.org';
     var footer = createEl('div', 'az-footer');
-    footer.innerHTML = '<a href="mailto:zaki@zakiahmed.org" class="az-contact-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> Contact Zaki</a>';
+    var footerInner = createEl('div', 'az-footer-inner');
+    var emailSpan = createEl('span', 'az-footer-email');
+    emailSpan.textContent = EMAIL;
+    var copyBtn = createEl('button', 'az-copy-btn', { type: 'button', 'aria-label': 'Copy email address' });
+    copyBtn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+    var tooltip = createEl('span', 'az-copy-tooltip');
+    tooltip.textContent = 'Copied!';
+    copyBtn.appendChild(tooltip);
+
+    copyBtn.addEventListener('click', function () {
+      navigator.clipboard.writeText(EMAIL).then(function () {
+        tooltip.classList.add('az-copy-tooltip--visible');
+        setTimeout(function () { tooltip.classList.remove('az-copy-tooltip--visible'); }, 1800);
+      });
+    });
+
+    footerInner.appendChild(emailSpan);
+    footerInner.appendChild(copyBtn);
+    footer.appendChild(footerInner);
 
     panel.appendChild(header);
+    panel.appendChild(introBar);
     panel.appendChild(body);
     panel.appendChild(footer);
     root.appendChild(panel);
@@ -326,9 +353,7 @@
       msgArea.innerHTML = '';
       chipsArea.innerHTML = '';
 
-      var introDiv = createEl('div', 'az-intro-msg');
-      introDiv.innerHTML = '<span class="az-avatar">Z</span><span class="az-intro-text">' + (currentNodeId === 'root' ? NODES.root.prompt : 'What would you like to know?') + '</span>';
-      msgArea.appendChild(introDiv);
+      introBarText.textContent = currentNodeId === 'root' ? NODES.root.prompt : 'What would you like to know?';
 
       messages.forEach(function (msg) {
         var el = createEl('div', 'az-msg az-msg--' + msg.type);
