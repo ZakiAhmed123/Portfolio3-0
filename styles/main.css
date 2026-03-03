@@ -1765,6 +1765,7 @@ body {
   margin: 0 0 2rem 0;
   padding-bottom: 1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
 }
 
 .education-item {
