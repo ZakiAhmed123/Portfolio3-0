@@ -764,47 +764,58 @@ body {
   z-index: 1;
 }
 
-.cs-tags {
-  display: flex;
+.item_content .cs-tags {
+  display: flex !important;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 12px;
+  margin-top: -1rem;
 }
 
-.cs-tag {
-  display: inline-flex;
+.item_content .cs-tag {
+  display: inline-flex !important;
   align-items: center;
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: #000;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.7);
-  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 0.8rem;
-  font-weight: 400;
-  letter-spacing: 0.01em;
+  padding: 5px 13px;
+  border-radius: 999px !important;
+  background: #0a0a0a !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 0.75rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
   cursor: default;
-  position: relative;
-  overflow: hidden;
-  transition: color 0.3s ease, border-color 0.3s ease;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: color 0.35s ease, border-color 0.35s ease;
+  white-space: nowrap;
 }
 
-.cs-tag::before {
+.item_content .cs-tag::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.18) 0%, rgba(0, 0, 0, 0) 100%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.8) 70%, #000 100%);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.35s ease;
+  z-index: 0;
 }
 
-.cs-tag:hover::before {
+.item_content .cs-tag:hover::before {
   opacity: 1;
 }
 
-.cs-tag:hover {
-  color: rgba(255, 255, 255, 0.95);
-  border-color: rgba(255, 255, 255, 0.25);
+.item_content .cs-tag:hover {
+  color: rgba(255, 255, 255, 1) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+}
+
+.item_content .cs-tag-text {
+  position: relative;
+  z-index: 1;
 }
 
 
