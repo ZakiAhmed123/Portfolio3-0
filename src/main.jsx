@@ -1,6 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import MeshGradientCard from './MeshGradientCard';
+import TestimonialsCarousel from './TestimonialsCarousel';
 
 const isMobileDevice = () => {
   const isTouchOnly = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
@@ -35,8 +36,17 @@ const initMeshGradients = (selector) => {
   });
 };
 
+const initTestimonialsCarousel = () => {
+  const container = document.getElementById('testimonials-carousel-root');
+  if (!container || container.dataset.initialized) return;
+  container.dataset.initialized = 'true';
+  const root = createRoot(container);
+  root.render(<TestimonialsCarousel />);
+};
+
 if (typeof window !== 'undefined') {
   window.initMeshGradients = initMeshGradients;
+  window.initTestimonialsCarousel = initTestimonialsCarousel;
 }
 
-export { initMeshGradients };
+export { initMeshGradients, initTestimonialsCarousel };

@@ -352,6 +352,12 @@
       </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+      <h2>Trusted by Teams & Leaders</h2>
+      <div id="testimonials-carousel-root"></div>
+    </section>
+
     <!-- FOOTER -->
     <footer class="portfolio-footer">
       <div class="portfolio-footer-content">
@@ -383,13 +389,15 @@
     <script>
       if (window.initMeshGradients) {
         window.addEventListener('load', () => {
-          // Initialize splash screen mesh gradient immediately
           window.initMeshGradients('.splash-mesh-background');
-
-          // Initialize other mesh gradients after a delay
           setTimeout(() => {
             window.initMeshGradients();
           }, 500);
+        });
+      }
+      if (window.initTestimonialsCarousel) {
+        window.addEventListener('load', () => {
+          window.initTestimonialsCarousel();
         });
       }
     </script>
