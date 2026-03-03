@@ -1890,7 +1890,7 @@ body {
   letter-spacing: -2px;
   line-height: 1.1;
   margin: 0 0 1rem 0;
-  text-align: left;
+  text-align: center;
 }
 
 .experience-page-subtitle {
@@ -1900,7 +1900,8 @@ body {
   font-weight: 400;
   line-height: 1.6;
   margin: 0;
-  max-width: 900px;
+  max-width: 100%;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
