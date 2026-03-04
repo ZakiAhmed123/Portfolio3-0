@@ -1595,28 +1595,7 @@ body {
   width: 100%;
   overflow: hidden;
   position: relative;
-  padding: 2rem 0 3rem;
-}
-
-.logo-marquee-wrapper::before,
-.logo-marquee-wrapper::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 120px;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.logo-marquee-wrapper::before {
-  left: 0;
-  background: linear-gradient(to right, var(--bg-primary, #000) 0%, transparent 100%);
-}
-
-.logo-marquee-wrapper::after {
-  right: 0;
-  background: linear-gradient(to left, var(--bg-primary, #000) 0%, transparent 100%);
+  padding: 2rem 6rem 3rem;
 }
 
 .logo-marquee-track {
@@ -1636,8 +1615,13 @@ body {
   width: auto;
   object-fit: contain;
   opacity: 0.5;
-  filter: grayscale(100%);
   transition: opacity 0.3s ease;
+}
+
+.logo-marquee-item:last-child img,
+.logo-marquee-item:nth-last-child(2) img {
+  mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
 }
 
 .logo-marquee-item img:hover {
@@ -1654,9 +1638,8 @@ body {
 }
 
 @media (max-width: 768px) {
-  .logo-marquee-wrapper::before,
-  .logo-marquee-wrapper::after {
-    width: 60px;
+  .logo-marquee-wrapper {
+    padding: 2rem 1.5rem 3rem;
   }
 
   .logo-marquee-track {
