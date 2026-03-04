@@ -1595,7 +1595,8 @@ body {
   width: 100%;
   overflow: hidden;
   position: relative;
-  padding: 2rem 6rem 3rem;
+  padding: 2rem 6rem;
+  margin-bottom: 96px;
 }
 
 .logo-marquee-track {
@@ -1639,7 +1640,8 @@ body {
 
 @media (max-width: 768px) {
   .logo-marquee-wrapper {
-    padding: 2rem 1.5rem 3rem;
+    padding: 2rem 1.5rem;
+    margin-bottom: 6rem;
   }
 
   .logo-marquee-track {
@@ -1654,7 +1656,8 @@ body {
 /* Experience Section Styles */
 .experience-section {
   width: 100%;
-  padding: 0 6rem 48px 6rem;
+  padding: 0 6rem;
+  margin-bottom: 96px;
   position: relative;
   z-index: 100;
   scroll-margin-top: 120px;
@@ -1742,7 +1745,8 @@ body {
 
 @media (max-width: 768px) {
   .experience-section {
-    padding: 0 1rem 6rem 1rem;
+    padding: 0 1rem;
+    margin-bottom: 6rem;
   }
 
   .experience-item {
@@ -1807,7 +1811,8 @@ body {
 /* Education Section */
 .education-section {
   width: 100%;
-  padding: 0 6rem 48px 6rem;
+  padding: 0 6rem;
+  margin-bottom: 96px;
   position: relative;
   z-index: 100;
 }
@@ -1843,14 +1848,16 @@ body {
 
 @media (max-width: 768px) {
   .education-section {
-    padding: 0 1rem 6rem 1rem;
+    padding: 0 1rem;
+    margin-bottom: 6rem;
   }
 }
 
 /* Tools Section */
 .tools-section {
   width: 100%;
-  padding: 0 6rem 192px 6rem;
+  padding: 0 6rem;
+  margin-bottom: 96px;
   position: relative;
   z-index: 100;
 }
@@ -1924,7 +1931,8 @@ body {
 
 @media (max-width: 768px) {
   .tools-section {
-    padding: 0 1rem 6rem 1rem;
+    padding: 0 1rem;
+    margin-bottom: 6rem;
   }
 
   .tools-columns {
@@ -1999,7 +2007,7 @@ body {
   background: transparent;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 4rem 6rem 128px 6rem;
-  margin-top: 8rem;
+  margin-top: 0;
   margin-bottom: 40px;
 }
 
