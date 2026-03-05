@@ -1013,6 +1013,21 @@
       transform: translateY(-2px);
     }
 
+    @media (max-width: 991px) {
+      .scroll-to-top-btn {
+        bottom: calc(58px + 1rem + env(safe-area-inset-bottom));
+        right: 1rem;
+        width: 56px;
+        height: 56px;
+        padding: 0;
+        border-radius: 50%;
+      }
+
+      .scroll-to-top-text {
+        display: none;
+      }
+    }
+
     .dq-expand-btn {
       display: none;
       position: absolute;
