@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <!-- JQUERY -->
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <!-- STYLE SHEET -->
+  <link rel="stylesheet" href="./styles/main.css?v=3">
+  <link rel="stylesheet" href="./styles/askZaki.css">
+  <!-- JS -->
+  <script src="./js/follower.js"></script>
+  <!-- FAVICONS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+  <!-- SF PRO FONT -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/sf-pro-display@5.0.0/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/sf-pro-text@5.0.0/index.css">
+
+  <title>About — Zaki Ahmed</title>
+</head>
+<body class="has-scroll-to-top">
+
+  <!-- FOLLOWER -->
+  <div id="follower"></div>
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="index.html" id="logo-scroll-top">
+      <span class="nav-logo-text">Zaki</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"> <img src="./assets/images/icons/heart.png"> Work</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="experience.html"> <img src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/resumeIcon_Y4Bvt_nED.png?updatedAt=1757959688570"> Experience</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="about.html"> <img src="./assets/images/icons/user copy.png"> About me</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- MOBILE BOTTOM NAV -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+    <a class="mobile-bottom-nav__item" href="index.html">
+      <svg class="mobile-bottom-nav__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/>
+        <path d="M9 21V12h6v9"/>
+      </svg>
+      <span class="mobile-bottom-nav__label">Home</span>
+    </a>
+    <a class="mobile-bottom-nav__item" href="nethealth.html">
+      <svg class="mobile-bottom-nav__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+      </svg>
+      <span class="mobile-bottom-nav__label">Healthcare</span>
+    </a>
+    <a class="mobile-bottom-nav__item" href="#">
+      <svg class="mobile-bottom-nav__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="1" y="3" width="15" height="13" rx="2"/>
+        <path d="M16 8h4l3 5v3h-7V8z"/>
+        <circle cx="5.5" cy="18.5" r="2.5"/>
+        <circle cx="18.5" cy="18.5" r="2.5"/>
+      </svg>
+      <span class="mobile-bottom-nav__label">Logistics</span>
+    </a>
+    <a class="mobile-bottom-nav__item" href="dociq.html">
+      <svg class="mobile-bottom-nav__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+      </svg>
+      <span class="mobile-bottom-nav__label">AI tool</span>
+    </a>
+    <a class="mobile-bottom-nav__item mobile-bottom-nav__item--active" href="about.html">
+      <svg class="mobile-bottom-nav__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </svg>
+      <span class="mobile-bottom-nav__label">About</span>
+    </a>
+  </nav>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+
+      <nav class="mobile-breadcrumb" aria-label="Breadcrumb">
+        <a href="./index.html" class="mobile-breadcrumb__item mobile-breadcrumb__item--link">Home</a>
+        <span class="mobile-breadcrumb__sep" aria-hidden="true">/</span>
+        <span class="mobile-breadcrumb__item mobile-breadcrumb__item--current">About</span>
+      </nav>
+
+      <!-- Hero -->
+      <div class="experience-page-hero">
+        <h1 class="experience-page-title">About Me</h1>
+        <p class="experience-page-subtitle"><em>A little about my journey and how I think about product design.</em></p>
+      </div>
+
+      <!-- Introduction Section -->
+      <section class="about-section">
+        <div class="about-section-inner">
+          <div class="about-intro-grid">
+            <div class="about-intro-image-col">
+              <img
+                src="https://ik.imagekit.io/s3rnd2unn/Portfolio-3.0/IMG_4077_YQAn4ysG5.JPG"
+                alt="Zaki and his wife running through a hallway during their wedding photoshoot"
+                class="about-intro-image"
+              >
+              <p class="about-image-caption">Running through a hallway with my wife during our wedding photoshoot — May 2025.</p>
+            </div>
+            <div class="about-intro-text-col">
+              <p>I'm a Product Designer based in Houston, Texas with <strong>9+ years of experience designing enterprise software and complex digital products</strong> across industries including healthcare, logistics, financial services, and energy.</p>
+              <p>My work focuses on <strong>modernizing legacy systems, designing operational tools, and aligning user experience decisions with real-world business and technical constraints.</strong></p>
+              <p>Before moving into product design, I started my career as a <strong>front-end developer</strong>, which gave me a deep appreciation for engineering realities and product feasibility. Today I use that background to bridge the gap between <strong>design, engineering, and product strategy</strong>, helping teams deliver better solutions faster.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- My Journey Section -->
+      <section class="about-section">
+        <div class="about-section-inner">
+          <h2 class="section-label">My Journey</h2>
+          <div class="about-content-block">
+            <p>My path into design wasn't traditional.</p>
+            <p>I graduated in 2014 with a <strong>degree in Petroleum Engineering</strong> in Houston. After struggling to break into the oil and gas industry during a downturn, I pivoted and enrolled in a coding bootcamp to learn web development.</p>
+            <p>That decision led me into the startup world as a <strong>full-stack developer</strong>, where I eventually found myself helping a client with design work. What started as a small task quickly became something I fell in love with.</p>
+            <p>Design felt like a natural fit. I've been painting and drawing most of my life, so product design became the perfect intersection of <strong>creativity, problem solving, and systems thinking.</strong></p>
+            <p>Nine years later, that pivot has turned into a career designing and leading product experiences across complex enterprise environments.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- How I Think Section -->
+      <section class="about-section">
+        <div class="about-section-inner">
+          <h2 class="section-label">How I Think About Product Design</h2>
+          <div class="about-content-block">
+            <p>Great product design sits at the intersection of <strong>creativity, structure, and collaboration.</strong></p>
+            <p>Designers need creativity to explore ideas.<br>
+            They need structure to build scalable systems.<br>
+            And they need thick skin to navigate feedback and iteration.</p>
+            <p>But great products don't emerge from designers alone.</p>
+            <p>They emerge when <strong>design, product, engineering, and stakeholders align around shared goals.</strong></p>
+            <p>That's why I focus on:</p>
+            <ul class="about-focus-list">
+              <li>Creating structure that enables creativity within real constraints</li>
+              <li>Facilitating workshops and working sessions that bring teams into the decision-making process</li>
+              <li>Balancing user needs, business goals, and technical feasibility when making design decisions</li>
+            </ul>
+            <p>Products improve through cycles of research, feedback, and iteration—not through perfect ideas on the first try.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Philosophy Section -->
+      <section class="about-section about-section--last">
+        <div class="about-section-inner">
+          <h2 class="section-label">One Philosophy I Try to Live By</h2>
+          <div class="about-content-block">
+            <p>Technology changes constantly.</p>
+            <p>Careers evolve.<br>
+            Tools evolve.<br>
+            Industries evolve.</p>
+            <p>The mindset that has served me best throughout my career is simple:</p>
+            <p class="about-philosophy-highlight"><strong>Be flexible. Adapt always.</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="portfolio-footer">
+        <div class="portfolio-footer-content">
+          <div class="footer-left">
+            <h3 class="footer-name">Zaki Ahmed</h3>
+            <p class="footer-role">Product Designer focused on complex enterprise and AI products</p>
+          </div>
+          <div class="footer-right">
+            <div class="footer-contact-links">
+              <a href="mailto:zaki@zakiahmed.org" class="footer-link">zaki@zakiahmed.org</a>
+              <a href="https://www.linkedin.com/in/zakiahmed14/" target="_blank" class="footer-link">LinkedIn</a>
+              <a href="#" class="footer-link">Resume</a>
+            </div>
+            <p class="footer-location">Houston, TX</p>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- SCROLL TO TOP BUTTON -->
+  <button id="scroll-to-top" class="scroll-to-top-btn" aria-label="Scroll to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+    <span class="scroll-to-top-text">Scroll to top</span>
+  </button>
+
+  <script type="module" src="./js/smoothScroll.js"></script>
+  <script type="text/javascript" src="./js/askZaki.js"></script>
+  <script>
+    (function() {
+      const scrollToTopBtn = document.getElementById('scroll-to-top');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+          scrollToTopBtn.classList.add('visible');
+        } else {
+          scrollToTopBtn.classList.remove('visible');
+        }
+      });
+      scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+</body>
+</html>
