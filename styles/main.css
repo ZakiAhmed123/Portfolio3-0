@@ -19,6 +19,7 @@
 
 html {
   background: linear-gradient(269deg, #000 81.13%, #2A3642 100%);
+  overflow-x: hidden;
 }
 
 body {
@@ -2706,7 +2707,8 @@ body {
 @media (max-width: 991px) {
   #smooth-wrapper {
     position: static !important;
-    overflow: visible !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
     height: auto !important;
     z-index: auto !important;
   }
