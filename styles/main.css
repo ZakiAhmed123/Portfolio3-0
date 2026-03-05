@@ -1721,6 +1721,8 @@ body {
 
   .logo-marquee-item img {
     height: 44px;
+    opacity: 1;
+    filter: brightness(1.2);
   }
 }
 
