@@ -1299,6 +1299,10 @@ body {
     display: none;
   }
 
+  .item_content .cs-tags {
+    margin-top: 0.75rem;
+  }
+
   .item img {
     width: 100%;
     height: auto;
