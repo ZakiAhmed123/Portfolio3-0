@@ -1869,15 +1869,16 @@ body {
 
 .tools-columns {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   padding-top: 0.5rem;
+  gap: 1.5rem;
 }
 
 .tools-column {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 0 2rem;
+  padding: 0 1.25rem;
   border-left: 1px solid rgba(255, 255, 255, 0.12);
 }
 
