@@ -341,6 +341,7 @@
 
   .has-scroll-to-top .az-chat-root {
     right: calc(1rem + 56px + 12px);
+    bottom: calc(58px + 1rem + env(safe-area-inset-bottom));
   }
 
   .az-header-btn {
