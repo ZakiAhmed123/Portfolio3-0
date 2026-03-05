@@ -336,19 +336,21 @@
 @media (max-width: 991px) {
   .az-chat-root {
     bottom: calc(58px + 1rem + env(safe-area-inset-bottom));
+    right: 1rem;
+  }
+
+  .has-scroll-to-top .az-chat-root {
+    right: calc(1rem + 56px + 12px);
   }
 }
 
 @media (max-width: 768px) {
-  .has-scroll-to-top .az-chat-root {
-    right: calc(1rem + 48px + 12px);
-  }
-}
-
-@media (max-width: 480px) {
   .az-panel {
-    width: calc(100vw - 2rem);
-    right: -0.5rem;
-    max-height: 70vh;
+    position: fixed;
+    bottom: calc(58px + 72px + env(safe-area-inset-bottom));
+    right: 1rem;
+    left: 1rem;
+    width: auto;
+    max-height: calc(100vh - 58px - 72px - 2rem - env(safe-area-inset-bottom) - env(safe-area-inset-top));
   }
 }
