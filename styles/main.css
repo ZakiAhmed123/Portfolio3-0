@@ -2513,6 +2513,57 @@ body {
   }
 }
 
+/* Mobile Breadcrumbs */
+.mobile-breadcrumb {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .mobile-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 1.25rem 1rem 0 1rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .mobile-breadcrumb__item {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.45);
+    text-decoration: none;
+    line-height: 1.4;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mobile-breadcrumb__item--link {
+    color: var(--peach);
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
+  }
+
+  .mobile-breadcrumb__item--link:hover,
+  .mobile-breadcrumb__item--link:active {
+    opacity: 1;
+  }
+
+  .mobile-breadcrumb__sep {
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 12px;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 1px;
+  }
+
+  .mobile-breadcrumb__item--current {
+    color: rgba(255, 255, 255, 0.55);
+    font-weight: 500;
+  }
+}
+
 /* MOBILE BOTTOM NAV */
 nav.mobile-bottom-nav {
   display: none !important;
