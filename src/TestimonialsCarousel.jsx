@@ -11,7 +11,7 @@ const testimonials = [
   {
     quote: "Zaki is an excellent leader and facilitator. He fosters open idea sharing and creates a goal-driven team environment where perspectives are respected, ideas are challenged, and growth is encouraged.",
     name: "Jared Thayer",
-    title: "UX Designer",
+    title: "UX Manager",
     company: "Optym",
     context: "Reported directly to Zaki",
   },
