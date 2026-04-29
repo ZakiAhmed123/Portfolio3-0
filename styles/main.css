@@ -435,7 +435,7 @@ nav {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
 }
@@ -478,7 +478,6 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
   margin: 0;
   padding: 0;
 }
@@ -2698,7 +2697,7 @@ body {
   }
 
   .navbar {
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .nav-link {
