@@ -435,9 +435,11 @@ nav {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 100%;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .navbar-brand {
@@ -2725,7 +2727,7 @@ body {
   }
 
   .navbar {
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .nav-link {
