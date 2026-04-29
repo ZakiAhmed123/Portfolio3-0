@@ -2745,6 +2745,10 @@ body {
 }
 
 @media (max-width: 991px) {
+  .navbar {
+    display: none;
+  }
+
   #smooth-wrapper {
     position: static !important;
     overflow-x: hidden !important;
