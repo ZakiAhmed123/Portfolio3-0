@@ -435,15 +435,16 @@ nav {
 
 .navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
 }
 
 .navbar-brand {
   padding-left: 0rem;
-  display: none;
+  display: block;
   flex-shrink: 0;
+  text-decoration: none;
 }
 
 .navbar-brand:hover {
@@ -463,13 +464,28 @@ nav {
   transition: color 0.3s ease;
 }
 
+.nav-breezy-text {
+  font-family: 'KT Higer', sans-serif;
+  font-weight: 900;
+  font-size: 1.6rem;
+  color: white;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover .nav-breezy-text {
+  color: #C4734F;
+}
+
 .navbar-brand:hover .nav-logo-text {
   color: #C4734F !important;
 }
 
 .navbar-collapse {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   flex-grow: 1;
 }
@@ -477,6 +493,14 @@ nav {
 .nav-center-links {
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-right-links {
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
   margin: 0;
   padding: 0;
@@ -2697,7 +2721,7 @@ body {
   }
 
   .navbar {
-    justify-content: center;
+    justify-content: space-between;
   }
 
   .nav-link {
