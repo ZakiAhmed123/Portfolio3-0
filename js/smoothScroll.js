@@ -9,7 +9,9 @@ window.gsap = gsap;
 window.ScrollTrigger = ScrollTrigger;
 window.ScrollSmoother = ScrollSmoother;
 
-const smoother = ScrollSmoother.create({
+const isMobile = window.innerWidth < 992;
+
+const smoother = isMobile ? null : ScrollSmoother.create({
   wrapper: "#smooth-wrapper",
   content: "#smooth-content",
   smooth: 1.5,
@@ -17,7 +19,7 @@ const smoother = ScrollSmoother.create({
 });
 
 setTimeout(() => {
-  smoother.scrollTo(0, false);
+  if (smoother) smoother.scrollTo(0, false);
   ScrollTrigger.refresh();
 }, 200);
 

@@ -2742,20 +2742,6 @@ body {
 
 }
 
-@media (max-width: 991px) {
-  #smooth-wrapper {
-    position: static !important;
-    overflow-x: hidden !important;
-    overflow-y: visible !important;
-    height: auto !important;
-    z-index: auto !important;
-  }
-
-  #smooth-content {
-    transform: none !important;
-  }
-}
-
 @media (max-width: 768px) {
   body::after {
     display: none;
