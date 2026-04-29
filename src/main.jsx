@@ -3,20 +3,8 @@ import { createRoot } from 'react-dom/client';
 import MeshGradientCard from './MeshGradientCard';
 import TestimonialsCarousel from './TestimonialsCarousel';
 
-const isMobileDevice = () => {
-  const isTouchOnly = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
-  const isSmallScreen = window.innerWidth < 768;
-  const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-  return isTouchOnly || isSmallScreen || isMobileUA;
-};
 
 const initMeshGradients = (selector) => {
-  if (isMobileDevice()) {
-    console.log('Mobile device detected, skipping mesh gradients');
-    return;
-  }
-
   const defaultSelector = '.mesh-gradient-container, .mesh-gradient-icon, .carousel-mesh-background';
   const containers = document.querySelectorAll(selector || defaultSelector);
 
